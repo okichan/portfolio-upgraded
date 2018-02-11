@@ -1,1 +1,1 @@
-Tomomi's portfolio build in React.
+Tomomi's portfolio built in React.
