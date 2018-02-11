@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './assets/tomomi.svg'
 import './App.css';
 
 class App extends Component {
@@ -7,12 +6,11 @@ class App extends Component {
       return (
          <div className="App">
             <div className="frame" id="card1">
-               <div className="title-frame bg-paleblue">
-                  <div className="title-frame-inner bg-default" >
-                     <img src="tomomi.svg" />      
-                     <span className="bold test rotate-90" id="myname">
+               <div className="title-frame bg-paleblue" >
+                  <div id="card1-inner-frame" >
+                     <h1 className="bold rotate-90 py-3 text-center" id="myname">
                         Tomomi Oki
-                     </span>
+                     </h1>
                   </div>
                   <p className="text-center bold py-1">
                      Web Developer
