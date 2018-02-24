@@ -6,13 +6,17 @@ class App extends Component {
       return (
          <div className="App">
             <div className="frame" id="card1">
-               <div className="title-frame bg-paleblue" >
-                  <div id="card1-inner-frame" >
-                     <h1 className="bold rotate-90 py-3 text-center" id="myname">
-                        Tomomi Oki
-                     </h1>
+               <div id="title-frame-outer">
+                  <div className="title-frame" >
+                     <div className="title-frame-left">
+                     </div>
+                     <div className="title-frame-right" >
+                        <h1 className="">
+                           Tomomi Oki
+                        </h1>
+                     </div>
                   </div>
-                  <p className="text-center bold py-1">
+                  <p className="text-center py-2 bold">
                      Web Developer
                   </p>
                </div>

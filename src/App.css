@@ -57,7 +57,6 @@ td {
   padding: 0;
   border: 0;
   outline: 0;
-  font-weight: inherit;
   font-style: inherit;
   font-family: "Quicksand";
   vertical-align: baseline; }
@@ -133,39 +132,64 @@ q {
 .mb-3 {
   margin-bottom: 30px; }
 
-.rotate-90 {
-  transform: rotate(90deg); }
-
-.bg-paleblue {
-  background-color: rgba(152, 191, 204, 0.69); }
-
 .bg-default {
   background-color: #F3EEE2; }
 
 .frame {
   box-sizing: border-box;
-  border: 4vmax solid;
+  border: 3vmax solid;
+  height: 100vh;
   margin-bottom: 50vh; }
   .frame:last-of-type {
     margin-bottom: 0; }
   .frame .title-frame {
-    border: 4px solid #333;
-    margin: 4vmax; }
+    display: flex;
+    width: 60vw;
+    margin: 35px auto 0;
+    border: 6px solid #333; }
+    .frame .title-frame .title-frame-left {
+      border-right: 6px solid #333; }
+    .frame .title-frame .title-frame-right h1 {
+      transform: rotate(90deg);
+      transform-origin: 7% 67% 0;
+      float: left;
+      padding-left: 10px;
+      white-space: nowrap; }
 
 #card1 {
-  border-color: #910C32;
-  padding: 60px 0; }
-  #card1 #card1-inner-frame {
-    border: 4px solid #333;
-    margin: 4vmax 1vmax 0 1vmax;
-    height: 230px;
-    background: #F3EEE2 url(./assets/tomomi.svg) no-repeat 4% -7px; }
-  #card1 #myname {
-    position: absolute;
-    right: 0;
-    bottom: 47vh;
-    border-bottom: 4px solid #333;
-    width: 234px; }
+  border-color: #910C32; }
+  #card1 .title-frame-left {
+    height: 227px;
+    width: 70%;
+    background: #F3EEE2 url(./assets/tomomi.svg) no-repeat 50% -10px; }
+  #card1 .title-frame-right {
+    width: 30%;
+    background-color: #F3EEE2; }
+  #card1 #title-frame-outer {
+    border: 6px solid #333;
+    margin: 17vh 10vw;
+    background-color: rgba(152, 191, 204, 0.69); }
+    #card1 #title-frame-outer::before {
+      content: "";
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      top: 11.5vh;
+      left: 40vw;
+      background: transparent url(./assets/coder_girl.png) no-repeat;
+      background-size: cover;
+      animation: girl 1s forwards; }
+
+@keyframes girl {
+  0% {
+    display: none;
+    opacity: 0; }
+  50% {
+    display: block;
+    opacity: 0; }
+  100% {
+    display: block;
+    opacity: 1; } }
 
 #card2 {
   border-color: #1C486B; }
