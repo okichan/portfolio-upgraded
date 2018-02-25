@@ -158,6 +158,17 @@ q {
 
 #card1 {
   border-color: #910C32; }
+  #card1 #coder_girl_img {
+    position: relative;
+    width: 60px;
+    top: 17px;
+    left: 15vw;
+    margin: 0 auto; }
+  #card1 #title-frame-outer {
+    position: relative;
+    border: 6px solid #333;
+    margin: 0 10vw;
+    background-color: rgba(152, 191, 204, 0.69); }
   #card1 .title-frame-left {
     height: 227px;
     width: 70%;
@@ -165,31 +176,6 @@ q {
   #card1 .title-frame-right {
     width: 30%;
     background-color: #F3EEE2; }
-  #card1 #title-frame-outer {
-    border: 6px solid #333;
-    margin: 17vh 10vw;
-    background-color: rgba(152, 191, 204, 0.69); }
-    #card1 #title-frame-outer::before {
-      content: "";
-      position: absolute;
-      height: 60px;
-      width: 60px;
-      top: 11.5vh;
-      left: 40vw;
-      background: transparent url(./assets/coder_girl.png) no-repeat;
-      background-size: cover;
-      animation: girl 1s forwards; }
-
-@keyframes girl {
-  0% {
-    display: none;
-    opacity: 0; }
-  50% {
-    display: block;
-    opacity: 0; }
-  100% {
-    display: block;
-    opacity: 1; } }
 
 #card2 {
   border-color: #1C486B; }
