@@ -10,32 +10,12 @@ h5,
 h6,
 i,
 p,
-blockquote,
-pre,
 a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
 em,
-font,
 img,
-ins,
-kbd,
-q,
-s,
-samp,
 small,
 strike,
 strong,
-sub,
-sup,
-tt,
-var,
 dl,
 dt,
 dd,
@@ -77,7 +57,8 @@ a {
 
 body {
   line-height: 1;
-  background: #F3EEE2; }
+  background: #F3EEE2;
+  overflow-x: hidden; }
 
 ol,
 ul {
@@ -145,9 +126,10 @@ q {
 
 .frame {
   box-sizing: border-box;
-  border: 3vmax solid;
+  border: 5vw solid;
   min-height: 100vh;
-  margin-bottom: 50vh; }
+  margin-bottom: 50vh;
+  position: relative; }
   .frame:last-of-type {
     margin-bottom: 0; }
   .frame .title-frame {
@@ -191,14 +173,14 @@ q {
 #card2 {
   border-color: #1C486B; }
   #card2 #tsubaki {
-    position: relative;
-    width: 160px;
-    top: -70px;
-    left: -80px;
-    z-index: 1; }
+    position: absolute;
+    width: 210px;
+    top: -102px;
+    left: -110px; }
   #card2 .title-frame {
     width: 220px; }
   #card2 .title-frame-first {
+    position: relative;
     height: 125px;
     width: 150px;
     background: #F3EEE2 url(./assets/jiko2.png) no-repeat 50% -5px;
@@ -219,13 +201,21 @@ q {
 #card3 {
   border-color: #928C36; }
   #card3 #hagi {
-    position: relative;
-    float: right;
-    top: 200px;
-    width: 100px; }
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    width: 40vw;
+    max-width: 220px;
+    z-index: -1; }
+  #card3 [data-aos="example-anim1"] {
+    transform: rotate(360deg);
+    opacity: 0;
+    transition-property: transform, opacity; }
+    #card3 [data-aos="example-anim1"].aos-animate {
+      transform: rotate(0);
+      opacity: 1; }
   #card3 .title-frame {
-    position: relative;
-    top: -150px; }
+    position: relative; }
   #card3 .title-frame-first {
     height: 70px;
     width: 100%;
@@ -236,7 +226,6 @@ q {
     padding: 0; }
   #card3 .content {
     position: relative;
-    top: -150px;
     padding-left: 14vw;
     font-size: 18px;
     text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.47);

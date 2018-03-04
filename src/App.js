@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import AOS from 'aos'
 import './App.css';
 import './assets/aos.css';
 import girl from './assets/coder_girl.png';
 import tsubaki from './assets/tsubaki.svg';
 import hagi from './assets/hagi.png';
-import AOS from 'aos'
 
 class App extends Component {
    render() {
@@ -12,7 +12,8 @@ class App extends Component {
       return (
          <div className="App">
             <div className="frame" id="card1">
-               <img id="coder_girl_img" data-aos="flip-left" data-aos-duration="1000" alt="coder girl" src={girl} />
+               <img id="coder_girl_img" data-aos="flip-left" data-aos-duration="1000"
+                alt="coder girl" src={girl} />
                <div id="title-frame-outer">
                   <div className="title-frame" >
                      <div className="title-frame-first">
@@ -23,7 +24,7 @@ class App extends Component {
                         </h1>
                      </div>
                   </div>
-                  <p className="text-center py-2 bold">
+                  <p className="text-center pb-1 bold">
                      Web Developer
                   </p>
                </div>
@@ -33,7 +34,7 @@ class App extends Component {
             <div className="frame" id="card2">
                <div className="title-frame">
                   <div className="title-frame-first">
-                     <img id="tsubaki" data-aos="flip-left" data-aos-duration="2000" data-aos-offset="100" alt="tsubaki" src={tsubaki} />
+                     <img id="tsubaki" data-aos="fade" data-aos-duration="1500" data-aos-anchor-placement="top-center" alt="tsubaki" src={tsubaki} />
                   </div>
                   <div className="title-frame-second" >
                      <h3 className="vertical">
@@ -57,7 +58,12 @@ class App extends Component {
 
             {/* card 3 */}
             <div className="frame" id="card3">
-               <img id="hagi" data-aos="fade-left" data-aos-duration="2000" data-aos-offset="100" alt="hagi" src={hagi} />
+               <img id="hagi" 
+                data-aos="fade-up-left" 
+                data-aos-anchor-placement="bottom-bottom"
+                data-aos-duration="1500"
+                alt="hagi" src={hagi} 
+               />
 
                <div className="title-frame">
                   <div className="title-frame-first">
