@@ -100,6 +100,9 @@ ol, ul {
   visibility: hidden;
 }
   
+.hidden-mobile {
+  visibility: hidden;
+}
 
 // Global Frame
 .frame {
@@ -142,19 +145,18 @@ ol, ul {
 #card1 {
   border-color: #910C32;
   
-  #coder_girl_img {
-    position: relative;
-    width: 60px;
-    top: 17px;
-    left: 15vw;
-    margin: 0 auto;
-  }
   
   #title-frame-outer {
     position: relative;
     border: 6px solid $black;
-    margin: 0 7vw;
+    margin: 100px 7vw 0 7vw;
     background-color: rgba(152, 191, 204, 0.69);
+
+    #coder_girl_img {
+      position: absolute;
+      width: 60px;
+      top: -54px;
+    }
   }
 
   .title-frame {
@@ -471,4 +473,55 @@ footer {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Tablet and Desktop view */
+@media (min-width: 768px) {
+
+  .hidden-mobile {
+    visibility: visible;
+  }
+
+  .frame {
+    display: flex;
+    justify-content: space-around;
+    min-height: 50vw;
+  }
+
+  #card1 {
+
+    #title-frame-outer {
+      position: relative;
+      bottom: 0;
+      border: 6px solid $black;
+      width: 240px;
+      background-color: rgba(152, 191, 204, 0.69);
+      margin: 10% 7vw;
+      
+      .title-frame {
+        width: 89%;
+      }
+
+      .title-frame-first {
+        width: 70%;
+      }
+    }
+
+    .hidden-mobile {
+      visibility: visible;
+      border-left: 1px solid darkgray;
+      width: 45%;
+
+      ul {
+        position: relative;
+        transform: translateY(-50%);
+        top: 50%;
+        margin-left: 25%;
+        li {
+          font-size: 2rem;
+        }
+        
+      }
+    }
+  }
 }
