@@ -117,53 +117,40 @@ q {
   font-weight: bold;
 }
 
-.py-1 {
-  padding: 7px 0;
-}
-
-.py-2 {
-  padding: 16px 0;
-}
-
-.py-3 {
-  padding: 26px 0;
-}
-
-.pb-1 {
-  padding-bottom: 10px;
-}
-
-.pb-2 {
-  padding-bottom: 20px;
-}
-
-.pb-3 {
-  padding-bottom: 30px;
-}
-
-.mb-1 {
-  margin-bottom: 10px;
-}
-
-.mb-2 {
-  margin-bottom: 20px;
-}
-
-.mb-3 {
-  margin-bottom: 30px;
-}
+.py-1 { padding: 7px 0;}
+.py-2 { padding: 16px 0;}
+.py-3 { padding: 26px 0;}
+.pb-1 { padding-bottom: 10px; }
+.pb-2 { padding-bottom: 20px; }
+.pb-3 { padding-bottom: 30px; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mr-1 { margin-right: 10px; }
+.mr-2 { margin-right: 20px; }
+.mr-3 { margin-right: 30px; }
+.mr-4 { margin-right: 40px; }
 
 .bg-default {
   background-color: $bg-default;
 }
 
-.svg-wrapper {
-  margin-top: 10px;
-  position: relative;
+.inline-header {
+  display: inline;
+}
+
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: ".";
+  visibility: hidden;
 }
   
 
-// Global
+// Global Frame
 .frame {
   box-sizing: border-box;
   border: 5vw solid;
@@ -178,7 +165,7 @@ q {
   .title-frame {
     display: flex;
     flex-wrap: wrap;
-    width: 60vw;
+    
     margin: 15px auto 15px auto;
     border: 6px solid $black;
     background-color: $bg-default;
@@ -218,6 +205,10 @@ q {
     margin: 0 7vw;
     background-color: rgba(152, 191, 204, 0.69);
   }
+
+  .title-frame {
+    width: 60vw;
+  }
   
   .title-frame-first {
     height: 227px;
@@ -236,7 +227,7 @@ q {
   
   .title-frame {
     margin-top: 30px;
-    width: 220px;
+    width: 190px;
     
     #tsubaki {
       position: absolute;
@@ -250,16 +241,15 @@ q {
   .title-frame-first {
     position: relative;
     height: 125px;
-    width: 150px;
+    width: 155px;
     background: $bg-default url(./assets/jiko2.png) no-repeat 50% -5px;
     background-size: 85px;
   }
   
   .title-frame-second {
-    width: 20%;
+    width: 10px;
     background-color: $bg-default
   }
-
   
     span {
       font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
@@ -275,23 +265,7 @@ q {
       animation: pulse 2s infinite;
     }
   
-  @keyframes pulse {
-    0% {
-      width: 20px;
-    }
-    50% {
-      width: 20px;
-    }
-    85% {
-      width: 20px;
-    }
-    95% {
-      width: 12px;
-    }
-    100% {
-      width: 20px;
-    }
-  }
+
   p {
     font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
     font-size: 17px;
@@ -311,17 +285,17 @@ q {
   
   #hagi {
     position: absolute;
-    bottom: 110px;
+    bottom: 10%;
     right: 0;
     width: 40vw;
     max-width: 220px;
-    z-index: -1;
   }
   
   .title-frame {
     position: relative;
+    width: 55vw;
   }
-  
+
   .title-frame-first {
     height: 70px;
     width: 100%;
@@ -339,29 +313,23 @@ q {
     text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.47);
     line-height: 2rem;
     
-    p {
-      padding-top: 10px;
-    }
-    
     a {
       font-size: 40px;
-      margin-right: 40px;
       border-right: 30px solid transparent;
     }
 
     svg {
-      position: absolute;
-      justify-content: center;
       width: 50px;
-      transition: all .3s ease;
-    }
-      
-    #word {
-      transition: all .4s ease;
+      position: absolute;
+      transition: width .4s ease;
+
       g {
         fill: #5e5e5e;
+        transition: fill 1s ease;
       }
-      
+    }
+    
+    #word {
       &:hover {
         width: 70px;
         g {
@@ -371,11 +339,6 @@ q {
     }
     
     #pdf {
-      transition: all .4s ease;
-      g {
-        fill: #5e5e5e;
-      }
-      
       &:hover {
         width: 70px;
         g {
@@ -389,6 +352,26 @@ q {
 #card4 {
   border-color: #9E452A;
   
+  #fuji {
+    position: absolute;
+    width: 26%;
+    z-index: 1;
+  }
+  
+  #fuji-r {
+    position: absolute;
+    width: 26%;
+    right: 0;
+    top: -2px;
+    z-index: 1;
+  }
+  
+  .title-frame {
+    position: relative;
+    width: 180px;
+    z-index: -1;
+  }
+  
   .title-frame-first {
     height: 115px;
     width: 80%;
@@ -398,7 +381,6 @@ q {
   
   .title-frame-second {
     width: 10%;
-    background-color: $bg-default;
     padding-left: 3px;
   }
   
@@ -412,18 +394,32 @@ q {
       
       li {
         display: inline;
-        margin-right: 12px;
-        
-        &:last-child {
-          margin-right: 0;
-        }
       }
+    }
+
+    #react {
+      width: 20px;
+      animation: spin 6s linear infinite;
+    }
+    
+    #ruby {
+      width: 20px;
+      vertical-align: -20%;
+    }
+    
+    #responsive {
+      width: 20px;
+      vertical-align: -21%;
     }
   }
 }
 
 #card5 {
   border-color: #55295B;
+
+  .title-frame {
+    width: 210px;
+  }
 
   .title-frame-first {
     height: 74px;
@@ -439,4 +435,28 @@ q {
     margin-left: 12px;
   }
   
+}
+
+
+@keyframes pulse {
+  0% {
+    width: 20px;
+  }
+  50% {
+    width: 20px;
+  }
+  85% {
+    width: 20px;
+  }
+  95% {
+    width: 12px;
+  }
+  100% {
+    width: 20px;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

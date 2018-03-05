@@ -123,12 +123,38 @@ q {
 .mb-3 {
   margin-bottom: 30px; }
 
+.mt-1 {
+  margin-top: 10px; }
+
+.mt-2 {
+  margin-top: 20px; }
+
+.mt-3 {
+  margin-top: 30px; }
+
+.mr-1 {
+  margin-right: 10px; }
+
+.mr-2 {
+  margin-right: 20px; }
+
+.mr-3 {
+  margin-right: 30px; }
+
+.mr-4 {
+  margin-right: 40px; }
+
 .bg-default {
   background-color: #F3EEE2; }
 
-.svg-wrapper {
-  margin-top: 10px;
-  position: relative; }
+.inline-header {
+  display: inline; }
+
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: ".";
+  visibility: hidden; }
 
 .frame {
   box-sizing: border-box;
@@ -141,7 +167,6 @@ q {
   .frame .title-frame {
     display: flex;
     flex-wrap: wrap;
-    width: 60vw;
     margin: 15px auto 15px auto;
     border: 6px solid #333;
     background-color: #F3EEE2; }
@@ -168,6 +193,8 @@ q {
     border: 6px solid #333;
     margin: 0 7vw;
     background-color: rgba(152, 191, 204, 0.69); }
+  #card1 .title-frame {
+    width: 60vw; }
   #card1 .title-frame-first {
     height: 227px;
     width: 70%;
@@ -180,7 +207,7 @@ q {
   border-color: #1C486B; }
   #card2 .title-frame {
     margin-top: 30px;
-    width: 220px; }
+    width: 190px; }
     #card2 .title-frame #tsubaki {
       position: absolute;
       width: 210px;
@@ -190,11 +217,11 @@ q {
   #card2 .title-frame-first {
     position: relative;
     height: 125px;
-    width: 150px;
+    width: 155px;
     background: #F3EEE2 url(./assets/jiko2.png) no-repeat 50% -5px;
     background-size: 85px; }
   #card2 .title-frame-second {
-    width: 20%;
+    width: 10px;
     background-color: #F3EEE2; }
   #card2 span {
     font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
@@ -206,18 +233,6 @@ q {
     margin-top: 5px;
     transform: translate(-50%, -50%);
     animation: pulse 2s infinite; }
-
-@keyframes pulse {
-  0% {
-    width: 20px; }
-  50% {
-    width: 20px; }
-  85% {
-    width: 20px; }
-  95% {
-    width: 12px; }
-  100% {
-    width: 20px; } }
   #card2 p {
     font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
     font-size: 17px;
@@ -232,13 +247,13 @@ q {
   overflow: hidden; }
   #card3 #hagi {
     position: absolute;
-    bottom: 110px;
+    bottom: 10%;
     right: 0;
     width: 40vw;
-    max-width: 220px;
-    z-index: -1; }
+    max-width: 220px; }
   #card3 .title-frame {
-    position: relative; }
+    position: relative;
+    width: 55vw; }
   #card3 .title-frame-first {
     height: 70px;
     width: 100%;
@@ -253,36 +268,41 @@ q {
     font-size: 18px;
     text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.47);
     line-height: 2rem; }
-    #card3 .content p {
-      padding-top: 10px; }
     #card3 .content a {
       font-size: 40px;
-      margin-right: 40px;
       border-right: 30px solid transparent; }
     #card3 .content svg {
-      position: absolute;
-      justify-content: center;
       width: 50px;
-      transition: all .3s ease; }
-    #card3 .content #word {
-      transition: all .4s ease; }
-      #card3 .content #word g {
-        fill: #5e5e5e; }
-      #card3 .content #word:hover {
-        width: 70px; }
-        #card3 .content #word:hover g {
-          fill: #1d1da8; }
-    #card3 .content #pdf {
-      transition: all .4s ease; }
-      #card3 .content #pdf g {
-        fill: #5e5e5e; }
-      #card3 .content #pdf:hover {
-        width: 70px; }
-        #card3 .content #pdf:hover g {
-          fill: #c03a2b; }
+      position: absolute;
+      transition: width .4s ease; }
+      #card3 .content svg g {
+        fill: #5e5e5e;
+        transition: fill 1s ease; }
+    #card3 .content #word:hover {
+      width: 70px; }
+      #card3 .content #word:hover g {
+        fill: #1d1da8; }
+    #card3 .content #pdf:hover {
+      width: 70px; }
+      #card3 .content #pdf:hover g {
+        fill: #c03a2b; }
 
 #card4 {
   border-color: #9E452A; }
+  #card4 #fuji {
+    position: absolute;
+    width: 26%;
+    z-index: 1; }
+  #card4 #fuji-r {
+    position: absolute;
+    width: 26%;
+    right: 0;
+    top: -2px;
+    z-index: 1; }
+  #card4 .title-frame {
+    position: relative;
+    width: 180px;
+    z-index: -1; }
   #card4 .title-frame-first {
     height: 115px;
     width: 80%;
@@ -290,7 +310,6 @@ q {
     background-size: 74px; }
   #card4 .title-frame-second {
     width: 10%;
-    background-color: #F3EEE2;
     padding-left: 3px; }
   #card4 .content {
     padding: 0 10vw;
@@ -299,13 +318,21 @@ q {
     #card4 .content ul {
       padding: 10px 0 38px; }
       #card4 .content ul li {
-        display: inline;
-        margin-right: 12px; }
-        #card4 .content ul li:last-child {
-          margin-right: 0; }
+        display: inline; }
+    #card4 .content #react {
+      width: 20px;
+      animation: spin 6s linear infinite; }
+    #card4 .content #ruby {
+      width: 20px;
+      vertical-align: -20%; }
+    #card4 .content #responsive {
+      width: 20px;
+      vertical-align: -21%; }
 
 #card5 {
   border-color: #55295B; }
+  #card5 .title-frame {
+    width: 210px; }
   #card5 .title-frame-first {
     height: 74px;
     width: 100%;
@@ -316,3 +343,21 @@ q {
     padding: 0; }
   #card5 h4 {
     margin-left: 12px; }
+
+@keyframes pulse {
+  0% {
+    width: 20px; }
+  50% {
+    width: 20px; }
+  85% {
+    width: 20px; }
+  95% {
+    width: 12px; }
+  100% {
+    width: 20px; } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
