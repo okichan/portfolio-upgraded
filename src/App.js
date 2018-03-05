@@ -13,13 +13,27 @@ import heart from './assets/heart.svg'
 class App extends Component {
 
   componentDidMount = () => {
-    let svgWithWhiteSpace = document.getElementsByClassName("svg");
+    const svgWithWhiteSpace = document.getElementsByClassName("svg");
     for (let i = 0; i < svgWithWhiteSpace.length; i++) { 
       const svg = svgWithWhiteSpace[i];
       const bbox = svg.getBBox();
       const viewBox = [bbox.x, bbox.y, bbox.width, bbox.height].join(" ");
       svg.setAttribute("viewBox", viewBox);
     }
+  }
+
+  copyText = () => {
+    const copiedText = document.getElementById("addy").select();
+    document.execCommand("Copy");
+    console.log(copiedText);
+    // alert(copiedText)
+    const tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied!";
+  }
+
+  outFunc = () => {
+    const tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy email address";
   }
 
   render() {
@@ -195,23 +209,35 @@ class App extends Component {
             </div>
           </div>
           <div className="content">
-            <svg id="octocat" className="svg" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 512 512">
-              <g fill="#333" >
-                <path d="M436 147c5-16 8-32 8-48 0-22-5-43-15-62-20 0-38 3-54 11-15 7-33 19-53 34a380 380 0 0 0-168 1c-20-16-38-28-54-35-16-8-34-11-54-11-10 19-15 40-15 62 0 17 3 33 8 48-26 31-39 68-39 113 0 40 6 71 18 95a119 119 0 0 0 59 56 301 301 0 0 0 125 27 882 882 0 0 0 137-7c18-3 34-8 48-14 14-5 28-13 41-24 12-11 22-23 30-38 11-24 17-55 17-95 0-45-13-83-39-113zm-34 207c-6 13-14 23-23 30s-21 13-35 17-27 7-40 8c-13 2-27 2-42 2h-48c-16 0-30 0-43-2-13-1-26-4-40-8s-25-10-35-17c-9-7-17-17-23-30-6-12-9-27-9-43 0-23 7-43 20-59s31-24 53-24l56 6a294 294 0 0 0 89 0l56-6c22 0 40 8 53 24 14 16 20 36 20 59 0 16-3 31-9 43z" />
-                <path d="M167 266a27 27 0 0 0-42 0c-5 6-9 13-12 21a82 82 0 0 0 0 47c3 8 7 15 12 22a27 27 0 0 0 42 0c6-7 10-14 12-22a82 82 0 0 0 0-47c-2-8-6-15-12-21zM350 266a27 27 0 0 0-42 0c-6 6-10 13-12 21a82 82 0 0 0 0 47c2 8 6 15 12 22a27 27 0 0 0 42 0c5-7 9-14 12-22a82 82 0 0 0 0-47c-3-8-7-15-12-21z" />
-              </g>
-            </svg>
-            <svg id="in" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 512 512" >
-              <path fill="#333" d="M430 262v159h-92V272c0-37-13-63-47-63-25 0-40 18-47 34-3 6-3 14-3 23v155h-92V143h92v40h-1 1c12-19 34-46 83-46 61 0 106 39 106 125zM52 10C21 10 0 30 0 57s20 48 51 48h1c32 0 52-21 52-48-1-27-20-47-52-47zM5 421h93V143H5v278z" />
-            </svg>
-            <svg id="email" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 129 129">
-              <path fill="#333" d="M7 111v2h1v1h2v1h108l1-1h2v-1h1v-1-1-92c0-3-2-4-4-4H10c-2 0-4 1-4 4v92zm12-5l31-36 12 9h5l12-9 31 36H19zm95-7L86 65l28-19v53zM15 23h99v13L65 70 15 36V23zm0 23l28 19-28 34V46z" />
-            </svg>
+            <a href="https://github.com/okichan" target="_blank" rel="noopener noreferrer">
+              <svg id="octocat" className="svg" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 512 512">
+                <g fill="#333" >
+                  <path d="M436 147c5-16 8-32 8-48 0-22-5-43-15-62-20 0-38 3-54 11-15 7-33 19-53 34a380 380 0 0 0-168 1c-20-16-38-28-54-35-16-8-34-11-54-11-10 19-15 40-15 62 0 17 3 33 8 48-26 31-39 68-39 113 0 40 6 71 18 95a119 119 0 0 0 59 56 301 301 0 0 0 125 27 882 882 0 0 0 137-7c18-3 34-8 48-14 14-5 28-13 41-24 12-11 22-23 30-38 11-24 17-55 17-95 0-45-13-83-39-113zm-34 207c-6 13-14 23-23 30s-21 13-35 17-27 7-40 8c-13 2-27 2-42 2h-48c-16 0-30 0-43-2-13-1-26-4-40-8s-25-10-35-17c-9-7-17-17-23-30-6-12-9-27-9-43 0-23 7-43 20-59s31-24 53-24l56 6a294 294 0 0 0 89 0l56-6c22 0 40 8 53 24 14 16 20 36 20 59 0 16-3 31-9 43z" />
+                  <path d="M167 266a27 27 0 0 0-42 0c-5 6-9 13-12 21a82 82 0 0 0 0 47c3 8 7 15 12 22a27 27 0 0 0 42 0c6-7 10-14 12-22a82 82 0 0 0 0-47c-2-8-6-15-12-21zM350 266a27 27 0 0 0-42 0c-6 6-10 13-12 21a82 82 0 0 0 0 47c2 8 6 15 12 22a27 27 0 0 0 42 0c5-7 9-14 12-22a82 82 0 0 0 0-47c-3-8-7-15-12-21z" />
+                </g>
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/tomomi-oki-parsons/" target="_blank" rel="noopener noreferrer">
+              <svg id="in" className="svg" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 512 512" >
+                <path fill="#333" d="M430 262v159h-92V272c0-37-13-63-47-63-25 0-40 18-47 34-3 6-3 14-3 23v155h-92V143h92v40h-1 1c12-19 34-46 83-46 61 0 106 39 106 125zM52 10C21 10 0 30 0 57s20 48 51 48h1c32 0 52-21 52-48-1-27-20-47-52-47zM5 421h93V143H5v278z" />
+              </svg>
+            </a>
+            
+            <div className="tooltip-positioner">
+              <a onClick={this.copyText} onMouseLeave={this.outFunc}>
+                <svg id="email" className="svg" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 129 129">
+                  <path fill="#333" d="M7 111v2h1v1h2v1h108l1-1h2v-1h1v-1-1-92c0-3-2-4-4-4H10c-2 0-4 1-4 4v92zm12-5l31-36 12 9h5l12-9 31 36H19zm95-7L86 65l28-19v53zM15 23h99v13L65 70 15 36V23zm0 23l28 19-28 34V46z" />
+                </svg>
+              </a>
+              <p className="tooltiptext" id="myTooltip">Copy email address</p>
+            </div>
+            <input id="addy" defaultValue="tomomioki@outlook.com" />
           </div>
         </div>
-        <small>
-          Last updated on: 5 Mar 2018
-        </small>
+        <footer>
+          Last update: 5 Mar 2018
+        </footer>
 
 </div>
     );

@@ -1,7 +1,8 @@
 $bg-default: #F3EEE2;
 $black: #333;
 $red: #c03a2b;
-html,
+
+html, 
 body,
 div,
 span,
@@ -17,7 +18,6 @@ a,
 em,
 img,
 small,
-strike,
 strong,
 dl,
 dt,
@@ -27,16 +27,7 @@ ul,
 li,
 fieldset,
 form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+label, {
   color: $black;
   text-decoration-skip: ink;
   text-decoration-color: $black;
@@ -69,54 +60,14 @@ body {
   background: $bg-default;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-
-/* tables still need 'cellspacing="0"' in the markup */
-
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-caption,
-th,
-td {
-  text-align: left;
-  font-weight: normal;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-}
-
-blockquote,
-q {
-  quotes: "" "";
-}
-
-.test {
-  border: 1px solid lime;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.bold {
-  font-weight: bold;
-}
-
+.test {  border: 1px solid lime; }
+.text-center {  text-align: center; }
+.text-right {  text-align: right;}
+.bold {  font-weight: bold;}
 .py-1 { padding: 7px 0;}
 .py-2 { padding: 16px 0;}
 .py-3 { padding: 26px 0;}
@@ -438,26 +389,66 @@ q {
 
   .content {
     position: absolute;
-    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 110px;
+    height: 70%;
     left: 50%;
-    top: 60%;
+    top: 62%;
     transform: translate(-50%, -50%);
     
     svg {
-      display: block;
-      margin: 10px auto;
-      transition: all 2s;
-
-      &:hover {
-        // transform: rotate(360deg);
+      justify-content: flex-start;
+      width: 100%;
+      transition: all 1s;
+      
+      &#octocat:hover, &#email:hover {
         transform: rotateY(180deg);
-          // width: 90px;
-        // animation: spin 1s ease-in-out;
+      }
+    }
+    #in {
+      transition: transform 2s;
+      &:hover {
+        transform: rotateY(360deg);
+      }
+    }
+    
+    #addy {
+      visibility: hidden;
+      position: absolute;
+    }
+    
+    .tooltip-positioner {
+      cursor: pointer;
+      position: relative;
+      
+      .tooltiptext {
+        font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
+        white-space: nowrap;
+        text-align: center;
+        width: 140px;
+        opacity: 0;
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.5s;
+        border-radius: 20px;
+      }
+      
+      a:hover + .tooltiptext {
+        opacity: .8;
       }
     }
   }
 }
 
+footer {
+  float: right;
+  font-size: .8em;
+  line-height: 2rem;
+}
 
 @keyframes pulse {
   0% {

@@ -14,7 +14,6 @@ a,
 em,
 img,
 small,
-strike,
 strong,
 dl,
 dt,
@@ -24,16 +23,7 @@ ul,
 li,
 fieldset,
 form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+label {
   color: #333;
   text-decoration-skip: ink;
   text-decoration-color: #333;
@@ -59,30 +49,8 @@ body {
   line-height: 1;
   background: #F3EEE2; }
 
-ol,
-ul {
+ol, ul {
   list-style: none; }
-
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-  border-collapse: separate;
-  border-spacing: 0; }
-
-caption,
-th,
-td {
-  text-align: left;
-  font-weight: normal; }
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: ""; }
-
-blockquote,
-q {
-  quotes: "" ""; }
 
 .test {
   border: 1px solid lime; }
@@ -346,16 +314,49 @@ q {
     margin-left: 12px; }
   #card5 .content {
     position: absolute;
-    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 110px;
+    height: 70%;
     left: 50%;
-    top: 60%;
+    top: 62%;
     transform: translate(-50%, -50%); }
     #card5 .content svg {
-      display: block;
-      margin: 10px auto;
-      transition: all 2s; }
-      #card5 .content svg:hover {
+      justify-content: flex-start;
+      width: 100%;
+      transition: all 1s; }
+      #card5 .content svg#octocat:hover, #card5 .content svg#email:hover {
         transform: rotateY(180deg); }
+    #card5 .content #in {
+      transition: transform 2s; }
+      #card5 .content #in:hover {
+        transform: rotateY(360deg); }
+    #card5 .content #addy {
+      visibility: hidden;
+      position: absolute; }
+    #card5 .content .tooltip-positioner {
+      cursor: pointer;
+      position: relative; }
+      #card5 .content .tooltip-positioner .tooltiptext {
+        font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
+        white-space: nowrap;
+        text-align: center;
+        width: 140px;
+        opacity: 0;
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.5s;
+        border-radius: 20px; }
+      #card5 .content .tooltip-positioner a:hover + .tooltiptext {
+        opacity: .8; }
+
+footer {
+  float: right;
+  font-size: .8em;
+  line-height: 2rem; }
 
 @keyframes pulse {
   0% {
