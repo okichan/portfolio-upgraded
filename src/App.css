@@ -32,11 +32,11 @@ label {
   border: 0;
   outline: 0;
   font-style: inherit;
-  font-family: "Quicksand", 'Segoe UI', sans-serif;
+  font-family: 'Quicksand', 'Segoe UI', sans-serif;
   vertical-align: baseline; }
 
 a {
-  transition: all .4s; }
+  transition: all 0.4s; }
   a:hover {
     text-decoration: none;
     color: #c03a2b; }
@@ -47,9 +47,10 @@ a {
 
 body {
   line-height: 1;
-  background: #F3EEE2; }
+  background: #f3eee2; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
 .test {
@@ -113,7 +114,7 @@ ol, ul {
   margin-right: 40px; }
 
 .bg-default {
-  background-color: #F3EEE2; }
+  background-color: #f3eee2; }
 
 .inline-header {
   display: inline; }
@@ -121,7 +122,7 @@ ol, ul {
 .clearfix:after {
   clear: both;
   display: block;
-  content: ".";
+  content: '.';
   visibility: hidden; }
 
 .hidden-mobile {
@@ -140,19 +141,23 @@ ol, ul {
     flex-wrap: wrap;
     margin: 15px auto 15px auto;
     border: 6px solid #333;
-    background-color: #F3EEE2; }
+    background-color: #f3eee2; }
     .frame .title-frame .title-frame-first {
       border-right: 6px solid #333; }
-    .frame .title-frame .title-frame-second h1, .frame .title-frame .title-frame-second h2, .frame .title-frame .title-frame-second h3 {
+    .frame .title-frame .title-frame-second h1,
+    .frame .title-frame .title-frame-second h2,
+    .frame .title-frame .title-frame-second h3 {
       padding-left: 10px; }
-      .frame .title-frame .title-frame-second h1.vertical, .frame .title-frame .title-frame-second h2.vertical, .frame .title-frame .title-frame-second h3.vertical {
+      .frame .title-frame .title-frame-second h1.vertical,
+      .frame .title-frame .title-frame-second h2.vertical,
+      .frame .title-frame .title-frame-second h3.vertical {
         transform: rotate(90deg);
         transform-origin: 7% 67% 0;
         float: left;
         white-space: nowrap; }
 
 #card1 {
-  border-color: #910C32; }
+  border-color: #910c32; }
   #card1 #title-frame-outer {
     position: relative;
     border: 6px solid #333;
@@ -167,13 +172,13 @@ ol, ul {
   #card1 .title-frame-first {
     height: 227px;
     width: 70%;
-    background: #F3EEE2 url(./assets/tomomi.svg) no-repeat 50% -10px; }
+    background: #f3eee2 url(./assets/tomomi.svg) no-repeat 50% -10px; }
   #card1 .title-frame-second {
     width: 26%;
-    background-color: #F3EEE2; }
+    background-color: #f3eee2; }
 
 #card2 {
-  border-color: #1C486B; }
+  border-color: #1c486b; }
   #card2 .title-frame {
     margin-top: 30px;
     width: 190px; }
@@ -183,36 +188,36 @@ ol, ul {
       top: -102px;
       left: -110px;
       z-index: 1; }
-  #card2 .title-frame-first {
-    position: relative;
-    height: 125px;
-    width: 155px;
-    background: #F3EEE2 url(./assets/jiko2.png) no-repeat 50% -5px;
-    background-size: 85px; }
-  #card2 .title-frame-second {
-    width: 10px;
-    background-color: #F3EEE2; }
-  #card2 span {
-    font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
-    position: absolute;
-    left: 60px; }
-  #card2 .heart {
-    position: absolute;
-    margin-left: 40px;
-    margin-top: 5px;
-    transform: translate(-50%, -50%);
-    animation: pulse 2s infinite; }
-  #card2 p {
-    font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
-    font-size: 17px;
-    line-height: 1.5em;
-    padding: .3em 30px;
-    text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.47); }
-    #card2 p a {
-      font-family: inherit; }
+    #card2 .title-frame .title-frame-first {
+      position: relative;
+      height: 125px;
+      width: 155px;
+      background: #f3eee2 url(./assets/jiko2.png) no-repeat 50% -5px;
+      background-size: 85px; }
+    #card2 .title-frame .title-frame-second {
+      width: 10px;
+      background-color: #f3eee2; }
+  #card2 .content {
+    margin: 0.3em 30px; }
+    #card2 .content p, #card2 .content span, #card2 .content a {
+      font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
+      text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.47);
+      font-size: 17px;
+      line-height: 1.5em; }
+    #card2 .content .heart-wrapper {
+      position: relative; }
+      #card2 .content .heart-wrapper .heart {
+        position: absolute;
+        margin-left: 10px;
+        transform: translate(-50%, -50%);
+        animation: pulse 2s infinite; }
+    #card2 .content span {
+      float: left;
+      transform: translateY(-50%);
+      margin-left: 30px; }
 
 #card3 {
-  border-color: #928C36;
+  border-color: #928c36;
   overflow: hidden; }
   #card3 #hagi {
     position: absolute;
@@ -228,7 +233,7 @@ ol, ul {
     width: 100%;
     border-right: 0;
     border-bottom: 6px solid #333;
-    background: #F3EEE2 url(./assets/ginou.png) no-repeat -10px;
+    background: #f3eee2 url(./assets/ginou.png) no-repeat -10px;
     background-size: 185px;
     padding: 0; }
   #card3 .content {
@@ -243,7 +248,7 @@ ol, ul {
     #card3 .content svg {
       width: 50px;
       position: absolute;
-      transition: width .4s; }
+      transition: width 0.4s; }
       #card3 .content svg g {
         fill: #5e5e5e;
         transition: fill 1s; }
@@ -257,7 +262,7 @@ ol, ul {
         fill: #c03a2b; }
 
 #card4 {
-  border-color: #9E452A; }
+  border-color: #9e452a; }
   #card4 #fuji {
     position: absolute;
     width: 22%;
@@ -276,7 +281,7 @@ ol, ul {
   #card4 .title-frame-first {
     height: 115px;
     width: 80%;
-    background: #F3EEE2 url(./assets/kikaku.png) no-repeat 50% -7px;
+    background: #f3eee2 url(./assets/kikaku.png) no-repeat 50% -7px;
     background-size: 74px; }
   #card4 .title-frame-second {
     width: 10%;
@@ -300,7 +305,7 @@ ol, ul {
       vertical-align: -21%; }
 
 #card5 {
-  border-color: #55295B; }
+  border-color: #55295b; }
   #card5 .title-frame {
     width: 210px; }
   #card5 .title-frame-first {
@@ -308,7 +313,7 @@ ol, ul {
     width: 100%;
     border-right: 0;
     border-bottom: 6px solid #333;
-    background: #F3EEE2 url(./assets/toiawase.png) no-repeat 50% -8px;
+    background: #f3eee2 url(./assets/toiawase.png) no-repeat 50% -8px;
     background-size: 185px;
     padding: 0; }
   #card5 h4 {
@@ -349,11 +354,11 @@ ol, ul {
         transition: opacity 0.5s;
         border-radius: 20px; }
       #card5 .content .tooltip-positioner a:hover + .tooltiptext {
-        opacity: .8; }
+        opacity: 0.8; }
 
 footer {
   float: right;
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 2rem; }
 
 #addy {
@@ -368,7 +373,7 @@ footer {
   85% {
     width: 20px; }
   95% {
-    width: 12px; }
+    width: 27px; }
   100% {
     width: 20px; } }
 
@@ -407,4 +412,15 @@ footer {
       top: 50%;
       margin-left: 25%; }
       #card1 .hidden-mobile ul li {
-        font-size: 2rem; } }
+        font-size: 2rem; }
+  #card2 .title-frame {
+    width: 200px; }
+    #card2 .title-frame .title-frame-first {
+      background: #f3eee2 url(./assets/jiko2.png) no-repeat 50% -5px;
+      background-size: 195px; }
+    #card2 .title-frame .title-frame-second {
+      width: 10px;
+      background-color: #f3eee2; }
+  #card2 .content {
+    border-left: 1px solid darkgray;
+    width: 50%; } }

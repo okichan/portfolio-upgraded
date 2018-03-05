@@ -90,23 +90,26 @@ class App extends Component {
                      <h3 className="vertical">About Me</h3>
                   </div>
                </div>
-               <p>Why, hello there.</p>
-               <p>My name is Tomomi, born and bred Japanese living in Melbourne.</p>
-               <p>
-                  This portfolio was originally created to showcase my skills that I've learnt in the first
-                  1.5 month of studying at{' '}
-                  <a href="https://coderacademy.edu.au" target="_blank" rel="noopener noreferrer">
-                     Coder Academy
-                  </a>. It is maintained and updated occasionally ever since.
-               </p>
-               <p>Past profession: A survey programmer in marketing research, querying away SQL</p>
-               <div className="py-2">
+               <div className="content">
+                <p className="py-2">Why, hello there.</p>
+                <p className="pb-1">My name is Tomomi, born and bred Japanese living in Melbourne.</p>
+                <p className="pb-1">
+                    This portfolio was originally created to showcase my skills that I've learnt in the first
+                    1.5 month of studying at{' '}
+                    <a href="https://coderacademy.edu.au" target="_blank" rel="noopener noreferrer">
+                      Coder Academy
+                    </a>. It is maintained and updated occasionally ever since.
+                </p>
+                <p className="pb-3">Past profession: A survey programmer in marketing research, querying away SQL</p>
+                <div className="heart-wrapper">
                   <object type="image/svg+xml" data={heart} className="heart">
-                     Your browser does not support SVGs
+                    Your browser does not support SVGs
                   </object>
                   <span>: Music, food, art and code</span>
+                </div>
+                <p>&nbsp;</p>
                </div>
-               <p>&nbsp;</p>
+                 
             </div>
 
             {/* card 3 */}
