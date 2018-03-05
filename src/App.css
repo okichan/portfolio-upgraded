@@ -332,9 +332,6 @@ ol, ul {
       transition: transform 2s; }
       #card5 .content #in:hover {
         transform: rotateY(360deg); }
-    #card5 .content #addy {
-      visibility: hidden;
-      position: absolute; }
     #card5 .content .tooltip-positioner {
       cursor: pointer;
       position: relative; }
@@ -357,6 +354,10 @@ footer {
   float: right;
   font-size: .8em;
   line-height: 2rem; }
+
+#addy {
+  width: 1px;
+  opacity: 0; }
 
 @keyframes pulse {
   0% {

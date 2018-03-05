@@ -28,7 +28,7 @@ class App extends Component {
     console.log(copiedText);
     // alert(copiedText)
     const tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copied!";
+    tooltip.innerHTML = "Email copied!";
   }
 
   outFunc = () => {
@@ -232,11 +232,11 @@ class App extends Component {
               </a>
               <p className="tooltiptext" id="myTooltip">Copy email address</p>
             </div>
-            <input id="addy" defaultValue="tomomioki@outlook.com" />
           </div>
         </div>
         <footer>
           Last update: 5 Mar 2018
+          <input id="addy" defaultValue="tomomioki@outlook.com" />
         </footer>
 
 </div>
