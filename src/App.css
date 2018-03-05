@@ -274,10 +274,10 @@ q {
     #card3 .content svg {
       width: 50px;
       position: absolute;
-      transition: width .4s ease; }
+      transition: width .4s; }
       #card3 .content svg g {
         fill: #5e5e5e;
-        transition: fill 1s ease; }
+        transition: fill 1s; }
     #card3 .content #word:hover {
       width: 70px; }
       #card3 .content #word:hover g {
@@ -291,16 +291,17 @@ q {
   border-color: #9E452A; }
   #card4 #fuji {
     position: absolute;
-    width: 26%;
+    width: 22%;
     z-index: 1; }
   #card4 #fuji-r {
     position: absolute;
-    width: 26%;
+    width: 23%;
     right: 0;
     top: -2px;
     z-index: 1; }
   #card4 .title-frame {
     position: relative;
+    margin-top: 30px;
     width: 180px;
     z-index: -1; }
   #card4 .title-frame-first {
@@ -343,6 +344,18 @@ q {
     padding: 0; }
   #card5 h4 {
     margin-left: 12px; }
+  #card5 .content {
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%); }
+    #card5 .content svg {
+      display: block;
+      margin: 10px auto;
+      transition: all 2s; }
+      #card5 .content svg:hover {
+        transform: rotateY(180deg); }
 
 @keyframes pulse {
   0% {

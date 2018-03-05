@@ -321,11 +321,11 @@ q {
     svg {
       width: 50px;
       position: absolute;
-      transition: width .4s ease;
+      transition: width .4s;
 
       g {
         fill: #5e5e5e;
-        transition: fill 1s ease;
+        transition: fill 1s;
       }
     }
     
@@ -354,13 +354,13 @@ q {
   
   #fuji {
     position: absolute;
-    width: 26%;
+    width: 22%;
     z-index: 1;
   }
   
   #fuji-r {
     position: absolute;
-    width: 26%;
+    width: 23%;
     right: 0;
     top: -2px;
     z-index: 1;
@@ -368,6 +368,7 @@ q {
   
   .title-frame {
     position: relative;
+    margin-top: 30px;
     width: 180px;
     z-index: -1;
   }
@@ -434,7 +435,27 @@ q {
   h4 {
     margin-left: 12px;
   }
-  
+
+  .content {
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    
+    svg {
+      display: block;
+      margin: 10px auto;
+      transition: all 2s;
+
+      &:hover {
+        // transform: rotate(360deg);
+        transform: rotateY(180deg);
+          // width: 90px;
+        // animation: spin 1s ease-in-out;
+      }
+    }
+  }
 }
 
 
