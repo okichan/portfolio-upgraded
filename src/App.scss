@@ -588,28 +588,18 @@ footer {
 			}
 		}
 
-
-      .wrapper-t {
-         border-left: 1px solid #D9D5CA;
-         // background: powderblue;
-         width: 50%;
-         height: 82vh;
-         display: table;
-
-         .wrapper-c {
-            vertical-align: middle;
-            display: table-cell;
-            
-            .content {
-               border-left: 0px;
-               position: relative;
-               width: 80%;
-               margin: auto;
-               
-               .textarea {
-                  font-size: 18px;
+      .content {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         margin: 0;
+         
+         .textarea {
+            font-size: 18px;
+            margin: 0 6%;
+               p:first-child {
+                  margin-top: 15px;
                }
-            }
          }
       }
 	}

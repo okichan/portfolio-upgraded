@@ -422,18 +422,13 @@ footer {
       height: inherit;
       background: #f3eee2 url(./assets/jiko2.png) no-repeat 50% -5px;
       background-size: 121px; }
-  #card2 .wrapper-t {
-    border-left: 1px solid #D9D5CA;
-    width: 50%;
-    height: 82vh;
-    display: table; }
-    #card2 .wrapper-t .wrapper-c {
-      vertical-align: middle;
-      display: table-cell; }
-      #card2 .wrapper-t .wrapper-c .content {
-        border-left: 0px;
-        position: relative;
-        width: 80%;
-        margin: auto; }
-        #card2 .wrapper-t .wrapper-c .content .textarea {
-          font-size: 18px; } }
+  #card2 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0; }
+    #card2 .content .textarea {
+      font-size: 18px;
+      margin: 0 6%; }
+      #card2 .content .textarea p:first-child {
+        margin-top: 15px; } }
