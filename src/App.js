@@ -7,7 +7,22 @@ import tsubaki from "./assets/tsubaki.svg";
 import hagi from "./assets/hagi.png";
 import fuji from "./assets/fuji.png";
 import fujiR from "./assets/fuji_r.png";
-import { Heart, Word, Pdf, ReactImg, Ruby, Responsive, Octocat, LinkedIn, Email } from "./assets/components/Svg";
+import {
+	Heart,
+	Word,
+	Pdf,
+	ReactImg,
+	NodeJs,
+	MongoDb,
+	Bootstrap,
+	Ruby,
+	Rails,
+	Sass,
+	Responsive,
+	Octocat,
+	LinkedIn,
+	Email
+} from "./assets/components/Svg";
 
 class App extends Component {
 	componentDidMount = () => {
@@ -164,7 +179,7 @@ class App extends Component {
 						src={fuji}
 						id="fuji"
 						data-aos="fade-down"
-						data-aos-duration="1200"
+						data-aos-duration="800"
 						data-aos-easing="ease-in-out"
 						data-aos-delay=""
 						alt="fuji"
@@ -173,7 +188,7 @@ class App extends Component {
 						src={fujiR}
 						id="fuji-r"
 						data-aos="fade-down"
-						data-aos-duration="1600"
+						data-aos-duration="900"
 						data-aos-easing="ease-in-out"
 						data-aos-delay="500"
 						alt="fuji right"
@@ -186,87 +201,93 @@ class App extends Component {
 					</div>
 
 					<div className="content mt-3">
-						<ReactImg />
-						<Responsive />
-						<h4 className="inline-header">Tanto Management System</h4>
-						<ul>
-							<li className="mr-1">
-								<a href="https://mct-project-t3-demo.netlify.com/" target="_blank" rel="noopener noreferrer">
-									Site
-								</a>
-							</li>
-							<li className="mr-1">
-								<a href="https://github.com/okichan/major-project-term3" target="_blank" rel="noopener noreferrer">
-									Repo
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://www.figma.com/file/ZxpbKR6v8zlqPtBJH6aW7u/Term-3-major-project-Copy"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Wireframe
-								</a>
-							</li>
-						</ul>
+						<div className="md-right-pane">
+							<h4 className="pb-1">Tanto Management System</h4>
+							<ReactImg />
+							<NodeJs />
+							<MongoDb />
+							<Bootstrap />
+							<Responsive />
+							<ul>
+								<li className="mr-1">
+									<a href="https://mct-project-t3-demo.netlify.com/" target="_blank" rel="noopener noreferrer">
+										Site
+									</a>
+								</li>
+								<li className="mr-1">
+									<a href="https://github.com/okichan/major-project-term3" target="_blank" rel="noopener noreferrer">
+										Repo
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.figma.com/file/ZxpbKR6v8zlqPtBJH6aW7u/Term-3-major-project-Copy"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Wireframe
+									</a>
+								</li>
+							</ul>
 
-						<Ruby />
-						<Responsive />
-						<h4 className="inline-header">Wordsworth</h4>
-						<ul>
-							<li className="mr-1">
-								<a href="http://wordsworth.herokuapp.com/" target="_blank" rel="noopener noreferrer">
-									Site
-								</a>
-							</li>
-							<li className="mr-1">
-								<a href="https://github.com/okichan/wordsworth" target="_blank" rel="noopener noreferrer">
-									Repo
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://www.figma.com/file/sHidem4uBMaK1UZOQKVUwG/Wordsworth-Copy"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Wireframe
-								</a>
-							</li>
-						</ul>
+							<h4 className="pb-1">Wordsworth</h4>
+							{/* <Ruby /> */}
+							<Rails />
+							<Bootstrap />
+							<Responsive />
+							<ul>
+								<li className="mr-1">
+									<a href="http://wordsworth.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+										Site
+									</a>
+								</li>
+								<li className="mr-1">
+									<a href="https://github.com/okichan/wordsworth" target="_blank" rel="noopener noreferrer">
+										Repo
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.figma.com/file/sHidem4uBMaK1UZOQKVUwG/Wordsworth-Copy"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Wireframe
+									</a>
+								</li>
+							</ul>
 
-						<Responsive />
-						<h4 className="inline-header">Responsive website practice: Pseudo NGV Hokusai exhibition</h4>
-						<ul>
-							<li className="mr-1">
-								<a
-									href="https://car-park-attendant-navigator-15513.netlify.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Site
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://www.figma.com/file/N8x0yhI3YZQ5KyqiCmJFDp5W/Responsive-Hokusai-NGV"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Wireframe
-								</a>
-							</li>
-						</ul>
+							<h4 className="pb-1">This portfolio</h4>
+							<ReactImg />
+							<Sass />
+							<Responsive />
+							<ul>
+								<li className="mr-1">
+									<a href="https://github.com/okichan/portfolio_v2" target="_blank" rel="noopener noreferrer">
+										Repo
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.figma.com/file/HSQQXVgZZxc1hClYtX8x0IWr/Portfolio"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Wireframe
+									</a>
+								</li>
+							</ul>
 
-						<h4>The unofficial Radiohead fan site</h4>
-						<ul>
-							<li>
-								<a href="https://secretary-answers-11183.netlify.com/" target="_blank" rel="noopener noreferrer">
-									Site
-								</a>
-							</li>
-						</ul>
+							<h4>The unofficial Radiohead fan site</h4>
+							<ul>
+								<li>
+									<a href="https://secretary-answers-11183.netlify.com/" target="_blank" rel="noopener noreferrer">
+										Site
+									</a>
+								</li>
+							</ul>
+							<h4>Project details are available in my CV.</h4>
+						</div>
 					</div>
 				</div>
 

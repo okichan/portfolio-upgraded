@@ -349,17 +349,20 @@ ul {
 }
 
 #card4 {
-	border-color: #9e452a;
+   border-color: #9e452a;
+   overflow: hidden;
 
 	#fuji {
 		position: absolute;
-		width: 22%;
+      width: 22%;
+      max-width: 200px;
 		z-index: 1;
 	}
-
+   
 	#fuji-r {
-		position: absolute;
+      position: absolute;
 		width: 23%;
+      max-width: 200px;
 		right: 0;
 		top: -2px;
 		z-index: 1;
@@ -397,20 +400,25 @@ ul {
 			}
 		}
 
-		#react {
-			width: 20px;
-			animation: spin 6s linear infinite;
-		}
 
-		#ruby {
-			width: 20px;
-			vertical-align: -20%;
-		}
+      svg {
+         width: 20px;
+      }
 
-		#responsive {
-			width: 20px;
-			vertical-align: -21%;
-		}
+         #react {
+            width: 22px;
+            animation: spin 6s linear infinite;
+            // vertical-align: -12%;
+         }
+         #rails {
+            width: 50px;
+         }
+         #sass {
+            width: 27px;
+         }
+         #mongo {
+            width: 12px;
+         }
 	}
 }
 
@@ -652,14 +660,22 @@ footer {
             // background: pink;
             margin-left: 8vw;
          }
-
-         ul {
-         }
-         
       }
    }
 
    #card4 {
-      
+      .content {
+         margin: 0;
+         padding: 0;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+
+         .md-right-pane {
+            margin-left: 8vw;
+            
+         }
+      }
    }
+
 }
