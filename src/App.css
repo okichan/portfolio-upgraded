@@ -32,7 +32,7 @@ label {
   border: 0;
   outline: 0;
   font-style: inherit;
-  font-family: 'Quicksand', 'Segoe UI', sans-serif;
+  font-family: "Quicksand", "Segoe UI", sans-serif;
   vertical-align: baseline; }
 
 a {
@@ -122,17 +122,14 @@ ul {
 .clearfix:after {
   clear: both;
   display: block;
-  content: '.';
-  visibility: hidden; }
-
-.hidden-mobile {
+  content: ".";
   visibility: hidden; }
 
 .frame {
   box-sizing: border-box;
   border: 5vw solid;
   min-height: 620px;
-  margin-bottom: 300px;
+  margin-bottom: 70vh;
   position: relative; }
   .frame:last-of-type {
     margin-bottom: 0; }
@@ -176,6 +173,8 @@ ul {
   #card1 .title-frame-second {
     width: 26%;
     background-color: #f3eee2; }
+  #card1 .content {
+    visibility: hidden; }
 
 #card2 {
   border-color: #1c486b; }
@@ -198,23 +197,25 @@ ul {
       width: 10px;
       background-color: #f3eee2; }
   #card2 .content {
-    margin: 0.3em 30px; }
-    #card2 .content p, #card2 .content span, #card2 .content a {
-      font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
+    margin: 0 2rem; }
+    #card2 .content p,
+    #card2 .content span,
+    #card2 .content a {
+      font-family: "Mukta Malar", "Segoe UI", sans-serif;
       text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.47);
       font-size: 17px;
       line-height: 1.5em; }
-    #card2 .content .heart-wrapper {
+    #card2 .content #heart-wrapper {
       position: relative; }
-      #card2 .content .heart-wrapper .heart {
+      #card2 .content #heart-wrapper #heart {
+        animation: pulse 2s infinite;
         position: absolute;
         margin-left: 10px;
-        transform: translate(-50%, -50%);
-        animation: pulse 2s infinite; }
+        transform: translate(-50%, -50%); }
     #card2 .content span {
       float: left;
       transform: translateY(-50%);
-      margin-left: 30px; }
+      margin-left: 25px; }
 
 #card3 {
   border-color: #928c36;
@@ -342,7 +343,7 @@ ul {
       cursor: pointer;
       position: relative; }
       #card5 .content .tooltip-positioner .tooltiptext {
-        font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
+        font-family: "Mukta Malar", "Segoe UI", sans-serif;
         white-space: nowrap;
         text-align: center;
         width: 140px;
@@ -385,12 +386,13 @@ footer {
 
 /* Tablet and Desktop view */
 @media (min-width: 768px) {
-  .hidden-mobile {
-    visibility: visible; }
   .frame {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     min-height: 50vw; }
+    .frame .content {
+      width: 50%;
+      border-left: 1px solid #D9D5CA; }
   #card1 #title-frame-outer {
     position: relative;
     bottom: 0;
@@ -402,25 +404,28 @@ footer {
       width: 89%; }
     #card1 #title-frame-outer .title-frame-first {
       width: 70%; }
-  #card1 .hidden-mobile {
-    visibility: visible;
-    border-left: 1px solid darkgray;
-    width: 45%; }
-    #card1 .hidden-mobile ul {
+  #card1 .content {
+    visibility: visible; }
+    #card1 .content ul {
+      width: 55%;
+      margin: 0 auto;
       position: relative;
       transform: translateY(-50%);
-      top: 50%;
-      margin-left: 25%; }
-      #card1 .hidden-mobile ul li {
+      top: 50%; }
+      #card1 .content ul li {
         font-size: 2rem; }
   #card2 .title-frame {
-    width: 200px; }
+    margin: auto;
+    height: 180px; }
     #card2 .title-frame .title-frame-first {
+      height: inherit;
       background: #f3eee2 url(./assets/jiko2.png) no-repeat 50% -5px;
-      background-size: 195px; }
-    #card2 .title-frame .title-frame-second {
-      width: 10px;
-      background-color: #f3eee2; }
+      background-size: 121px; }
   #card2 .content {
-    border-left: 1px solid darkgray;
-    width: 50%; } }
+    margin: 0; }
+    #card2 .content p {
+      padding: 0.5rem 1rem; }
+    #card2 .content #heart-wrapper {
+      position: relative;
+      margin-top: 1rem;
+      margin-left: 1rem; } }

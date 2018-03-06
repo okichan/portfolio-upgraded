@@ -28,572 +28,575 @@ li,
 fieldset,
 form,
 label {
-   color: $black;
-   text-decoration-skip: ink;
-   text-decoration-color: $black;
-   margin: 0;
-   padding: 0;
-   border: 0;
-   outline: 0; // font-weight: inherit;
-   font-style: inherit; // font-size: 100%;
-   font-family: 'Quicksand', 'Segoe UI', sans-serif;
-   vertical-align: baseline;
+	color: $black;
+	text-decoration-skip: ink;
+	text-decoration-color: $black;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0; // font-weight: inherit;
+	font-style: inherit; // font-size: 100%;
+	font-family: "Quicksand", "Segoe UI", sans-serif;
+	vertical-align: baseline;
 }
 
 a {
-   transition: all 0.4s;
-   &:hover {
-      text-decoration: none;
-      color: $red;
-   }
+	transition: all 0.4s;
+	&:hover {
+		text-decoration: none;
+		color: $red;
+	}
 }
 
 /* remember to define focus styles! */
 
 :focus {
-   outline: 0;
+	outline: 0;
 }
 
 body {
-   line-height: 1;
-   background: $bg-default;
+	line-height: 1;
+	background: $bg-default;
 }
 
 ol,
 ul {
-   list-style: none;
+	list-style: none;
 }
 
 .test {
-   border: 1px solid lime;
+	border: 1px solid lime;
 }
 .text-center {
-   text-align: center;
+	text-align: center;
 }
 .text-right {
-   text-align: right;
+	text-align: right;
 }
 .bold {
-   font-weight: bold;
+	font-weight: bold;
 }
 .py-1 {
-   padding: 7px 0;
+	padding: 7px 0;
 }
 .py-2 {
-   padding: 16px 0;
+	padding: 16px 0;
 }
 .py-3 {
-   padding: 26px 0;
+	padding: 26px 0;
 }
 .pb-1 {
-   padding-bottom: 10px;
+	padding-bottom: 10px;
 }
 .pb-2 {
-   padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 .pb-3 {
-   padding-bottom: 30px;
+	padding-bottom: 30px;
 }
 .mb-1 {
-   margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 .mb-2 {
-   margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 .mb-3 {
-   margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 .mt-1 {
-   margin-top: 10px;
+	margin-top: 10px;
 }
 .mt-2 {
-   margin-top: 20px;
+	margin-top: 20px;
 }
 .mt-3 {
-   margin-top: 30px;
+	margin-top: 30px;
 }
 .mr-1 {
-   margin-right: 10px;
+	margin-right: 10px;
 }
 .mr-2 {
-   margin-right: 20px;
+	margin-right: 20px;
 }
 .mr-3 {
-   margin-right: 30px;
+	margin-right: 30px;
 }
 .mr-4 {
-   margin-right: 40px;
+	margin-right: 40px;
 }
 
 .bg-default {
-   background-color: $bg-default;
+	background-color: $bg-default;
 }
 
 .inline-header {
-   display: inline;
+	display: inline;
 }
 
 .clearfix:after {
-   clear: both;
-   display: block;
-   content: '.';
-   visibility: hidden;
-}
-
-.hidden-mobile {
-   visibility: hidden;
+	clear: both;
+	display: block;
+	content: ".";
+	visibility: hidden;
 }
 
 // Global Frame
 .frame {
-   box-sizing: border-box;
-   border: 5vw solid;
-   min-height: 620px;
-   margin-bottom: 300px;
-   position: relative;
+	box-sizing: border-box;
+	border: 5vw solid;
+	min-height: 620px;
+	margin-bottom: 70vh;
+	position: relative;
 
-   &:last-of-type {
-      margin-bottom: 0;
-   }
+	&:last-of-type {
+		margin-bottom: 0;
+	}
 
-   .title-frame {
-      display: flex;
-      flex-wrap: wrap;
+	.title-frame {
+		display: flex;
+		flex-wrap: wrap;
 
-      margin: 15px auto 15px auto;
-      border: 6px solid $black;
-      background-color: $bg-default;
+		margin: 15px auto 15px auto;
+		border: 6px solid $black;
+		background-color: $bg-default;
 
-      .title-frame-first {
-         border-right: 6px solid $black;
-      }
+		.title-frame-first {
+			border-right: 6px solid $black;
+		}
 
-      .title-frame-second {
-         h1,
-         h2,
-         h3 {
-            padding-left: 10px;
-            &.vertical {
-               transform: rotate(90deg);
-               transform-origin: 7% 67% 0;
-               float: left;
-               white-space: nowrap;
-            }
-         }
-      }
-   }
+		.title-frame-second {
+			h1,
+			h2,
+			h3 {
+				padding-left: 10px;
+				&.vertical {
+					transform: rotate(90deg);
+					transform-origin: 7% 67% 0;
+					float: left;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
 }
 
 #card1 {
-   border-color: #910c32;
+	border-color: #910c32;
 
-   #title-frame-outer {
-      position: relative;
-      border: 6px solid $black;
-      margin: 100px 7vw 0 7vw;
-      background-color: rgba(152, 191, 204, 0.69);
+	#title-frame-outer {
+		position: relative;
+		border: 6px solid $black;
+		margin: 100px 7vw 0 7vw;
+		background-color: rgba(152, 191, 204, 0.69);
 
-      #coder_girl_img {
-         position: absolute;
-         width: 60px;
-         top: -54px;
-      }
+		#coder_girl_img {
+			position: absolute;
+			width: 60px;
+			top: -54px;
+		}
+	}
+
+	.title-frame {
+		width: 60vw;
+	}
+
+	.title-frame-first {
+		height: 227px;
+		width: 70%;
+		background: $bg-default url(./assets/tomomi.svg) no-repeat 50% -10px;
+	}
+
+	.title-frame-second {
+		width: 26%;
+		background-color: $bg-default;
    }
-
-   .title-frame {
-      width: 60vw;
-   }
-
-   .title-frame-first {
-      height: 227px;
-      width: 70%;
-      background: $bg-default url(./assets/tomomi.svg) no-repeat 50% -10px;
-   }
-
-   .title-frame-second {
-      width: 26%;
-      background-color: $bg-default;
+   
+   .content {
+      visibility: hidden;
    }
 }
 
 #card2 {
-   border-color: #1c486b;
+	border-color: #1c486b;
 
-   .title-frame {
-      margin-top: 30px;
-      width: 190px;
+	.title-frame {
+		margin-top: 30px;
+		width: 190px;
 
-      #tsubaki {
-         position: absolute;
-         width: 210px;
-         top: -102px;
-         left: -110px;
-         z-index: 1;
-      }
+		#tsubaki {
+			position: absolute;
+			width: 210px;
+			top: -102px;
+			left: -110px;
+			z-index: 1;
+		}
 
-      .title-frame-first {
+		.title-frame-first {
+			position: relative;
+			height: 125px;
+			width: 155px;
+			background: $bg-default url(./assets/jiko2.png) no-repeat 50% -5px;
+			background-size: 85px;
+		}
+
+		.title-frame-second {
+			width: 10px;
+			background-color: $bg-default;
+		}
+	}
+
+	.content {
+      margin: 0 2rem;;
+
+		p,
+		span,
+		a {
+			font-family: "Mukta Malar", "Segoe UI", sans-serif;
+			text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.47);
+			font-size: 17px;
+			line-height: 1.5em;
+		}
+
+		#heart-wrapper {
          position: relative;
-         height: 125px;
-         width: 155px;
-         background: $bg-default url(./assets/jiko2.png) no-repeat 50% -5px;
-         background-size: 85px;
-      }
-   
-      .title-frame-second {
-         width: 10px;
-         background-color: $bg-default;
-      }
-   }
 
-   .content {
-     margin: 0.3em 30px;
-     
-     p, span, a {
-       font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
-       text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.47);
-       font-size: 17px;
-       line-height: 1.5em;
-     }
-     
-    .heart-wrapper {
-      position: relative;
+			#heart {
+				animation: pulse 2s infinite;
+				position: absolute;
+				margin-left: 10px;
+				transform: translate(-50%, -50%);
+			}
+		}
 
-      .heart {
-        position: absolute;
-        margin-left: 10px;
-        transform: translate(-50%, -50%);
-        animation: pulse 2s infinite;
-        }
-      }
-
-     span {
-       float: left;
-        transform: translateY(-50%);
-        margin-left: 30px;
-     }
-   }
+		span {
+			float: left;
+			transform: translateY(-50%);
+			margin-left: 25px;
+		}
+	}
 }
 
 #card3 {
-   border-color: #928c36;
-   overflow: hidden;
+	border-color: #928c36;
+	overflow: hidden;
 
-   #hagi {
-      position: absolute;
-      bottom: 10%;
-      right: 0;
-      width: 40vw;
-      max-width: 220px;
-   }
+	#hagi {
+		position: absolute;
+		bottom: 10%;
+		right: 0;
+		width: 40vw;
+		max-width: 220px;
+	}
 
-   .title-frame {
-      position: relative;
-      width: 55vw;
-   }
+	.title-frame {
+		position: relative;
+		width: 55vw;
+	}
 
-   .title-frame-first {
-      height: 70px;
-      width: 100%;
-      border-right: 0;
-      border-bottom: 6px solid $black;
-      background: $bg-default url(./assets/ginou.png) no-repeat -10px;
-      background-size: 185px;
-      padding: 0;
-   }
+	.title-frame-first {
+		height: 70px;
+		width: 100%;
+		border-right: 0;
+		border-bottom: 6px solid $black;
+		background: $bg-default url(./assets/ginou.png) no-repeat -10px;
+		background-size: 185px;
+		padding: 0;
+	}
 
-   .content {
-      position: relative;
-      padding-left: 14vw;
-      font-size: 18px;
-      text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.47);
-      line-height: 2rem;
+	.content {
+		position: relative;
+		padding-left: 14vw;
+		font-size: 18px;
+		text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.47);
+		line-height: 2rem;
 
-      a {
-         font-size: 40px;
-         border-right: 30px solid transparent;
-      }
+		a {
+			font-size: 40px;
+			border-right: 30px solid transparent;
+		}
 
-      svg {
-         width: 50px;
-         position: absolute;
-         transition: width 0.4s;
+		svg {
+			width: 50px;
+			position: absolute;
+			transition: width 0.4s;
 
-         g {
-            fill: #5e5e5e;
-            transition: fill 1s;
-         }
-      }
+			g {
+				fill: #5e5e5e;
+				transition: fill 1s;
+			}
+		}
 
-      #word {
-         &:hover {
-            width: 70px;
-            g {
-               fill: rgb(29, 29, 168);
-            }
-         }
-      }
+		#word {
+			&:hover {
+				width: 70px;
+				g {
+					fill: rgb(29, 29, 168);
+				}
+			}
+		}
 
-      #pdf {
-         &:hover {
-            width: 70px;
-            g {
-               fill: $red;
-            }
-         }
-      }
-   }
+		#pdf {
+			&:hover {
+				width: 70px;
+				g {
+					fill: $red;
+				}
+			}
+		}
+	}
 }
 
 #card4 {
-   border-color: #9e452a;
+	border-color: #9e452a;
 
-   #fuji {
-      position: absolute;
-      width: 22%;
-      z-index: 1;
-   }
+	#fuji {
+		position: absolute;
+		width: 22%;
+		z-index: 1;
+	}
 
-   #fuji-r {
-      position: absolute;
-      width: 23%;
-      right: 0;
-      top: -2px;
-      z-index: 1;
-   }
+	#fuji-r {
+		position: absolute;
+		width: 23%;
+		right: 0;
+		top: -2px;
+		z-index: 1;
+	}
 
-   .title-frame {
-      position: relative;
-      margin-top: 30px;
-      width: 180px;
-      z-index: -1;
-   }
+	.title-frame {
+		position: relative;
+		margin-top: 30px;
+		width: 180px;
+		z-index: -1;
+	}
 
-   .title-frame-first {
-      height: 115px;
-      width: 80%;
-      background: $bg-default url(./assets/kikaku.png) no-repeat 50% -7px;
-      background-size: 74px;
-   }
+	.title-frame-first {
+		height: 115px;
+		width: 80%;
+		background: $bg-default url(./assets/kikaku.png) no-repeat 50% -7px;
+		background-size: 74px;
+	}
 
-   .title-frame-second {
-      width: 10%;
-      padding-left: 3px;
-   }
+	.title-frame-second {
+		width: 10%;
+		padding-left: 3px;
+	}
 
-   .content {
-      padding: 0 10vw;
-      font-size: 18px;
-      line-height: 1.3rem;
+	.content {
+		padding: 0 10vw;
+		font-size: 18px;
+		line-height: 1.3rem;
 
-      ul {
-         padding: 10px 0 38px;
+		ul {
+			padding: 10px 0 38px;
 
-         li {
-            display: inline;
-         }
-      }
+			li {
+				display: inline;
+			}
+		}
 
-      #react {
-         width: 20px;
-         animation: spin 6s linear infinite;
-      }
+		#react {
+			width: 20px;
+			animation: spin 6s linear infinite;
+		}
 
-      #ruby {
-         width: 20px;
-         vertical-align: -20%;
-      }
+		#ruby {
+			width: 20px;
+			vertical-align: -20%;
+		}
 
-      #responsive {
-         width: 20px;
-         vertical-align: -21%;
-      }
-   }
+		#responsive {
+			width: 20px;
+			vertical-align: -21%;
+		}
+	}
 }
 
 #card5 {
-   border-color: #55295b;
+	border-color: #55295b;
 
-   .title-frame {
-      width: 210px;
-   }
+	.title-frame {
+		width: 210px;
+	}
 
-   .title-frame-first {
-      height: 74px;
-      width: 100%;
-      border-right: 0;
-      border-bottom: 6px solid $black;
-      background: $bg-default url(./assets/toiawase.png) no-repeat 50% -8px;
-      background-size: 185px;
-      padding: 0;
-   }
+	.title-frame-first {
+		height: 74px;
+		width: 100%;
+		border-right: 0;
+		border-bottom: 6px solid $black;
+		background: $bg-default url(./assets/toiawase.png) no-repeat 50% -8px;
+		background-size: 185px;
+		padding: 0;
+	}
 
-   h4 {
-      margin-left: 12px;
-   }
+	h4 {
+		margin-left: 12px;
+	}
 
-   .content {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 110px;
-      height: 70%;
-      left: 50%;
-      top: 62%;
-      transform: translate(-50%, -50%);
+	.content {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 110px;
+		height: 70%;
+		left: 50%;
+		top: 62%;
+		transform: translate(-50%, -50%);
 
-      svg {
-         justify-content: flex-start;
-         width: 100%;
-         transition: all 1s;
+		svg {
+			justify-content: flex-start;
+			width: 100%;
+			transition: all 1s;
 
-         &#octocat:hover,
-         &#email:hover {
-            transform: rotateY(180deg);
-         }
-      }
-      #in {
-         transition: transform 2s;
-         &:hover {
-            transform: rotateY(360deg);
-         }
-      }
+			&#octocat:hover,
+			&#email:hover {
+				transform: rotateY(180deg);
+			}
+		}
+		#in {
+			transition: transform 2s;
+			&:hover {
+				transform: rotateY(360deg);
+			}
+		}
 
-      .tooltip-positioner {
-         cursor: pointer;
-         position: relative;
+		.tooltip-positioner {
+			cursor: pointer;
+			position: relative;
 
-         .tooltiptext {
-            font-family: 'Mukta Malar', 'Segoe UI', sans-serif;
-            white-space: nowrap;
-            text-align: center;
-            width: 140px;
-            opacity: 0;
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: opacity 0.5s;
-            border-radius: 20px;
-         }
+			.tooltiptext {
+				font-family: "Mukta Malar", "Segoe UI", sans-serif;
+				white-space: nowrap;
+				text-align: center;
+				width: 140px;
+				opacity: 0;
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: opacity 0.5s;
+				border-radius: 20px;
+			}
 
-         a:hover + .tooltiptext {
-            opacity: 0.8;
-         }
-      }
-   }
+			a:hover + .tooltiptext {
+				opacity: 0.8;
+			}
+		}
+	}
 }
 
 footer {
-   float: right;
-   font-size: 0.8em;
-   line-height: 2rem;
+	float: right;
+	font-size: 0.8em;
+	line-height: 2rem;
 }
 
 #addy {
-   width: 1px;
-   opacity: 0;
+	width: 1px;
+	opacity: 0;
 }
 
 @keyframes pulse {
-   0% {
-      width: 20px;
-   }
-   50% {
-      width: 20px;
-   }
-   85% {
-      width: 20px;
-   }
-   95% {
-      width: 27px;
-   }
-   100% {
-      width: 20px;
-   }
+	0% {
+		width: 20px;
+	}
+	50% {
+		width: 20px;
+	}
+	85% {
+		width: 20px;
+	}
+	95% {
+		width: 27px;
+	}
+	100% {
+		width: 20px;
+	}
 }
 
 @keyframes spin {
-   0% {
-      transform: rotate(0deg);
-   }
-   100% {
-      transform: rotate(360deg);
-   }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 /* Tablet and Desktop view */
 @media (min-width: 768px) {
-   .hidden-mobile {
-      visibility: visible;
-   }
-
-   .frame {
-      display: flex;
-      justify-content: space-around;
+   
+   // Global setting
+	.frame {
+		display: flex;
+		justify-content: space-between;
       min-height: 50vw;
-   }
-
-   #card1 {
-      #title-frame-outer {
-         position: relative;
-         bottom: 0;
-         border: 6px solid $black;
-         width: 240px;
-         background-color: rgba(152, 191, 204, 0.69);
-         margin: 10% 7vw;
-
-         .title-frame {
-            width: 89%;
-         }
-
-         .title-frame-first {
-            width: 70%;
-         }
-      }
-
-      .hidden-mobile {
-         visibility: visible;
-         border-left: 1px solid darkgray;
-         width: 45%;
-
-         ul {
-            position: relative;
-            transform: translateY(-50%);
-            top: 50%;
-            margin-left: 25%;
-            li {
-               font-size: 2rem;
-            }
-         }
-      }
-   }
-
-   #card2 {
-      .title-frame {
-         width: 200px;
-         // height: 170px;
-         // background: rebeccapurple;
-         // background: $bg-default url(./assets/jiko2.png) no-repeat 50% -5px;
-         // background-size: contain;
-
-         .title-frame-first {
-            // position: relative;
-            // height: 125px;
-            // width: 155px;
-            background: $bg-default url(./assets/jiko2.png) no-repeat 50% -5px;
-            background-size: 195px;
-         }
-
-         .title-frame-second {
-            width: 10px;
-            background-color: $bg-default;
-         }
-      }
-
+      
       .content {
-         border-left: 1px solid darkgray;
          width: 50%;
+         border-left: 1px solid #D9D5CA;
       }
    }
+
+
+	#card1 {
+		#title-frame-outer {
+			position: relative;
+			bottom: 0;
+			border: 6px solid $black;
+			width: 240px;
+			background-color: rgba(152, 191, 204, 0.69);
+			margin: 10% 7vw;
+
+			.title-frame {
+				width: 89%;
+			}
+
+			.title-frame-first {
+				width: 70%;
+			}
+		}
+
+		.content {
+         visibility: visible;
+
+			ul {
+            width: 55%;
+            margin: 0 auto;
+				position: relative;
+				transform: translateY(-50%);
+				top: 50%;
+				li {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+
+	#card2 {
+		.title-frame {
+         margin: auto;
+			height: 180px;
+
+			.title-frame-first {
+				height: inherit;
+				background: $bg-default url(./assets/jiko2.png) no-repeat 50% -5px;
+				background-size: 121px;
+			}
+		}
+
+		.content {
+         margin: 0;
+         
+         p {
+            padding: 0.5rem 1rem;
+         }
+         #heart-wrapper {
+            position: relative;
+            margin-top: 1rem;
+            margin-left: 1rem;
+         }
+		}
+	}
 }
