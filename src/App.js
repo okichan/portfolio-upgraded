@@ -39,15 +39,17 @@ class App extends Component {
 		return (
 			<div className="App">
 				<div className="frame" id="card1">
-					<div id="title-frame-outer">
-						<img id="coder_girl_img" data-aos="flip-left" data-aos-duration="1000" alt="coder girl" src={girl} />
-						<div className="title-frame">
-							<div className="title-frame-first" />
-							<div className="title-frame-second">
-								<h1 className="vertical">Tomomi Oki</h1>
+					<div className="md-left-pane">
+						<div id="title-frame-outer">
+							<img id="coder_girl_img" data-aos="flip-left" data-aos-duration="1000" alt="coder girl" src={girl} />
+							<div className="title-frame">
+								<div className="title-frame-first" />
+								<div className="title-frame-second">
+									<h1 className="vertical">Tomomi Oki</h1>
+								</div>
 							</div>
+							<p className="text-center pb-1 bold">Web Developer</p>
 						</div>
-						<p className="text-center pb-1 bold">Web Developer</p>
 					</div>
 					<div className="content">
 						<ul>
@@ -84,24 +86,24 @@ class App extends Component {
 							<h3 className="vertical">About Me</h3>
 						</div>
 					</div>
-               <div className="content">
-                  <div className="textarea">
-                     <p >Why, hello there.</p>
-                     <p >My name is Tomomi, born and bred Japanese living in Melbourne.</p>
-                     <p >
-                        This portfolio was originally created to showcase my skills that I've learnt in the first 1.5 month
-                        of studying at{" "}
-                        <a href="https://coderacademy.edu.au" target="_blank" rel="noopener noreferrer">
-                           Coder Academy
-                        </a>. It is maintained and updated occasionally ever since.
-                     </p>
-                     <p >Past profession: A survey programmer in marketing research, querying away SQL</p>
-                     <div id="heart-wrapper">
-                        <Heart id="heart" />
-                        <span>: Music, food, art and code</span>
-                     </div>
-                  </div>
-               </div>
+					<div className="content">
+						<div className="textarea">
+							<p>Why, hello there.</p>
+							<p>My name is Tomomi, born and bred Japanese living in Melbourne.</p>
+							<p>
+								This portfolio was originally created to showcase my skills that I've learnt in the first 1.5 month
+								of studying at{" "}
+								<a href="https://coderacademy.edu.au" target="_blank" rel="noopener noreferrer">
+									Coder Academy
+								</a>. It is maintained and updated occasionally ever since.
+							</p>
+							<p>Past profession: A survey programmer in marketing research, querying away SQL</p>
+							<div id="heart-wrapper">
+								<Heart id="heart" />
+								<span>: Music, food, art and code</span>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				{/* card 3 */}
@@ -110,15 +112,17 @@ class App extends Component {
 						id="hagi"
 						data-aos="fade-up-left"
 						data-aos-anchor-placement="bottom-bottom"
-						data-aos-duration="900"
+						data-aos-duration="2100"
 						alt="hagi"
 						src={hagi}
 					/>
 
-					<div className="title-frame">
-						<div className="title-frame-first" />
-						<div className="title-frame-second">
-							<h3 className="">Skills</h3>
+					<div className="md-left-pane">
+						<div className="title-frame">
+							<div className="title-frame-first" />
+							<div className="title-frame-second">
+								<h3 className="">Skills</h3>
+							</div>
 						</div>
 					</div>
 

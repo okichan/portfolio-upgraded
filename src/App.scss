@@ -531,9 +531,10 @@ footer {
    
    // Global setting
 	.frame {
+      border: 3vw solid;
 		display: flex;
 		justify-content: space-between;
-      min-height: 50vw;
+      min-height: 100vh;
       
       .content {
          width: 50%;
@@ -543,23 +544,30 @@ footer {
 
 
 	#card1 {
-		#title-frame-outer {
-			position: relative;
-			bottom: 0;
-			border: 6px solid $black;
-			width: 240px;
-			background-color: rgba(152, 191, 204, 0.69);
-			margin: 10% 7vw;
 
-			.title-frame {
-				width: 89%;
-			}
+      .md-left-pane {
+         position: relative;
+         width: 50%;
+         
+         #title-frame-outer {
+            position: absolute;
+            margin: 0 auto;
+            top: 50%;
+            left: 50%;
+            width: 240px;
+            max-height:300px;
+            transform: translate(-50%, -50%);
 
-			.title-frame-first {
-				width: 70%;
-			}
-		}
-
+            .title-frame {
+               width: 89%;
+            }
+            
+            .title-frame-first {
+               width: 70%;
+            }
+         }
+      }
+         
 		.content {
          visibility: visible;
 
@@ -579,13 +587,18 @@ footer {
 	#card2 {
 		.title-frame {
          margin: auto;
-			height: 180px;
+         height: 210px;
+         width: 220px;
 
 			.title-frame-first {
 				height: inherit;
-				background: $bg-default url(./assets/jiko2.png) no-repeat 50% -5px;
-				background-size: 121px;
-			}
+            background-size: 144px;
+            background-position-y: -10px;
+            width: 80%;
+         }
+         .title-frame-second {
+            font-size: 24px;
+         }
 		}
 
       .content {
@@ -602,5 +615,35 @@ footer {
                }
          }
       }
-	}
+   }
+   
+   #card3 {
+
+      .md-left-pane {
+         margin: 0;
+         width: 50%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         
+         .title-frame {
+            width: 270px;
+            height: 150px;
+            
+            .title-frame-first {
+               height: 75%;
+               background-size: 250px;
+               background-position-x: 7px;
+            }
+            .title-frame-second {
+               font-size: 24px;
+            }
+         }
+      }
+      
+      .content {
+         margin: 0;
+         padding: 0;
+      }
+   }
 }
