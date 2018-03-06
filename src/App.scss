@@ -644,6 +644,22 @@ footer {
       .content {
          margin: 0;
          padding: 0;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         
+         .md-right-pane {
+            // background: pink;
+            margin-left: 8vw;
+         }
+
+         ul {
+         }
+         
       }
+   }
+
+   #card4 {
+      
    }
 }

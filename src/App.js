@@ -127,31 +127,33 @@ class App extends Component {
 					</div>
 
 					<div className="content">
-						<ul>
-							<li>HTML5</li>
-							<li>CSS3 &amp; 4</li>
-							<li>SASS/SCSS</li>
-							<li>JavaScript</li>
-							<li>React</li>
-							<li>Angular</li>
-							<li>Node.js</li>
-							<li>Express.js</li>
-							<li>Mongodb</li>
-							<li>SQL</li>
-							<li>Ruby</li>
-							<li>Ruby on Rails</li>
-						</ul>
-						<p className="bold py-2">Download CV</p>
-						<div className="svg-wrapper clearfix">
-							<a
-								className="mr-4"
-								href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.docx"
-							>
-								<Word />
-							</a>
-							<a href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.pdf">
-								<Pdf />
-							</a>
+						<div className="md-right-pane">
+							<ul>
+								<li>HTML5</li>
+								<li>CSS3 &amp; 4</li>
+								<li>SASS/SCSS</li>
+								<li>JavaScript</li>
+								<li>React</li>
+								<li>Angular</li>
+								<li>Node.js</li>
+								<li>Express.js</li>
+								<li>Mongodb</li>
+								<li>SQL</li>
+								<li>Ruby</li>
+								<li>Ruby on Rails</li>
+							</ul>
+							<p className="bold py-2">Download CV</p>
+							<div className="svg-wrapper clearfix">
+								<a
+									className="mr-4"
+									href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.docx"
+								>
+									<Word />
+								</a>
+								<a href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.pdf">
+									<Pdf />
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
