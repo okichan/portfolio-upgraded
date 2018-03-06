@@ -237,7 +237,7 @@ class App extends Component {
 							<Responsive />
 							<ul>
 								<li className="mr-1">
-									<a href="http://wordsworth.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+									<a href="https://wordsworth.herokuapp.com/" target="_blank" rel="noopener noreferrer">
 										Site
 									</a>
 								</li>
