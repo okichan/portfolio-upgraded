@@ -301,21 +301,23 @@ class App extends Component {
 					</div>
 					<div className="content">
 						<div className="md-right-pane">
-							<a href="https://github.com/okichan" target="_blank" rel="noopener noreferrer">
-								<Octocat />
-							</a>
-
-							<a href="https://www.linkedin.com/in/tomomi-oki-parsons/" target="_blank" rel="noopener noreferrer">
-								<LinkedIn />
-							</a>
-
-							<div className="tooltip-positioner">
-								<a onClick={this.copyText} onMouseLeave={this.outFunc}>
-									<Email />
+							<div id="icons">
+								<a href="https://github.com/okichan" target="_blank" rel="noopener noreferrer">
+									<Octocat />
 								</a>
-								<p className="tooltiptext" id="myTooltip">
-									Copy email address
-								</p>
+
+								<a href="https://www.linkedin.com/in/tomomi-oki-parsons/" target="_blank" rel="noopener noreferrer">
+									<LinkedIn />
+								</a>
+
+								<div className="tooltip-positioner">
+									<a onClick={this.copyText} onMouseLeave={this.outFunc}>
+										<Email />
+									</a>
+									<p className="tooltiptext" id="myTooltip">
+										Copy email address
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>

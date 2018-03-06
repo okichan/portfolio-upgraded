@@ -325,7 +325,7 @@ ul {
     padding: 0; }
   #card5 h4 {
     margin-left: 12px; }
-  #card5 .content {
+  #card5 #icons {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -335,20 +335,20 @@ ul {
     left: 50%;
     top: 62%;
     transform: translate(-50%, -50%); }
-    #card5 .content svg {
+    #card5 #icons svg {
       justify-content: flex-start;
       width: 100%;
       transition: all 1s; }
-      #card5 .content svg#octocat:hover, #card5 .content svg#email:hover {
+      #card5 #icons svg#octocat:hover, #card5 #icons svg#email:hover {
         transform: rotateY(180deg); }
-    #card5 .content #in {
+    #card5 #icons #in {
       transition: transform 2s; }
-      #card5 .content #in:hover {
+      #card5 #icons #in:hover {
         transform: rotateY(360deg); }
-    #card5 .content .tooltip-positioner {
+    #card5 #icons .tooltip-positioner {
       cursor: pointer;
       position: relative; }
-      #card5 .content .tooltip-positioner .tooltiptext {
+      #card5 #icons .tooltip-positioner .tooltiptext {
         font-family: "Mukta Malar", "Segoe UI", sans-serif;
         white-space: nowrap;
         text-align: center;
@@ -360,7 +360,7 @@ ul {
         transform: translateX(-50%);
         transition: opacity 0.5s;
         border-radius: 20px; }
-      #card5 .content .tooltip-positioner a:hover + .tooltiptext {
+      #card5 #icons .tooltip-positioner a:hover + .tooltiptext {
         opacity: 0.8; }
 
 footer {
@@ -483,6 +483,22 @@ footer {
       margin: 3vw 3vw; }
       #card4 .content .md-right-pane h4:first-child {
         width: 26vw; }
-  #card5 .content {
-    margin: 0;
-    padding: 0; } }
+  #card5 .title-frame {
+    margin: auto;
+    width: 240px;
+    height: 133px; }
+    #card5 .title-frame .title-frame-first {
+      height: 70%;
+      background-size: 228px;
+      background-position-x: 12px; }
+    #card5 .title-frame .title-frame-second {
+      font-size: 25px; }
+  #card5 .content .md-right-pane {
+    margin: 0 auto; }
+    #card5 .content .md-right-pane #icons {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0%, 0%); }
+      #card5 .content .md-right-pane #icons > a {
+        margin-bottom: 50%; } }
