@@ -15,7 +15,6 @@ import {
 	NodeJs,
 	MongoDb,
 	Bootstrap,
-	Ruby,
 	Rails,
 	Sass,
 	Responsive,
@@ -67,20 +66,22 @@ class App extends Component {
 						</div>
 					</div>
 					<div className="content">
-						<ul>
-							<li className="py-2">
-								<a>About me</a>
-							</li>
-							<li className="py-2">
-								<a>Skills</a>
-							</li>
-							<li className="py-2">
-								<a>Projects</a>
-							</li>
-							<li className="py-2">
-								<a>Contact</a>
-							</li>
-						</ul>
+						<div className="md-right-pane">
+							<ul>
+								<li className="py-2">
+									<a>About me</a>
+								</li>
+								<li className="py-2">
+									<a>Skills</a>
+								</li>
+								<li className="py-2">
+									<a>Projects</a>
+								</li>
+								<li className="py-2">
+									<a>Contact</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
@@ -102,7 +103,7 @@ class App extends Component {
 						</div>
 					</div>
 					<div className="content">
-						<div className="textarea">
+						<div className="md-right-pane">
 							<p>Why, hello there.</p>
 							<p>My name is Tomomi, born and bred Japanese living in Melbourne.</p>
 							<p>
@@ -231,7 +232,6 @@ class App extends Component {
 							</ul>
 
 							<h4 className="pb-1">Wordsworth</h4>
-							{/* <Ruby /> */}
 							<Rails />
 							<Bootstrap />
 							<Responsive />
@@ -286,7 +286,7 @@ class App extends Component {
 									</a>
 								</li>
 							</ul>
-							<h4>Project details are available in my CV.</h4>
+							<h5>Project details are available in my CV.</h5>
 						</div>
 					</div>
 				</div>
@@ -300,21 +300,23 @@ class App extends Component {
 						</div>
 					</div>
 					<div className="content">
-						<a href="https://github.com/okichan" target="_blank" rel="noopener noreferrer">
-							<Octocat />
-						</a>
-
-						<a href="https://www.linkedin.com/in/tomomi-oki-parsons/" target="_blank" rel="noopener noreferrer">
-							<LinkedIn />
-						</a>
-
-						<div className="tooltip-positioner">
-							<a onClick={this.copyText} onMouseLeave={this.outFunc}>
-								<Email />
+						<div className="md-right-pane">
+							<a href="https://github.com/okichan" target="_blank" rel="noopener noreferrer">
+								<Octocat />
 							</a>
-							<p className="tooltiptext" id="myTooltip">
-								Copy email address
-							</p>
+
+							<a href="https://www.linkedin.com/in/tomomi-oki-parsons/" target="_blank" rel="noopener noreferrer">
+								<LinkedIn />
+							</a>
+
+							<div className="tooltip-positioner">
+								<a onClick={this.copyText} onMouseLeave={this.outFunc}>
+									<Email />
+								</a>
+								<p className="tooltiptext" id="myTooltip">
+									Copy email address
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

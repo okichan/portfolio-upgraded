@@ -97,7 +97,7 @@ export const MongoDb = () => {
 	return (
 		<span title="MongoDB">
 			<svg id="mongo" className="mr-1 svg" viewBox="0 0 247 247" xmlns="http://www.w3.org/2000/svg">
-				<g fill="none" fill-rule="evenodd">
+				<g fill="none" fillRule="evenodd">
 					<path d="M35 142l-4-1s1-19-6-21c-5-5 1-227 17 0 0 0-6 2-7 7v15z" fill="#333" />
 					<path d="M35 142l-4-1s1-19-6-21c-5-5 1-227 17 0 0 0-6 2-7 7v15z" fill="#333" />
 					<path d="M37 124s33-22 25-67C55 24 37 13 35 9l-4-8 2 91s-3 28 4 32" fill="#333" />
@@ -126,23 +126,23 @@ export const Rails = () => {
 			<svg id="rails" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 396 139" className="mr-1">
 				<g fill="#333">
 					<path
-						class="st0"
+						className="st0"
 						d="M345 121v18h32c7 0 19-5 19-18v-7c0-12-10-19-19-19h-16v-8h32V68h-31c-8 0-18 7-18 19v7c0 12 10 18 18 18h16v9m-209-4s18-2 18-24-21-25-21-25h-39v71h20v-17l16 17h29l-23-22zm-7-15h-15V86h15s4 1 4 8-4 8-4 8zm72-34h-19c-14 0-19 13-19 19v52h20v-12h18v12h19V87c0-15-14-19-19-19zm0 39h-18V89s0-4 6-4h6c6 0 6 4 6 4v18zm28-39h20v71h-20zm49 53V68h-21v71h48v-18z"
 					/>
 					<path
-						class="st0"
+						className="st0"
 						d="M7 139h79s-15-69 35-97c11-5 46-25 102 17l4-2S175 5 117 10c-29 3-65 30-86 65S7 139 7 139z"
 					/>
 					<path
-						class="st0"
+						className="st0"
 						d="M7 139h79s-15-69 35-97c11-5 46-25 102 17l4-2S175 5 117 10c-29 3-65 30-86 65S7 139 7 139z"
 					/>
 					<path
-						class="st0"
+						className="st0"
 						d="M7 139h79s-15-69 35-97c11-5 46-25 102 17l4-2S175 5 117 10c-29 3-65 30-86 65S7 139 7 139zM172 16V9l-10-3v6l10 4z"
 					/>
 					<path
-						class="st0"
+						className="st0"
 						d="M162 37v7l10 1v-6l-10-2zM125 6h1l-2-6-10 1 2 5h9zm5 37l2 7 9-4-2-6-9 3zM85 17l-5-7-8 4 5 7 7-4zm20 45l5 7c1-3 3-5 6-7l-5-7-6 7zM91 94l8 6 2-11-8-6-3 11zM47 46l-7-6-8 8 8 6 7-8zM17 91L5 87 0 99l12 4 5-12zm72 28l1 13 12 4-2-13-11-4z"
 					/>
 				</g>
