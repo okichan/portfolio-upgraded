@@ -35,7 +35,8 @@ label {
 	padding: 0;
 	border: 0;
 	outline: 0; // font-weight: inherit;
-	font-style: inherit; // font-size: 100%;
+   font-style: inherit;
+   // font-size: 100%;
 	font-family: "Quicksand", "Segoe UI", sans-serif;
 	vertical-align: baseline;
 }
@@ -246,33 +247,34 @@ ul {
 	}
 
 	.content {
-      margin: 0 2rem;;
+      margin: 0 2rem;
 
 		p,
 		span,
 		a {
 			font-family: "Mukta Malar", "Segoe UI", sans-serif;
-			text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.47);
-			font-size: 17px;
-			line-height: 1.5em;
+			text-shadow: 1px 1px 7px rgba(150, 150, 150, 0.47);
+         line-height: 1.5em;
+         padding: .4em 0;
 		}
 
 		#heart-wrapper {
          position: relative;
-
+         margin-top: 24px;
+         
 			#heart {
-				animation: pulse 2s infinite;
+            animation: pulse 2s infinite;
 				position: absolute;
 				margin-left: 10px;
 				transform: translate(-50%, -50%);
 			}
+         span {
+            float: left;
+            transform: translateY(-50%);
+            margin-left: 25px;
+         }
 		}
 
-		span {
-			float: left;
-			transform: translateY(-50%);
-			margin-left: 25px;
-		}
 	}
 }
 
@@ -586,17 +588,29 @@ footer {
 			}
 		}
 
-		.content {
-         margin: 0;
-         
-         p {
-            padding: 0.5rem 1rem;
+
+      .wrapper-t {
+         border-left: 1px solid #D9D5CA;
+         // background: powderblue;
+         width: 50%;
+         height: 82vh;
+         display: table;
+
+         .wrapper-c {
+            vertical-align: middle;
+            display: table-cell;
+            
+            .content {
+               border-left: 0px;
+               position: relative;
+               width: 80%;
+               margin: auto;
+               
+               .textarea {
+                  font-size: 18px;
+               }
+            }
          }
-         #heart-wrapper {
-            position: relative;
-            margin-top: 1rem;
-            margin-left: 1rem;
-         }
-		}
+      }
 	}
 }

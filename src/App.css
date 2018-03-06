@@ -202,20 +202,21 @@ ul {
     #card2 .content span,
     #card2 .content a {
       font-family: "Mukta Malar", "Segoe UI", sans-serif;
-      text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.47);
-      font-size: 17px;
-      line-height: 1.5em; }
+      text-shadow: 1px 1px 7px rgba(150, 150, 150, 0.47);
+      line-height: 1.5em;
+      padding: .4em 0; }
     #card2 .content #heart-wrapper {
-      position: relative; }
+      position: relative;
+      margin-top: 24px; }
       #card2 .content #heart-wrapper #heart {
         animation: pulse 2s infinite;
         position: absolute;
         margin-left: 10px;
         transform: translate(-50%, -50%); }
-    #card2 .content span {
-      float: left;
-      transform: translateY(-50%);
-      margin-left: 25px; }
+      #card2 .content #heart-wrapper span {
+        float: left;
+        transform: translateY(-50%);
+        margin-left: 25px; }
 
 #card3 {
   border-color: #928c36;
@@ -421,11 +422,18 @@ footer {
       height: inherit;
       background: #f3eee2 url(./assets/jiko2.png) no-repeat 50% -5px;
       background-size: 121px; }
-  #card2 .content {
-    margin: 0; }
-    #card2 .content p {
-      padding: 0.5rem 1rem; }
-    #card2 .content #heart-wrapper {
-      position: relative;
-      margin-top: 1rem;
-      margin-left: 1rem; } }
+  #card2 .wrapper-t {
+    border-left: 1px solid #D9D5CA;
+    width: 50%;
+    height: 82vh;
+    display: table; }
+    #card2 .wrapper-t .wrapper-c {
+      vertical-align: middle;
+      display: table-cell; }
+      #card2 .wrapper-t .wrapper-c .content {
+        border-left: 0px;
+        position: relative;
+        width: 80%;
+        margin: auto; }
+        #card2 .wrapper-t .wrapper-c .content .textarea {
+          font-size: 18px; } }
