@@ -216,7 +216,8 @@ ul {
       padding: 0.4em 0; }
     #card2 .content #heart-wrapper {
       position: relative;
-      margin-top: 24px; }
+      margin-top: 24px;
+      height: 30px; }
       #card2 .content #heart-wrapper #heart {
         -webkit-animation: pulse 2s infinite;
         -moz-animation: pulse 2s infinite;
@@ -256,24 +257,28 @@ ul {
     font-size: 18px;
     text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.47);
     line-height: 2rem; }
-    #card3 .content a {
-      font-size: 40px;
-      border-right: 30px solid transparent; }
-    #card3 .content svg {
-      width: 50px;
-      position: absolute;
-      transition: width 0.4s; }
-      #card3 .content svg g {
-        fill: #5e5e5e;
-        transition: fill 1s; }
-    #card3 .content #word:hover {
-      width: 70px; }
-      #card3 .content #word:hover g {
-        fill: #1d1da8; }
-    #card3 .content #pdf:hover {
-      width: 70px; }
-      #card3 .content #pdf:hover g {
-        fill: #c03a2b; }
+    #card3 .content .svg-wrapper {
+      position: relative;
+      height: 72px;
+      width: 140px; }
+      #card3 .content .svg-wrapper svg {
+        width: 60px;
+        transition: width 0.4s; }
+        #card3 .content .svg-wrapper svg g {
+          fill: #5e5e5e;
+          transition: fill 1s; }
+      #card3 .content .svg-wrapper #word {
+        position: absolute; }
+        #card3 .content .svg-wrapper #word:hover {
+          width: 70px; }
+          #card3 .content .svg-wrapper #word:hover g {
+            fill: #1d1da8; }
+      #card3 .content .svg-wrapper #pdf {
+        float: right; }
+        #card3 .content .svg-wrapper #pdf:hover {
+          width: 70px; }
+          #card3 .content .svg-wrapper #pdf:hover g {
+            fill: #c03a2b; }
 
 #card4 {
   border-color: #9e452a;
