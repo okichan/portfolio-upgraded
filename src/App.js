@@ -205,11 +205,13 @@ class App extends Component {
 					<div className="content mt-3">
 						<div className="md-right-pane">
 							<h4 className="pb-1">Tanto Management System</h4>
-							<ReactImg />
-							<NodeJs />
-							<MongoDb />
-							<Bootstrap />
-							<Responsive />
+                     <div class="stack-logo">
+                        <ReactImg />
+                        <NodeJs />
+                        <MongoDb />
+                        <Bootstrap />
+                        <Responsive />
+                     </div>
 							<ul>
 								<li className="mr-1">
 									<a href="https://mct-project-t3-demo.netlify.com/" target="_blank" rel="noopener noreferrer">
@@ -233,9 +235,11 @@ class App extends Component {
 							</ul>
 
 							<h4 className="pb-1">Wordsworth</h4>
-							<Rails />
-							<Bootstrap />
-							<Responsive />
+                     <div className="stack-logo">
+                        <Rails />
+                        <Bootstrap />
+                        <Responsive />
+                     </div>
 							<ul>
 								<li className="mr-1">
 									<a href="https://wordsworth.herokuapp.com/" target="_blank" rel="noopener noreferrer">
@@ -259,9 +263,11 @@ class App extends Component {
 							</ul>
 
 							<h4 className="pb-1">This portfolio</h4>
-							<ReactImg />
-							<Sass />
-							<Responsive />
+                     <div className="stack-logo">
+                        <ReactImg />
+                        <Sass />
+                        <Responsive />
+                     </div>
 							<ul>
 								<li className="mr-1">
 									<a href="https://github.com/okichan/portfolio_v2" target="_blank" rel="noopener noreferrer">

@@ -435,26 +435,30 @@ ul {
 			}
 		}
 
-		svg {
-			width: 20px;
-		}
+      .stack-logo {
+         height: 20px;
+         svg {
+            width: 20px;
+         }
+      }
+         
+         #react {
+            width: 24px;
+            -webkit-animation: spin 6s linear infinite;
+            -moz-animation: spin 6s linear infinite;
+            -ms-animation: spin 6s linear infinite;
+            animation: spin 6s linear infinite;
+         }
 
-		#react {
-			width: 22px;
-			-webkit-animation: spin 6s linear infinite;
-			-moz-animation: spin 6s linear infinite;
-			-ms-animation: spin 6s linear infinite;
-			animation: spin 6s linear infinite;
-		}
-		#rails {
-			width: 50px;
-		}
-		#sass {
-			width: 27px;
-		}
-		#mongo {
-			width: 12px;
-		}
+         #rails {
+            width: 50px;
+         }
+         #sass {
+            width: 27px;
+         }
+         #mongo {
+            width: 12px;
+         }
 	}
 }
 

@@ -311,10 +311,12 @@ ul {
       padding: 10px 0 38px; }
       #card4 .content ul li {
         display: inline; }
-    #card4 .content svg {
-      width: 20px; }
+    #card4 .content .stack-logo {
+      height: 20px; }
+      #card4 .content .stack-logo svg {
+        width: 20px; }
     #card4 .content #react {
-      width: 22px;
+      width: 24px;
       -webkit-animation: spin 6s linear infinite;
       -moz-animation: spin 6s linear infinite;
       -ms-animation: spin 6s linear infinite;
