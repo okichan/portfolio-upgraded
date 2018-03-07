@@ -134,7 +134,15 @@ ul {
   .frame:last-of-type {
     margin-bottom: 0; }
   .frame .title-frame {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -o-flex;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 15px auto 15px auto;
     border: 6px solid #333;
@@ -209,6 +217,9 @@ ul {
       position: relative;
       margin-top: 24px; }
       #card2 .content #heart-wrapper #heart {
+        -webkit-animation: pulse 2s infinite;
+        -moz-animation: pulse 2s infinite;
+        -o-animation: pulse 2s infinite;
         animation: pulse 2s infinite;
         position: absolute;
         margin-left: 10px;
@@ -303,6 +314,9 @@ ul {
       width: 20px; }
     #card4 .content #react {
       width: 22px;
+      -webkit-animation: spin 6s linear infinite;
+      -moz-animation: spin 6s linear infinite;
+      -o-animation: spin 6s linear infinite;
       animation: spin 6s linear infinite; }
     #card4 .content #rails {
       width: 50px; }
@@ -325,30 +339,40 @@ ul {
     padding: 0; }
   #card5 h4 {
     margin-left: 12px; }
-  #card5 #icons {
-    position: absolute;
+  #card5 .content {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -o-flex;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 110px;
-    height: 70%;
-    left: 50%;
-    top: 62%;
-    transform: translate(-50%, -50%); }
-    #card5 #icons svg {
-      justify-content: flex-start;
-      width: 100%;
-      transition: all 1s; }
-      #card5 #icons svg#octocat:hover, #card5 #icons svg#email:hover {
-        transform: rotateY(180deg); }
-    #card5 #icons #in {
-      transition: transform 2s; }
-      #card5 #icons #in:hover {
-        transform: rotateY(360deg); }
-    #card5 #icons .tooltip-positioner {
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; }
+    #card5 .content #icons {
+      width: 110px;
+      height: 70%; }
+      #card5 .content #icons svg {
+        margin-bottom: 30%;
+        transition: all 1s; }
+        #card5 .content #icons svg#octocat:hover, #card5 .content #icons svg#email:hover {
+          transform: rotateY(180deg); }
+      #card5 .content #icons #in {
+        transition: transform 2s; }
+        #card5 .content #icons #in:hover {
+          transform: rotateY(360deg); }
+    #card5 .content .tooltip-positioner {
       cursor: pointer;
       position: relative; }
-      #card5 #icons .tooltip-positioner .tooltiptext {
+      #card5 .content .tooltip-positioner #email {
+        margin-bottom: 0; }
+      #card5 .content .tooltip-positioner .tooltiptext {
         font-family: "Mukta Malar", "Segoe UI", sans-serif;
         white-space: nowrap;
         text-align: center;
@@ -360,7 +384,7 @@ ul {
         transform: translateX(-50%);
         transition: opacity 0.5s;
         border-radius: 20px; }
-      #card5 #icons .tooltip-positioner a:hover + .tooltiptext {
+      #card5 .content .tooltip-positioner a:hover + .tooltiptext {
         opacity: 0.8; }
 
 footer {
@@ -371,6 +395,42 @@ footer {
 #addy {
   width: 1px;
   opacity: 0; }
+
+@-webkit-keyframes pulse {
+  0% {
+    width: 20px; }
+  50% {
+    width: 20px; }
+  85% {
+    width: 20px; }
+  95% {
+    width: 27px; }
+  100% {
+    width: 20px; } }
+
+@-moz-keyframes pulse {
+  0% {
+    width: 20px; }
+  50% {
+    width: 20px; }
+  85% {
+    width: 20px; }
+  95% {
+    width: 27px; }
+  100% {
+    width: 20px; } }
+
+@-o-keyframes pulse {
+  0% {
+    width: 20px; }
+  50% {
+    width: 20px; }
+  85% {
+    width: 20px; }
+  95% {
+    width: 27px; }
+  100% {
+    width: 20px; } }
 
 @keyframes pulse {
   0% {
@@ -384,6 +444,24 @@ footer {
   100% {
     width: 20px; } }
 
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@-moz-keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@-o-keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg); }
@@ -393,18 +471,39 @@ footer {
 /* Tablet and Desktop view */
 @media (min-width: 768px) {
   .frame {
-    border: 3vw solid;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -o-flex;
     display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
     justify-content: space-between;
+    -ms-flex-pack: space-between;
+    border: 3vw solid;
     min-height: 100vh; }
     .frame .content {
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: -o-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
       width: 50%;
       border-left: 1px solid #d9d5ca;
       margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; }
+      padding: 0; }
       .frame .content .md-right-pane {
         margin-left: 8vw; }
   #card1 .md-left-pane {
@@ -449,9 +548,21 @@ footer {
   #card3 .md-left-pane {
     margin: 0;
     width: 50%;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -o-flex;
     display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
-    justify-content: center; }
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; }
     #card3 .md-left-pane .title-frame {
       width: 270px;
       height: 150px; }
@@ -496,11 +607,9 @@ footer {
     #card5 .title-frame .title-frame-second {
       font-size: 25px; }
   #card5 .content .md-right-pane {
-    margin: 0 auto; }
+    margin: 0 auto;
+    border: 1px solid pink; }
     #card5 .content .md-right-pane #icons {
-      position: relative;
-      top: 0;
-      left: 0;
-      transform: translate(0%, 0%); }
+      border: 1px solid powderblue; }
       #card5 .content .md-right-pane #icons > a {
         margin-bottom: 50%; } }
