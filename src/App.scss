@@ -61,6 +61,7 @@ form,
 label {
 	color: $black;
 	text-decoration-skip: ink;
+	-webkit-text-decoration-skip: ink;
 	text-decoration-color: $black;
 	margin: 0;
 	padding: 0;
@@ -297,7 +298,7 @@ ul {
 			#heart {
 				-webkit-animation: pulse 2s infinite;
 				-moz-animation: pulse 2s infinite;
-				-o-animation: pulse 2s infinite;
+				-ms-animation: pulse 2s infinite;
 				animation: pulse 2s infinite;
 				position: absolute;
 				margin-left: 10px;
@@ -442,7 +443,7 @@ ul {
 			width: 22px;
 			-webkit-animation: spin 6s linear infinite;
 			-moz-animation: spin 6s linear infinite;
-			-o-animation: spin 6s linear infinite;
+			-ms-animation: spin 6s linear infinite;
 			animation: spin 6s linear infinite;
 		}
 		#rails {
@@ -564,7 +565,7 @@ footer {
 	100% {		width: 20px;	}
 }
 
-@-o-keyframes pulse {
+@-ms-keyframes pulse {
 	0% {		width: 20px;	}
 	50% {		width: 20px;	}
 	85% {		width: 20px;	}
@@ -590,7 +591,7 @@ footer {
 	100% {		transform: rotate(360deg);	}
 }
 
-@-o-keyframes spin {
+@-ms-keyframes spin {
 	0% {		transform: rotate(0deg);	}
 	100% {		transform: rotate(360deg);	}
 }
@@ -602,14 +603,14 @@ footer {
 
 /* Tablet and Desktop view */
 @media (min-width: 768px) {
-	// Global setting
+   
+   // Global setting
 	.frame {
       @include flexbox();
       @include justify-content(space-between);
-		// justify-content: space-between;
       border: 3vw solid;
+		height: 100vh;
 		min-height: 100vh;
-      // flex: 1;
 
 		.content {
          @include flexbox();
@@ -618,10 +619,7 @@ footer {
 			width: 50%;
 			border-left: 1px solid #d9d5ca;
 			margin: 0;
-			padding: 0;
-         // flex: 1;
-         // flex-direction: column;
-			// justify-content: center;
+         padding: 0;
 
 			.md-right-pane {
 				margin-left: 8vw;
@@ -655,17 +653,17 @@ footer {
       
 		.content {
          visibility: visible;
-         height: 88.1vh;
 
 			.md-right-pane {
             margin-left: 13vw;
 			}
 
 			li {
-            font-size: 2rem;
+            font-size: 3vw;
             
             a {
                text-decoration-color: rgba(152, 191, 204, 0.69);
+               line-height: 1.2;
             }
 			}
 		}
@@ -690,10 +688,8 @@ footer {
 
 		.content {
          margin: 0;
-         height: 88.1vh;
 
 			.md-right-pane {
-				font-size: 18px;
 				margin: 0 10%;
 			}
 		}
@@ -725,12 +721,9 @@ footer {
 		.content {
 			margin: 0;
 			padding: 0;
-         height: 88.1vh;
-         
+      
 			.md-right-pane {
-				// background: blanchedalmond;
-				margin-top: 2vw;
-				// padding: 0;
+            margin-top: 2vw;
 			}
 		}
 	}
@@ -758,7 +751,7 @@ footer {
 			padding: 0;
 
 			.md-right-pane {
-				margin: 3vw 3vw;
+            margin: 3vw 3vw;
 
 				h4:first-child {
 					width: 26vw;

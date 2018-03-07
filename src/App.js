@@ -12,6 +12,7 @@ import {
 	Word,
 	Pdf,
 	ReactImg,
+	ReactImg2,
 	NodeJs,
 	MongoDb,
 	Bootstrap,

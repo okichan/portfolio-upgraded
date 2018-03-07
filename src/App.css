@@ -26,6 +26,7 @@ form,
 label {
   color: #333;
   text-decoration-skip: ink;
+  -webkit-text-decoration-skip: ink;
   text-decoration-color: #333;
   margin: 0;
   padding: 0;
@@ -219,7 +220,7 @@ ul {
       #card2 .content #heart-wrapper #heart {
         -webkit-animation: pulse 2s infinite;
         -moz-animation: pulse 2s infinite;
-        -o-animation: pulse 2s infinite;
+        -ms-animation: pulse 2s infinite;
         animation: pulse 2s infinite;
         position: absolute;
         margin-left: 10px;
@@ -316,7 +317,7 @@ ul {
       width: 22px;
       -webkit-animation: spin 6s linear infinite;
       -moz-animation: spin 6s linear infinite;
-      -o-animation: spin 6s linear infinite;
+      -ms-animation: spin 6s linear infinite;
       animation: spin 6s linear infinite; }
     #card4 .content #rails {
       width: 50px; }
@@ -420,7 +421,7 @@ footer {
   100% {
     width: 20px; } }
 
-@-o-keyframes pulse {
+@-ms-keyframes pulse {
   0% {
     width: 20px; }
   50% {
@@ -456,7 +457,7 @@ footer {
   100% {
     transform: rotate(360deg); } }
 
-@-o-keyframes spin {
+@-ms-keyframes spin {
   0% {
     transform: rotate(0deg); }
   100% {
@@ -483,6 +484,7 @@ footer {
     justify-content: space-between;
     -ms-flex-pack: space-between;
     border: 3vw solid;
+    height: 100vh;
     min-height: 100vh; }
     .frame .content {
       display: -webkit-flex;
@@ -522,14 +524,14 @@ footer {
       #card1 .md-left-pane #title-frame-outer .title-frame-first {
         width: 70%; }
   #card1 .content {
-    visibility: visible;
-    height: 88.1vh; }
+    visibility: visible; }
     #card1 .content .md-right-pane {
       margin-left: 13vw; }
     #card1 .content li {
-      font-size: 2rem; }
+      font-size: 3vw; }
       #card1 .content li a {
-        text-decoration-color: rgba(152, 191, 204, 0.69); }
+        text-decoration-color: rgba(152, 191, 204, 0.69);
+        line-height: 1.2; }
   #card2 .title-frame {
     margin: auto;
     height: 210px;
@@ -542,10 +544,8 @@ footer {
     #card2 .title-frame .title-frame-second {
       font-size: 24px; }
   #card2 .content {
-    margin: 0;
-    height: 88.1vh; }
+    margin: 0; }
     #card2 .content .md-right-pane {
-      font-size: 18px;
       margin: 0 10%; }
   #card3 .md-left-pane {
     margin: 0;
@@ -576,8 +576,7 @@ footer {
         font-size: 24px; }
   #card3 .content {
     margin: 0;
-    padding: 0;
-    height: 88.1vh; }
+    padding: 0; }
     #card3 .content .md-right-pane {
       margin-top: 2vw; }
   #card4 #fuji-r {
