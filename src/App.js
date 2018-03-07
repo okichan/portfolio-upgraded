@@ -205,7 +205,7 @@ class App extends Component {
 					<div className="content mt-3">
 						<div className="md-right-pane">
 							<h4 className="pb-1">Tanto Management System</h4>
-                     <div class="stack-logo">
+                     <div className="stack-logo">
                         <ReactImg />
                         <NodeJs />
                         <MongoDb />
