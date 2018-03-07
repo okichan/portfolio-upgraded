@@ -346,18 +346,18 @@ ul {
     display: -webkit-box;
     display: -o-flex;
     display: flex;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
     -webkit-justify-content: center;
     -moz-justify-content: center;
     -ms-justify-content: center;
     justify-content: center;
-    -ms-flex-pack: center; }
+    -ms-flex-pack: center;
+    align-items: center;
+    padding: 0;
+    margin: 0; }
     #card5 .content #icons {
-      width: 110px;
-      height: 70%; }
+      width: 30vw;
+      max-width: 120px;
+      margin: 5vh 0; }
       #card5 .content #icons svg {
         margin-bottom: 30%;
         transition: all 1s; }
@@ -522,7 +522,8 @@ footer {
       #card1 .md-left-pane #title-frame-outer .title-frame-first {
         width: 70%; }
   #card1 .content {
-    visibility: visible; }
+    visibility: visible;
+    height: 88.1vh; }
     #card1 .content .md-right-pane {
       margin-left: 13vw; }
     #card1 .content li {
@@ -541,7 +542,8 @@ footer {
     #card2 .title-frame .title-frame-second {
       font-size: 24px; }
   #card2 .content {
-    margin: 0; }
+    margin: 0;
+    height: 88.1vh; }
     #card2 .content .md-right-pane {
       font-size: 18px;
       margin: 0 10%; }
@@ -574,7 +576,8 @@ footer {
         font-size: 24px; }
   #card3 .content {
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    height: 88.1vh; }
     #card3 .content .md-right-pane {
       margin-top: 2vw; }
   #card4 #fuji-r {
@@ -606,10 +609,8 @@ footer {
       background-position-x: 12px; }
     #card5 .title-frame .title-frame-second {
       font-size: 25px; }
-  #card5 .content .md-right-pane {
-    margin: 0 auto;
-    border: 1px solid pink; }
-    #card5 .content .md-right-pane #icons {
-      border: 1px solid powderblue; }
-      #card5 .content .md-right-pane #icons > a {
-        margin-bottom: 50%; } }
+  #card5 .content {
+    margin: 0;
+    padding: 0; }
+    #card5 .content .md-right-pane {
+      margin: 0; } }

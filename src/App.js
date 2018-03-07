@@ -128,7 +128,7 @@ class App extends Component {
 						id="hagi"
 						data-aos="fade-up-left"
 						data-aos-anchor-placement="bottom-bottom"
-						data-aos-duration="2100"
+						data-aos-duration="1600"
 						alt="hagi"
 						src={hagi}
 					/>
