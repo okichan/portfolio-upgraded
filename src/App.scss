@@ -587,7 +587,11 @@ footer {
 			}
 
 			li {
-				font-size: 2rem;
+            font-size: 2rem;
+            
+            a {
+               text-decoration-color: rgba(152, 191, 204, 0.69);
+            }
 			}
 		}
 	}

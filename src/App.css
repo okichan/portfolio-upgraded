@@ -428,6 +428,8 @@ footer {
       margin-left: 13vw; }
     #card1 .content li {
       font-size: 2rem; }
+      #card1 .content li a {
+        text-decoration-color: rgba(152, 191, 204, 0.69); }
   #card2 .title-frame {
     margin: auto;
     height: 210px;

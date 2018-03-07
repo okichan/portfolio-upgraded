@@ -69,16 +69,16 @@ class App extends Component {
 						<div className="md-right-pane">
 							<ul>
 								<li className="py-2">
-									<a>About me</a>
+									<a href="#card2">About me</a>
 								</li>
 								<li className="py-2">
-									<a>Skills</a>
+									<a href="#card3">Skills</a>
 								</li>
 								<li className="py-2">
-									<a>Projects</a>
+									<a href="#card4">Projects</a>
 								</li>
 								<li className="py-2">
-									<a>Contact</a>
+									<a href="#card5">Contact</a>
 								</li>
 							</ul>
 						</div>
