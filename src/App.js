@@ -116,7 +116,7 @@ class App extends Component {
 							</p>
 							<p>Past profession: A survey programmer in marketing research, querying away SQL</p>
 							<div id="heart-wrapper">
-								<Heart id="heart" />
+                        <Heart id="heart" />
 								<span>: Music, food, art and code</span>
 							</div>
 						</div>
@@ -330,7 +330,7 @@ class App extends Component {
 					</div>
 				</div>
 				<footer>
-					Last update: 5 Mar 2018
+					Last update: 7 Mar 2018
 					<input id="addy" defaultValue="tomomioki@outlook.com" />
 				</footer>
 			</div>
