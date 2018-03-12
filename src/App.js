@@ -12,7 +12,6 @@ import {
 	Word,
 	Pdf,
 	ReactImg,
-	ReactImg2,
 	NodeJs,
 	MongoDb,
 	Bootstrap,
@@ -205,7 +204,7 @@ class App extends Component {
 					<div className="content mt-3">
 						<div className="md-right-pane">
 							<h4 className="pb-1">Tanto Management System</h4>
-                     <div className="stack-logo">
+                     <div className="stack-logo mb-1">
                         <ReactImg />
                         <NodeJs />
                         <MongoDb />
