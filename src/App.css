@@ -319,7 +319,8 @@ ul {
     #card4 .content .stack-logo {
       height: 20px; }
       #card4 .content .stack-logo svg {
-        width: 20px; }
+        width: 20px;
+        vertical-align: top; }
     #card4 .content #react {
       width: 24px;
       -webkit-animation: spin 6s linear infinite;
@@ -331,7 +332,8 @@ ul {
     #card4 .content #sass {
       width: 27px; }
     #card4 .content #mongo {
-      width: 12px; }
+      width: 12px;
+      transform: translateY(-10%); }
 
 #card5 {
   border-color: #55295b; }
