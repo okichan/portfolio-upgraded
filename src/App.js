@@ -122,7 +122,7 @@ class App extends Component {
                 and dealing with Microsoft Excel.
               </p>
               <p>
-                The world has evolved whilst I was v-looking up cells, so I decided to go back to {" "}
+                The world has evolved whilst I was v-looking up cells, so I decided to go back to{" "}
                 <a
                   href="https://coderacademy.edu.au"
                   target="_blank"
@@ -135,7 +135,8 @@ class App extends Component {
                 ever made.
               </p>
               <p>
-                In the more distant past, I grew up in Japan and that's what makes me "me" now, although quite frequently it's mixed with the quirky culture of Melbourne (north)!
+                In the more distant past, I grew up in Japan and that's what makes me "me" now,
+                although quite frequently it's mixed with the quirky culture of Melbourne (north)!
               </p>
               <div id="heart-wrapper">
                 <Heart id="heart" />
@@ -183,13 +184,10 @@ class App extends Component {
               </ul>
               <p className="bold py-2">Download CV</p>
               <div className="svg-wrapper clearfix">
-                <a
-                  className="mr-4"
-                  href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.docx"
-                >
+                <a className="mr-4" href="Tomomi_Oki_resume.docx">
                   <Word />
                 </a>
-                <a href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.pdf">
+                <a href="Tomomi_Oki_resume.pdf">
                   <Pdf />
                 </a>
               </div>
@@ -349,7 +347,10 @@ class App extends Component {
           <div className="title-frame">
             <div className="title-frame-first" />
             <div className="title-frame-second">
-              <h4 className="">Contact</h4>
+              <h4 className="">
+                Contact
+                <input id="addy" />
+              </h4>
             </div>
           </div>
           <div className="content">
@@ -379,10 +380,6 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <footer>
-          Last update: 7 Mar 2018
-          <input id="addy" />
-        </footer>
       </div>
     );
   }
