@@ -184,10 +184,10 @@ class App extends Component {
               </ul>
               <p className="bold py-2">Download CV</p>
               <div className="svg-wrapper clearfix">
-                <a className="mr-4" href="Tomomi_Oki_resume.docx">
+                <a className="mr-4" href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.docx">
                   <Word />
                 </a>
-                <a href="Tomomi_Oki_resume.pdf">
+                <a href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.pdf">
                   <Pdf />
                 </a>
               </div>
