@@ -169,11 +169,11 @@ class App extends Component {
             <div className="md-right-pane">
               <ul>
                 <li>HTML5</li>
-                <li>CSS3 &amp; 4</li>
+                <li>CSS3</li>
                 <li>SASS/SCSS</li>
                 <li>JavaScript</li>
                 <li>React</li>
-                <li>Angular</li>
+                <li>Angular (2+)</li>
                 <li>Node.js</li>
                 <li>Express.js</li>
                 <li>Mongodb</li>

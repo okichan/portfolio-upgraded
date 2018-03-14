@@ -440,10 +440,11 @@ ul {
 
     .stack-logo {
       height: 20px;
+      vertical-align: top;
 
       svg {
-        width: 20px;
-        vertical-align: top;
+        width: 22px;
+        height: 22px;
       }
     }
 
@@ -462,8 +463,9 @@ ul {
       width: 27px;
     }
     #mongo {
-      width: 12px;
-      transform: translateY(-10%);
+      g {
+      transform: translateX(50%);
+      }
     }
   }
 }
