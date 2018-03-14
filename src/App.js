@@ -32,13 +32,15 @@ class App extends Component {
       const viewBox = [bbox.x, bbox.y, bbox.width, bbox.height].join(" ");
       svg.setAttribute("viewBox", viewBox);
     }
+    const email = "tpmpmipki@putlppk.cpm";
+    const decrypted = email.replace(/p/g, "o");
+    let addyForm = document.getElementById("addy");
+    addyForm.value = decrypted;
   };
 
   copyText = () => {
-    const copiedText = document.getElementById("addy").select();
+    document.getElementById("addy").select();
     document.execCommand("Copy");
-    console.log(copiedText);
-    // alert(copiedText)
     const tooltip = document.getElementById("myTooltip");
     tooltip.innerHTML = "Email copied!";
   };
@@ -379,7 +381,7 @@ class App extends Component {
         </div>
         <footer>
           Last update: 7 Mar 2018
-          <input id="addy" defaultValue="tomomioki@outlook.com" />
+          <input id="addy" />
         </footer>
       </div>
     );
