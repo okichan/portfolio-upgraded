@@ -333,7 +333,7 @@ ul {
     #card4 .content #sass {
       width: 27px; }
     #card4 .content #mongo g {
-      transform: translateX(50%); }
+      transform: translateX(170%); }
 
 #card5 {
   border-color: #55295b; }
@@ -396,11 +396,6 @@ ul {
         border-radius: 20px; }
       #card5 .content .tooltip-positioner a:hover + .tooltiptext {
         opacity: 0.8; }
-
-footer {
-  float: right;
-  font-size: 0.8em;
-  line-height: 2rem; }
 
 #addy {
   width: 1px;
