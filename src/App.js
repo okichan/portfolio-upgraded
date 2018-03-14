@@ -111,18 +111,33 @@ class App extends Component {
           <div className="content">
             <div className="md-right-pane">
               <p>Why, hello there.</p>
-              <p>My name is Tomomi, born and bred Japanese living in Melbourne.</p>
               <p>
-                This portfolio was originally created to showcase my skills that I've learnt in the
-                first 1.5 month of studying at{" "}
-                <a href="https://coderacademy.edu.au" target="_blank" rel="noopener noreferrer">
-                  Coder Academy
-                </a>. It is maintained and updated occasionally ever since.
+                My name is Tomomi, an aspiring web developer who loves creating simple, elegant and
+                eye-pleasing websites.
               </p>
-              <p>Past profession: A survey programmer in marketing research, querying away SQL</p>
+              <p>
+                In the recent past, I had been in a marketing research industry querying away SQL
+                and dealing with Microsoft Excel.
+              </p>
+              <p>
+                The world has evolved whilst I was v-looking up cells, so I decided to go back to {" "}
+                <a
+                  href="https://coderacademy.edu.au"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Coder Academy"
+                >
+                  school
+                </a>{" "}
+                to learn new technologies, which turned out to be one of the best decisions I've
+                ever made.
+              </p>
+              <p>
+                In the more distant past, I grew up in Japan and that's what makes me "me" now, although quite frequently it's mixed with the quirky culture of Melbourne (north)!
+              </p>
               <div id="heart-wrapper">
                 <Heart id="heart" />
-                <span>: Music, food, art and code</span>
+                <span>: Music, food, tea, art and code</span>
               </div>
             </div>
           </div>
