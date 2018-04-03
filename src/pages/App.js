@@ -162,13 +162,13 @@ class App extends React.Component {
             {circles.map((circle, i) => {
               if (i === 0) {
                 return (
-                  <a href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.docx" title="Get resume (word)" key="1">
+                  <a href="https://github.com/okichan/portfolio-upgraded/raw/master/src/assets/Tomomi_Oki_resume.docx" title="Get resume (word)" key="1">
                     {circle}
                   </a>
                 );
               } else if (i === 1) {
                 return (
-                  <a href="https://github.com/okichan/portfolio-upgraded/raw/master/public/Tomomi_Oki_resume.pdf" title="Get resume (pdf)" key="2">
+                  <a href="https://github.com/okichan/portfolio-upgraded/raw/master/src/assets/Tomomi_Oki_resume.pdf" title="Get resume (pdf)" key="2">
                     {circle}
                   </a>
                 );
