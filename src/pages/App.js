@@ -89,11 +89,11 @@ class App extends React.Component {
         stack: "HTML / CSS"
       }
     ]
-  }
+  };
 
   componentDidMount() {
-    const isBrowser = typeof window !== 'undefined';
-    const AOS = isBrowser ? require('aos') : undefined;
+    const isBrowser = typeof window !== "undefined";
+    const AOS = isBrowser ? require("aos") : undefined;
     AOS.init();
 
     document.getElementsByTagName("svg")[1].setAttribute("id", "circle1");
@@ -102,15 +102,15 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    const isBrowser = typeof window !== 'undefined';
-    const AOS = isBrowser ? require('aos') : undefined;
-    
-    AOS.refresh()
+    const isBrowser = typeof window !== "undefined";
+    const AOS = isBrowser ? require("aos") : undefined;
+
+    AOS.refresh();
   }
 
   render() {
-      const { circles, projects, favs } = this.state
-      
+    const { circles, projects, favs } = this.state;
+
     return (
       <S.Container>
         <S.Top>
@@ -162,13 +162,21 @@ class App extends React.Component {
             {circles.map((circle, i) => {
               if (i === 0) {
                 return (
-                  <a href="https://github.com/okichan/portfolio-upgraded/raw/master/src/assets/Tomomi_Oki_resume.docx" title="Get resume (word)" key="1">
+                  <a
+                    href="https://github.com/okichan/portfolio-upgraded/raw/master/src/assets/Tomomi_Oki_resume.docx"
+                    title="Get resume (word)"
+                    key="1"
+                  >
                     {circle}
                   </a>
                 );
               } else if (i === 1) {
                 return (
-                  <a href="https://github.com/okichan/portfolio-upgraded/raw/master/src/assets/Tomomi_Oki_resume.pdf" title="Get resume (pdf)" key="2">
+                  <a
+                    href="https://github.com/okichan/portfolio-upgraded/raw/master/src/assets/Tomomi_Oki_resume.pdf"
+                    title="Get resume (pdf)"
+                    key="2"
+                  >
                     {circle}
                   </a>
                 );
