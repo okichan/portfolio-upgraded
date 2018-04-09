@@ -51,14 +51,14 @@ class App extends React.Component {
         url: "https://mct-project-t3-demo.netlify.com",
         img: tanto,
         desc: "Sales management app for an existing shop in Melbourne. School group project.",
-        stack: "React / Node / Express / Mongo / API / Bootstrap"
+        stack: "React / Node / Express / Mongo / Rest API / Bootstrap"
       },
       {
-        name: "Portfolio",
+        name: "Portfolio (Old)",
         url: "https://tomomioki.netlify.com",
         img: port,
         desc: "My old portfolio. School solo project.",
-        stack: "React / Node / SCSS / SVG"
+        stack: "HTML / CSS"
       },
       {
         name: "Zodiac Redifined",
@@ -85,7 +85,7 @@ class App extends React.Component {
         name: "Radiohead fansite",
         url: "https://secretary-answers-11183.netlify.com",
         img: radiohead,
-        desc: "Sales management app for an existing shop in Melbourne. School group project.",
+        desc: "Pre-responsive days, very early work static website.",
         stack: "HTML / CSS"
       }
     ]
