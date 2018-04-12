@@ -15,6 +15,56 @@ const media = {
   `
 };
 
+export const NoIEPlease = styled.div`
+  background: gainsboro;
+  font-family: Cardo;
+  overflow: auto;
+  padding: 1rem;
+
+  div {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  svg {
+    border: 0px solid red;
+    width: 40px;
+    height: 40px;
+  }
+  
+  p {
+    margin: 0 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  button {
+    border: 0px solid red;
+    border-radius: 12px;
+    margin: .3rem 0;
+    width: auto;
+
+    &:hover {
+      cursor: pointer;
+      background: teal
+      color: white;
+    }
+  }
+
+  ${media.tablet`
+    div {
+      width: 70%;
+    }
+  `};
+`
+
 export const Container = styled.div`
   background: #fffcf5;
   color: #666;
@@ -215,11 +265,11 @@ export const WorkDesc = styled.p`
   font-size: 0.9rem;
   text-shadow: 1px 1px 3px rgba(97, 97, 97, 0.35);
   position: absolute;
-  margin: 0;
+  transform: translateX(-50%);
+  left: 50%;
   bottom: 0;
   width: 100%;
   text-align: center;
-  // border: 1px solid lime;
   opacity: 0;
   transition: opacity 0.5s;
   
