@@ -14,6 +14,7 @@ import { svgs } from '../assets/Svgs'
 
 class App extends React.Component {
    state = {
+      isIE: null,
       circles: [svgs.circle, svgs.circle, svgs.circle],
       favs: [
          'React',
@@ -94,7 +95,10 @@ class App extends React.Component {
       ]
    }
 
+   
    componentDidMount() {
+      // const isIE = /*@cc_on!@*/ false || !!document.documentMode
+      this.setState({ isIE: /*@cc_on!@*/ false || !!document.documentMode })
       const isBrowser = typeof window !== 'undefined'
       const AOS = isBrowser ? require('aos') : undefined
       AOS.init()
@@ -118,14 +122,13 @@ class App extends React.Component {
    }
 
    render() {
-      const { circles, projects, favs } = this.state
-      let isIE = /*@cc_on!@*/ false || !!document.documentMode
+      const { isIE, circles, projects, favs } = this.state
 
       return (
          <S.Container>
             {isIE && (
                <S.NoIEPlease id="no-ie">
-                  <div >
+                  <div>
                      {svgs.warning}
                      <p>
                         It looks like you're using Internet Explorer. You{' '}
