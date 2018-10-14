@@ -16,9 +16,22 @@ function Footer({ onClick }) {
 }
 
 const FooterContainer = styled.footer`
-  img {
-     width: 48px;
-     cursor: pointer;
+   position: relative;
+   width: 4rem;
+   height: 4rem;
+   cursor: pointer;
+   
+   img {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      width: 48px;
+      transition: top .3s;
+   }
+
+  :hover > img {
+     top: 60%;
   }
 `
 

@@ -9,13 +9,9 @@ import Button from "../components/Button"
 import Footer from "../components/Footer"
 import { media, colors } from "../style/globalStyle"
 // import bg1 from "../../static/images/bg.jpg"
-import curtain from "../../static/images/curtain.jpg"
-import geelong from "../../static/logos/main.svg"
-import ryrie from "../../static/logos/ryrie.svg"
-import bg1 from "../../static/images/I03_Bedroom.jpg"
-import bg2 from "../../static/images/I05_Living.jpg"
-import bg3 from "../../static/images/kitchen.jpg"
-import bg4 from "../../static/images/toilet.jpg"
+import git from "../../static/images/github.svg"
+import linkedIn from "../../static/images/linkedin.svg"
+import mail from "../../static/images/mail.svg"
 
 class MainArea extends Component {
    state = {
@@ -108,9 +104,19 @@ class MainArea extends Component {
             </Page>
             <Page className="contact">
                <h3>contact</h3>
-               <Bio>
-              
-               </Bio>
+               <Social>
+                  <a href="" >
+                     <img src={git} alt="git" />
+                  </a>
+                  <a href="" >
+                  <img src={linkedIn} alt="git" />
+                  </a>
+                  <span>
+                  <img src={mail} alt="git" onClick={this.toggleHandler} />
+
+                  </span>
+               </Social>
+               <p></p>
             </Page>
             <Form closeButton={this.toggleHandler} />
          </Div100vh>
@@ -169,7 +175,6 @@ const Page = styled.div`
    position: relative;
    width: 100vw;
    height: 100vh;
-   /* background: center/cover url(${bg1}) repeat; */
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -196,5 +201,16 @@ const Bio = styled.div`
 
    }
 `
+
+const Social = styled.div`
+   display: flex;
+   align-items: flex-end;
+
+   img {
+      width: 48px;
+
+   }
+`
+
 
 export default MainArea
