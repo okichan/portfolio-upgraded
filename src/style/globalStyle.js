@@ -8,7 +8,6 @@ injectGlobal`
       font-family: 'Gotham', 'Century Gothic', Arial, Helvetica, sans-serif;
       font-size: 16px;
       color: white;
-      text-transform: uppercase;
       letter-spacing: .3rem;
       margin: 0;
       padding: 0;

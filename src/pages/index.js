@@ -23,17 +23,17 @@ class MainArea extends Component {
    }
 
    componentDidMount() {
-      let rotation = 1
+      // let rotation = 1
 
-      if (rotation <= 4) {
-         setInterval(() => {
-            rotation = this.state.rotation + 1
-            this.setState({ rotation })
-            if (this.state.rotation > 4) {
-               this.setState({ rotation: 1 })
-            }
-         }, 4000)
-      }
+      // if (rotation <= 4) {
+      //    setInterval(() => {
+      //       rotation = this.state.rotation + 1
+      //       this.setState({ rotation })
+      //       if (this.state.rotation > 4) {
+      //          this.setState({ rotation: 1 })
+      //       }
+      //    }, 4000)
+      // }
       objectFitImages()
    }
 
@@ -54,7 +54,7 @@ class MainArea extends Component {
                className="curtain"
                style={{
                   backgroundPositionX: -(i * (100 / n)) + "vw",
-                  animationDelay: 0.5 + 0.3 * i / 8 + "s"
+                  animationDelay: 0.5 + (0.3 * i) / 8 + "s"
                }}
                key={i}
                numberOfCurtain={n}
@@ -69,23 +69,39 @@ class MainArea extends Component {
 
       return (
          <Div100vh className="div100">
-             <figure className="bg-wrapper">
-                  <Background src={bg1} alt="bg1" isVisible={rotation === 1} />
-                  <Background src={bg2} alt="bg2" isVisible={rotation === 2} />
-                  <Background src={bg3} alt="bg3" isVisible={rotation === 3} />
-                  <Background src={bg4} alt="bg2" isVisible={rotation === 4} />
-               </figure>
-            <CurtainWrapper className="curtain-wrapper">
+            {/* <figure className="bg-wrapper"> */}
+               {/* <Background src={bg1} alt="bg1" isVisible={rotation === 1} /> */}
+               {/* <Background src={bg2} alt="bg2" isVisible={rotation === 2} /> */}
+               {/* <Background src={bg3} alt="bg3" isVisible={rotation === 3} /> */}
+               <Background autoPlay loop muted playsInline id="my-video">
+                  <source src="/images/botanic_movie.mp4" type="video/mp4" />
+               </Background>
+               {/* <Background src={bg4} alt="bg2" isVisible={rotation === 4} /> */}
+            {/* </figure> */}
+            {/* <CurtainWrapper className="curtain-wrapper">
                {this.createElements(4)}
-            </CurtainWrapper>
+            </CurtainWrapper> */}
             <Container>
                <Header>
-                  <img src={geelong} alt="Geelong Quarter" className="main-logo" />
+                  <ul>
+                     <li className="left">
+                        Home
+                     </li>
+                     <li>
+                        about
+                     </li>
+                     <li>
+                        works
+                     </li>
+                     <li>
+                        contact
+                     </li>
+                  </ul>
                </Header>
 
                <Main>
-                  <h1 className="copy">Where Geelong comes together</h1>
-                  <img src={ryrie} alt="Ryrie" className="ryrie-logo" />
+                  <h1 className="copy">I'm Tomomi Oki</h1>
+                  <h2 className="copy">A web developer</h2>
                </Main>
 
                <Footer clickAction={this.toggleHandler} />
@@ -96,7 +112,7 @@ class MainArea extends Component {
    }
 }
 
-const Background = styled.img`
+const Background = styled.video`
    position: absolute;
    top: 0;
    left: 0;
@@ -106,7 +122,7 @@ const Background = styled.img`
    object-fit: cover;
    object-position: center;
    font-family: "'object-fit: cover; object-position: top;'"; /* IE polyfill */
-   opacity: ${props => (props.isVisible ? 1 : 0)};
+   /* opacity: ${props => (props.isVisible ? 1 : 0)}; */
    z-index: -1;
 
    /* body.open & {
@@ -131,108 +147,36 @@ const Container = styled.div`
    }
 `
 
-const CurtainWrapper = styled.div`
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   justify-content: space-between;
-   /* direction: rtl; */
-`
+const Header = styled.nav`
+   text-transform: uppercase;
+   background: rgba(26, 26, 26, .8);
+   ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      line-height: 4;
 
-const Curtain = styled.div`
-   background: url(${curtain}) no-repeat;
-   background-size: cover;
-   height: 100%;
-   width: 100%;
-   /* flex-grow: 1; */
-   transform-origin: 0% 50%;
-   transform: scaleX(0);
-   /* width: calc(100% / ${props => props.numberOfCurtain})vw; */
-   animation: curtain 4s linear infinite;
-
-   @keyframes curtain {
-      0% {
-         transform: scaleX(0);
-         transform-origin: 0% 50%;
-      }
-      80% {
-         transform: scaleX(0);
-         transform-origin: 0% 50%;
-      }
-      88% {
-         transform: scaleX(1);
-         transform-origin: 0% 50%;
-      }
-      90% {
-         transform: scaleX(1);
-         transform-origin: 100% 50%;
-      }
-      95% {
-         transform: scaleX(1);
-         transform-origin: 100% 50%;
-      }
-      100% {
-         transform: scaleX(0);
-         transform-origin: 100% 50%;
-      }
-   }
-`
-
-const Header = styled.header`
-   width: 100%;
-   z-index: 0;
-   .main-logo {
-      width: 25vw;
-      min-width: 200px;
-      max-width: 800px;
-      height: 100%;
-      margin-top: 3vh;
-      object-fit: contain;
-      font-family: "'object-fit: contain'";
-
-      body.open & {
-         display: none;
+      li {
+         margin: 0 2rem;
+         &.left {
+            flex-grow: 1;
+            text-align: left;
+         }
       }
    }
 `
 
 const Main = styled.div`
-   z-index: 0;
   h1 {
-     text-transform: none;
-     font-size: 4rem;
-     
-      body.open & {
-         display: none;
-      }
+     font-size: 2rem;
+  }
 
-      ${media.mobileL`
-         font-size: 2rem;
-      `};
+  h2 {
+     font-size: 1.5rem;
+     margin: 2rem;
   }
       
-   .ryrie-logo {
-      display: none;
-
-      body.open & {
-         display: block;
-         width: 60%;
-         margin: 0 auto;
-      }
-         
-      ${media.mobileL`
-         min-width: 318px;
-      `};
-   }
-
-    #to-form {
-      /* z-index: 100;
-      background: ${colors.main}; */
-      body.open & {
-         visibility: hidden;
-      }
-   }
+ 
 `
 
 export default MainArea
