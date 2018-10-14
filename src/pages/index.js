@@ -46,22 +46,11 @@ class MainArea extends Component {
       }
    }
 
-   createElements(n) {
-      var elements = []
-      for (let i = 0; i < n; i++) {
-         elements.push(
-            <Curtain
-               className="curtain"
-               style={{
-                  backgroundPositionX: -(i * (100 / n)) + "vw",
-                  animationDelay: 0.5 + (0.3 * i) / 8 + "s"
-               }}
-               key={i}
-               numberOfCurtain={n}
-            />
-         )
-      }
-      return elements
+   scrollDown = () => {
+      window.scrollTo({
+         top: 500,
+         behavior: "smooth"
+      })
    }
 
    render() {
@@ -69,43 +58,60 @@ class MainArea extends Component {
 
       return (
          <Div100vh className="div100">
-            {/* <figure className="bg-wrapper"> */}
-               {/* <Background src={bg1} alt="bg1" isVisible={rotation === 1} /> */}
-               {/* <Background src={bg2} alt="bg2" isVisible={rotation === 2} /> */}
-               {/* <Background src={bg3} alt="bg3" isVisible={rotation === 3} /> */}
+            <Page className="home">
                <Background autoPlay loop muted playsInline id="my-video">
                   <source src="/images/botanic_movie.mp4" type="video/mp4" />
                </Background>
-               {/* <Background src={bg4} alt="bg2" isVisible={rotation === 4} /> */}
-            {/* </figure> */}
-            {/* <CurtainWrapper className="curtain-wrapper">
-               {this.createElements(4)}
-            </CurtainWrapper> */}
-            <Container>
                <Header>
                   <ul>
-                     <li className="left">
-                        Home
-                     </li>
-                     <li>
-                        about
-                     </li>
-                     <li>
-                        works
-                     </li>
-                     <li>
-                        contact
-                     </li>
+                     <li className="left">Home</li>
+                     <li>about</li>
+                     <li>works</li>
+                     <li>contact</li>
                   </ul>
                </Header>
 
                <Main>
                   <h1 className="copy">I'm Tomomi Oki</h1>
-                  <h2 className="copy">A web developer</h2>
+                  <h2 className="copy">A front-end web developer</h2>
                </Main>
-
-               <Footer clickAction={this.toggleHandler} />
-            </Container>
+               <Footer onClick={this.scrollDown} />
+            </Page>
+            <Page className="about ">
+               <h3>about</h3>
+               <Bio>
+                  <p>I'm a web developer based in Melbourne, Australia.</p>
+                  <p>
+                     I have a passion for creating simple, elegant and eye-pleasing
+                     websites.
+                  </p>
+                  <p>
+                     I'm a developer, so I know how to create your website to run across
+                     devices using the latest technologies available. If you have a
+                     project that you want to get started, think you need my help with
+                     something or just fancy saying hey, then get in touch.
+                  </p>
+               </Bio>
+               <Footer onClick={this.scrollDown} />
+            </Page>
+            <Page className="works ">
+               <h3>works</h3>
+               <Bio>
+                 <h4>
+                    Cornwell
+                    </h4>
+                 <h4>
+                    Coder Academy
+                    </h4>
+               </Bio>
+               <Footer onClick={this.scrollDown} />
+            </Page>
+            <Page className="contact">
+               <h3>contact</h3>
+               <Bio>
+              
+               </Bio>
+            </Page>
             <Form closeButton={this.toggleHandler} />
          </Div100vh>
       )
@@ -129,27 +135,10 @@ const Background = styled.video`
       filter: blur(10px);
    } */
 `
-
-const Container = styled.div`
-   width: 100vw;
-   height: 100vh;
-   /* background: center/cover url(${bg1}) repeat; */
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   /* align-items: center; */
-   transition: width 0.7s;
-   /* object-fit: cover; */
-   /* font-family: "'object-fit: cover'"; */
-   body.open & {
-      width: 50vw;
-      /* background: ${colors.main}; */
-   }
-`
-
 const Header = styled.nav`
+   width: 100%;
    text-transform: uppercase;
-   background: rgba(26, 26, 26, .8);
+   background: rgba(26, 26, 26, 0.8);
    ul {
       display: flex;
       justify-content: flex-end;
@@ -165,18 +154,47 @@ const Header = styled.nav`
       }
    }
 `
-
 const Main = styled.div`
-  h1 {
-     font-size: 2rem;
-  }
+   h1 {
+      font-size: 2rem;
+   }
 
-  h2 {
-     font-size: 1.5rem;
-     margin: 2rem;
-  }
-      
- 
+   h2 {
+      font-size: 1.5rem;
+      margin: 2rem;
+   }
+`
+
+const Page = styled.div`
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+   /* background: center/cover url(${bg1}) repeat; */
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   transition: width 0.7s;
+   /* object-fit: cover; */
+   /* font-family: "'object-fit: cover'"; */
+   &:not(.home) {
+      background: black;
+   }
+
+   h3 {
+      text-transform: uppercase;
+   }
+   
+`
+
+const Bio = styled.div`
+   width: 50vw;
+   min-width: 18rem;
+   p {
+      text-align: left;
+      margin: 1rem 0;
+
+   }
 `
 
 export default MainArea
