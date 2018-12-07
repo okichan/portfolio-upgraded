@@ -32,19 +32,41 @@ injectGlobal`
       }
    }
 
-   body {
-      .div100 {
-         position: relative;
-         overflow-x: hidden;
-
-      }
-   }
 `
 
 export const colors = {
    main: '#dad6d1',
    darkNavy: '#141E2D'
 }
+
+const breakpoints = {
+   fourK: 2000,
+   laptopL: 1440,
+   laptop: 1024,
+   tablet: 800,
+   mobileL: 600,
+   mobileM: 380,
+   mobileS: 320
+ }
+
+ export const above = Object.keys(breakpoints).reduce((accumulator, label) => {
+   accumulator[label] = (...args) => css`
+     @media (min-width: ${breakpoints[label]}px) {
+       ${css(...args)};
+     }
+   `
+   return accumulator
+ }, {})
+ 
+ export const below = Object.keys(breakpoints).reduce((accumulator, label) => {
+   accumulator[label] = (...args) => css`
+     @media (max-width: ${breakpoints[label]}px) {
+       ${css(...args)};
+     }
+   `
+   return accumulator
+ }, {})
+ 
 
 export const media = {
    mobileS: (...args) => css`
