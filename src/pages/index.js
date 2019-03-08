@@ -6,6 +6,7 @@ import Div100vh from "react-div-100vh"
 import styled from "styled-components"
 import Form from "../components/Form"
 import Button from "../components/Button"
+import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { media, colors, below, above } from "../style/globalStyle"
 import bg from "../../static/images/bg.jpg"
@@ -14,11 +15,10 @@ import linkedIn from "../../static/images/linkedin.svg"
 import mail from "../../static/images/mail.svg"
 
 class MainArea extends Component {
-   constructor(props) {
-      super(props);
-      this.about = React.createRef();
-    }
-   
+   // constructor(props) {
+   //    super(props);
+   //  }
+
    state = {
       rotation: 1
    }
@@ -28,26 +28,23 @@ class MainArea extends Component {
       this.mobileHeightFix()
    }
 
-   
    mobileHeightFix = () => {
       if (typeof window !== `undefined`) {
          // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
          let vh = window.innerHeight * 0.01
          let vw = window.innerWidth
          // Then we set the value in the --vh custom property to the root of the document
-         document.documentElement.style.setProperty('--vh', `${vh}px`)
+         document.documentElement.style.setProperty("--vh", `${vh}px`)
          if (vw > 768) {
             // We listen to the resize event for desktop
-            window.addEventListener('resize', () => {
+            window.addEventListener("resize", () => {
                // We execute the same script as before
                let vh = window.innerHeight * 0.01
-               document.documentElement.style.setProperty('--vh', `${vh}px`)
+               document.documentElement.style.setProperty("--vh", `${vh}px`)
             })
          }
       }
    }
-
-
 
    toggleHandler = () => {
       if (typeof window !== `undefined`) {
@@ -58,12 +55,11 @@ class MainArea extends Component {
       }
    }
 
-   scrollDown = () => {
-      const target = this.about.current.getBoundingClientRect().top
-      const navHeight = document.getElementById('nav').offsetHeight
-      console.log('yay', target, navHeight)
+   scrollTo = el => {
+      const target = document.getElementById(el).offsetTop
+      console.log("yay", target)
       window.scrollTo({
-         top: target - navHeight,
+         top: target,
          behavior: "smooth"
       })
    }
@@ -71,72 +67,54 @@ class MainArea extends Component {
    render() {
       return (
          <Fragment>
-            <Page className="home">
+            <Page id="home">
                <Bg>
                   <VideoWrapper autoPlay loop muted playsInline id="my-video">
                      <source src="/images/botanic_movie.mp4" type="video/mp4" />
                   </VideoWrapper>
                   <img src={bg} alt="bg" />
                </Bg>
-               <Header id="nav">
-                  <ul>
-                     <li className="left">Home</li>
-                     <li>about</li>
-                     <li>works</li>
-                     <li>contact</li>
-                  </ul>
-               </Header>
-
+               {/* <Header /> */}
                <Main>
                   <h1 className="copy">I'm Tomomi Oki</h1>
-                  <h2 className="copy">A front-end web developer</h2>
+                  <h2 className="copy">Front-end web developer</h2>
                </Main>
-               <Footer onClick={this.scrollDown} />
+               <Footer onClick={() => this.scrollTo("about")} />
             </Page>
-            <Page className="about" innerRef={this.about}>
-               <h3>about</h3>
+            <Page id="about">
+               <h3>about me</h3>
                <Bio>
                   <p>I'm a web developer based in Melbourne, Australia.</p>
                   <p>
                      I have a passion for creating simple, elegant and eye-pleasing
                      websites.
                   </p>
-                  <p>
-                     I'm a developer, so I know how to create your website to run across
-                     devices using the latest technologies available. If you have a
-                     project that you want to get started, think you need my help with
-                     something or just fancy saying hey, then get in touch.
-                  </p>
+                  <p>blah blah</p>
                </Bio>
-               {/* <Footer onClick={this.scrollDown} /> */}
+               <Footer onClick={() => this.scrollTo("works")} />
             </Page>
-            <Page className="works ">
+            <Page id="works">
                <h3>works</h3>
-               <Bio>
-                 <h4>
-                    Cornwell
-                    </h4>
-                 <h4>
-                    Coder Academy
-                    </h4>
-               </Bio>
-               {/* <Footer onClick={this.scrollDown} /> */}
+               <div>
+                  <h4>Cornwell</h4>
+                  <h4>Coder Academy</h4>
+               </div>
+               <Footer onClick={() => this.scrollTo("contact")} />
             </Page>
-            <Page className="contact">
+            <Page id="contact">
                <h3>contact</h3>
                <Social>
-                  <a href="" >
+                  <a href="">
                      <img src={git} alt="git" />
                   </a>
-                  <a href="" >
-                  <img src={linkedIn} alt="git" />
+                  <a href="">
+                     <img src={linkedIn} alt="git" />
                   </a>
                   <span>
-                  <img src={mail} alt="git" onClick={this.toggleHandler} />
-
+                     <img src={mail} alt="git" onClick={this.toggleHandler} />
                   </span>
                </Social>
-               <p></p>
+               <Footer onClick={() => this.scrollTo("home")} reverseArrow />
             </Page>
             {/* <Form closeButton={this.toggleHandler} /> */}
          </Fragment>
@@ -164,7 +142,6 @@ const Bg = styled.div`
    }
 `
 
-
 const VideoWrapper = styled.video`
    width: 100%;
    height: 100%;
@@ -174,49 +151,8 @@ const VideoWrapper = styled.video`
    ${below.tablet`
       display: none;
    `}
-   
 `
 
-const Header = styled.nav`
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   text-transform: uppercase;
-   background: rgba(26, 26, 26, 0.8);
-   padding: 1rem; 
-   z-index: 1;
-   ul {
-      display: flex;
-      justify-content: flex-end;
-      /* flex-wrap: wrap; */
-      list-style: none;
-      /* line-height: 4; */
-
-      li {
-         margin: 0 2rem;
-         &.left {
-            flex-grow: 1;
-            text-align: left;
-         }
-      }
-   }
-
-   ${below.mobileL`
-      // padding: 1rem 0; 
-      ul {
-         justify-content: space-between;
-         
-         li {
-            font-size: .5rem;
-            margin: 0;
-            &.left {
-               flex-grow: 0;
-            }
-         }
-      }
-   `}
-`
 const Main = styled.div`
    position: absolute;
    transform: translate(-50%, -50%);
@@ -235,6 +171,7 @@ const Main = styled.div`
 `
 
 const Page = styled.div`
+   /* border: 1px solid lime; */
    position: relative;
    width: 100%;
    height: 100vh;
@@ -247,7 +184,7 @@ const Page = styled.div`
    padding-top: 1rem;
    /* object-fit: cover; */
    /* font-family: "'object-fit: cover'"; */
-   &:not(.home) {
+   &:not(#home) {
       background: black;
       justify-content: space-between;
    }
@@ -255,7 +192,6 @@ const Page = styled.div`
    h3 {
       text-transform: uppercase;
    }
-   
 `
 
 const Bio = styled.div`
@@ -264,7 +200,6 @@ const Bio = styled.div`
    p {
       text-align: left;
       margin: 1rem 0;
-
    }
 `
 
@@ -274,9 +209,7 @@ const Social = styled.div`
 
    img {
       width: 48px;
-
    }
 `
-
 
 export default MainArea

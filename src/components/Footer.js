@@ -7,10 +7,10 @@ import subLogo2 from "../../static/logos/hodges.svg"
 import goDown from "../../static/images/arrow.svg"
 import subLogo3 from "../../static/logos/holiday-inn.svg"
 
-function Footer({ onClick }) {
+function Footer({ onClick, reverseArrow }) {
    return (
       <FooterContainer>
-         <img src={goDown} alt="Go down" onClick={onClick}/>
+         <img src={goDown} alt="Go down or up" onClick={onClick} className={reverseArrow && "reverse-arrow"}/>
       </FooterContainer>
    )
 }
@@ -25,13 +25,22 @@ const FooterContainer = styled.footer`
       position: absolute;
       transform: translate(-50%, -50%);
       left: 50%;
-      top: 50%;
+      top: 30%;
       width: 48px;
-      transition: top .3s;
+      transition: top .5s;
+
+      &.reverse-arrow {
+         top: 0%;
+         transform: translate(-50%, -50%) scaleX(-1);
+      }
    }
 
   :hover > img {
      top: 60%;
+
+     &.reverse-arrow {
+        top: -30%;
+     }
   }
 `
 
