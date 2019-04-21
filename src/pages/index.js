@@ -10,14 +10,16 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { media, colors, below, above } from "../style/globalStyle"
 import bg from "../../static/images/bg.jpg"
+import close from "../../static/images/close.svg"
 import git from "../../static/images/github.svg"
 import linkedIn from "../../static/images/linkedin.svg"
 import mail from "../../static/images/mail.svg"
 
 class MainArea extends Component {
-   // constructor(props) {
-   //    super(props);
-   //  }
+   constructor(props) {
+      super(props)
+      this.workDetailRef = React.createRef()
+   }
 
    state = {
       rotation: 1
@@ -57,15 +59,25 @@ class MainArea extends Component {
 
    scrollTo = el => {
       const target = document.getElementById(el).offsetTop
-      console.log("yay", target)
       window.scrollTo({
          top: target,
          behavior: "smooth"
       })
    }
 
-   showWork = idx => {
-      alert(idx)
+   toggleWorkModal = idx => {
+      let modalStyle = this.workDetailRef.current.style
+
+      if (modalStyle.visibility === 'visible' ) {
+         modalStyle.opacity = 0
+         setTimeout(() => {
+            modalStyle.visibility = 'hidden'
+         }, 500);
+      }
+      else {
+         modalStyle.visibility = 'visible'
+         modalStyle.opacity = 1
+      }
    }
 
    render() {
@@ -104,22 +116,41 @@ class MainArea extends Component {
                      <small>2018 - 2019</small>
                      <h3>Cornwell</h3>
                      <p>An award-winning design agency</p>
-                     <small className="more" onClick={() => this.showWork(0)}>
+                     <small className="more" onClick={() => this.toggleWorkModal(0)}>
                         tell me more
                      </small>
-                     {/* <WorkDetail>
+                     <WorkDetail innerRef={this.workDetailRef}>
                         <figure>
+                           <img src={close} onClick={() => this.toggleWorkModal(0)}/>
+
                            <img src="http://html5doctor.com/wp-content/uploads/2010/03/macaque.jpg" />
-                           <figcaption>blah</figcaption>
+                           <figcaption>
+                              Refs provide a way to access DOM nodes or React elements
+                              created in the render method. In the typical React dataflow,
+                              props are the only way that parent components interact with
+                              their children. To modify a child, you re-render it with new
+                              props. However, there are a few cases where you need to
+                              imperatively modify a child outside of the typical dataflow.
+                              The child to be modified could be an instance of a React
+                              component, or it could be a DOM element. For both of these
+                              cases, React provides an escape hatch. When to Use Refs
+                              There are a few good use cases for refs: Managing focus,
+                              text selection, or media playback. Triggering imperative
+                              animations. Integrating with third-party DOM libraries.
+                              Avoid using refs for anything that can be done
+                              declaratively. For example, instead of exposing open() and
+                              close() methods on a Dialog component, pass an isOpen prop
+                              to it.
+                           </figcaption>
                         </figure>
-                     </WorkDetail> */}
+                     </WorkDetail>
                   </WorkCard>
 
                   <WorkCard>
                      <small>2017 - 2018</small>
                      <h3>Coder Academy</h3>
-                     <p>Australia's only accredited coding bootcamps</p>
-                     <small className="more" onClick={() => this.showWork(0)}>
+                     <p>Australia's only accredited coding bootcamp</p>
+                     <small className="more" onClick={() => this.toggleWorkModal(1)}>
                         tell me more
                      </small>
                   </WorkCard>
@@ -222,7 +253,7 @@ const Page = styled.div`
          :after {
             content: "top";
             opacity: 0;
-            transition: opacity .3s;
+            transition: opacity 0.3s;
          }
          :hover:after {
             opacity: 1;
@@ -280,8 +311,32 @@ const WorkCard = styled.div`
 `
 
 const WorkDetail = styled.div`
+   border: 1px solid lime;
+   background: rgba(0, 0, 0, 0.8);
+   background: white;
    position: absolute;
-   opacity: 0.2;
+   opacity: 0;
+   visibility: hidden;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   transition: opacity 0.3s;
+
+   figure {
+      border: 1px solid magenta;
+      display: flex;
+      position: absolute;
+      height: 60%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      figcaption {
+         overflow: auto;
+         height: 100%;
+      }
+   }
 `
 
 const Social = styled.div`
