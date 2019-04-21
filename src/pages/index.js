@@ -68,14 +68,14 @@ class MainArea extends Component {
    toggleWorkModal = idx => {
       let modalStyle = this.workDetailRef.current.style
 
-      if (modalStyle.visibility === 'visible' ) {
+      if (modalStyle.opacity === '1' ) {
          modalStyle.opacity = 0
          setTimeout(() => {
-            modalStyle.visibility = 'hidden'
+            modalStyle.zIndex = -1
          }, 500);
       }
       else {
-         modalStyle.visibility = 'visible'
+         modalStyle.zIndex = 1
          modalStyle.opacity = 1
       }
    }
@@ -119,9 +119,9 @@ class MainArea extends Component {
                      <small className="more" onClick={() => this.toggleWorkModal(0)}>
                         tell me more
                      </small>
-                     <WorkDetail innerRef={this.workDetailRef}>
-                        <figure>
-                           <img src={close} onClick={() => this.toggleWorkModal(0)}/>
+                     <WorkDetail innerRef={this.workDetailRef} onClick={() => this.toggleWorkModal(0)} >
+                        <figure onClick={(e) => e.stopPropagation()}>
+                           <img className="close" src={close} onClick={() => this.toggleWorkModal(0)}/>
 
                            <img src="http://html5doctor.com/wp-content/uploads/2010/03/macaque.jpg" />
                            <figcaption>
@@ -153,6 +153,31 @@ class MainArea extends Component {
                      <small className="more" onClick={() => this.toggleWorkModal(1)}>
                         tell me more
                      </small>
+                     {/* <WorkDetail innerRef={this.workDetailRef}>
+                        <figure>
+                           <img src={close} onClick={() => this.toggleWorkModal(1)}/>
+
+                           <img src="https://media.wired.com/photos/59326c6058b0d64bb35d1809/master/w_616,c_limit/Kakapo-2.jpg" />
+                           <figcaption>
+                              Refs provide a way to access DOM nodes or React elements
+                              created in the render method. In the typical React dataflow,
+                              props are the only way that parent components interact with
+                              their children. To modify a child, you re-render it with new
+                              props. However, there are a few cases where you need to
+                              imperatively modify a child outside of the typical dataflow.
+                              The child to be modified could be an instance of a React
+                              component, or it could be a DOM element. For both of these
+                              cases, React provides an escape hatch. When to Use Refs
+                              There are a few good use cases for refs: Managing focus,
+                              text selection, or media playback. Triggering imperative
+                              animations. Integrating with third-party DOM libraries.
+                              Avoid using refs for anything that can be done
+                              declaratively. For example, instead of exposing open() and
+                              close() methods on a Dialog component, pass an isOpen prop
+                              to it.
+                           </figcaption>
+                        </figure>
+                     </WorkDetail> */}
                   </WorkCard>
                </div>
                <Footer onClick={() => this.scrollTo("contact")} />
@@ -311,20 +336,33 @@ const WorkCard = styled.div`
 `
 
 const WorkDetail = styled.div`
-   border: 1px solid lime;
+   /* border: 1px solid lime; */
    background: rgba(0, 0, 0, 0.8);
-   background: white;
-   position: absolute;
+   position: fixed;
    opacity: 0;
-   visibility: hidden;
+   z-index: -1;
    top: 0;
    bottom: 0;
    left: 0;
    right: 0;
    transition: opacity 0.3s;
 
+   .close {
+      position: absolute;
+      height: 2rem;
+      width: 2rem;
+      right: -1rem;
+      top: -1rem;
+      transform: translate(100%, -100%);
+      cursor: pointer;
+      transition: opacity .3s;
+      :hover {
+         opacity: .4;
+      }
+   }
+
    figure {
-      border: 1px solid magenta;
+      /* border: 1px solid magenta; */
       display: flex;
       position: absolute;
       height: 60%;
