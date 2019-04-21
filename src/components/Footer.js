@@ -9,8 +9,8 @@ import subLogo3 from "../../static/logos/holiday-inn.svg"
 
 function Footer({ onClick, reverseArrow }) {
    return (
-      <FooterContainer>
-         <img src={goDown} alt="Go down or up" onClick={onClick} className={reverseArrow && "reverse-arrow"}/>
+      <FooterContainer onClick={onClick}>
+         <img src={goDown} alt="Go down or up"  className={reverseArrow && "reverse-arrow"}/>
       </FooterContainer>
    )
 }
@@ -31,7 +31,7 @@ const FooterContainer = styled.footer`
 
       &.reverse-arrow {
          top: 0%;
-         transform: translate(-50%, -50%) scaleX(-1);
+         transform: translate(-50%, -50%) scale(-1);
       }
    }
 

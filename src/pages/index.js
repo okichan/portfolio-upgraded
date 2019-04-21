@@ -64,6 +64,10 @@ class MainArea extends Component {
       })
    }
 
+   showWork = idx => {
+      alert(idx)
+   }
+
    render() {
       return (
          <Fragment>
@@ -96,8 +100,29 @@ class MainArea extends Component {
             <Page id="works">
                <h3>works</h3>
                <div>
-                  <h4>Cornwell</h4>
-                  <h4>Coder Academy</h4>
+                  <WorkCard>
+                     <small>2018 - 2019</small>
+                     <h3>Cornwell</h3>
+                     <p>An award-winning design agency</p>
+                     <small className="more" onClick={() => this.showWork(0)}>
+                        tell me more
+                     </small>
+                     {/* <WorkDetail>
+                        <figure>
+                           <img src="http://html5doctor.com/wp-content/uploads/2010/03/macaque.jpg" />
+                           <figcaption>blah</figcaption>
+                        </figure>
+                     </WorkDetail> */}
+                  </WorkCard>
+
+                  <WorkCard>
+                     <small>2017 - 2018</small>
+                     <h3>Coder Academy</h3>
+                     <p>Australia's only accredited coding bootcamps</p>
+                     <small className="more" onClick={() => this.showWork(0)}>
+                        tell me more
+                     </small>
+                  </WorkCard>
                </div>
                <Footer onClick={() => this.scrollTo("contact")} />
             </Page>
@@ -171,7 +196,6 @@ const Main = styled.div`
 `
 
 const Page = styled.div`
-   /* border: 1px solid lime; */
    position: relative;
    width: 100%;
    height: 100vh;
@@ -181,7 +205,7 @@ const Page = styled.div`
    align-items: center;
    transition: width 0.7s;
    justify-content: flex-end;
-   padding-top: 1rem;
+   padding-top: 3rem;
    /* object-fit: cover; */
    /* font-family: "'object-fit: cover'"; */
    &:not(#home) {
@@ -192,6 +216,19 @@ const Page = styled.div`
    h3 {
       text-transform: uppercase;
    }
+
+   &#contact {
+      footer {
+         :after {
+            content: "top";
+            opacity: 0;
+            transition: opacity .3s;
+         }
+         :hover:after {
+            opacity: 1;
+         }
+      }
+   }
 `
 
 const Bio = styled.div`
@@ -201,6 +238,50 @@ const Bio = styled.div`
       text-align: left;
       margin: 1rem 0;
    }
+`
+
+const WorkCard = styled.div`
+   padding: 2rem;
+   /* border: 1px solid red; */
+
+   :first-child {
+      margin-bottom: 4rem;
+   }
+
+   h3 {
+      margin: 2rem 0;
+      display: inline-block;
+   }
+
+   small {
+      display: block;
+      font-size: 0.6rem;
+   }
+
+   .more {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      cursor: pointer;
+
+      :hover:after {
+         transform: scale(0);
+      }
+
+      :after {
+         content: "";
+         margin-top: 0.1rem;
+         display: block;
+         background: grey;
+         height: 1px;
+         transition: all 0.5s;
+      }
+   }
+`
+
+const WorkDetail = styled.div`
+   position: absolute;
+   opacity: 0.2;
 `
 
 const Social = styled.div`
