@@ -11,6 +11,8 @@ import Footer from "../components/Footer"
 import { media, colors, below, above } from "../style/globalStyle"
 import bg from "../../static/images/bg.jpg"
 import close from "../../static/images/close.svg"
+import yarrabend from "../../static/images/yarrabend.svg"
+import flinders from "../../static/images/180flindersStreet.png"
 import git from "../../static/images/github.svg"
 import linkedIn from "../../static/images/linkedin.svg"
 import mail from "../../static/images/mail.svg"
@@ -68,13 +70,12 @@ class MainArea extends Component {
    toggleWorkModal = idx => {
       let modalStyle = this.workDetailRef.current.style
 
-      if (modalStyle.opacity === '1' ) {
+      if (modalStyle.opacity === "1") {
          modalStyle.opacity = 0
          setTimeout(() => {
             modalStyle.zIndex = -1
-         }, 500);
-      }
-      else {
+         }, 500)
+      } else {
          modalStyle.zIndex = 1
          modalStyle.opacity = 1
       }
@@ -92,7 +93,7 @@ class MainArea extends Component {
                </Bg>
                {/* <Header /> */}
                <Main>
-                  <h1 className="copy">I'm Tomomi Oki</h1>
+                  <h1 className="copy">Tomomi Oki</h1>
                   <h2 className="copy">Front-end web developer</h2>
                </Main>
                <Footer onClick={() => this.scrollTo("about")} />
@@ -100,50 +101,73 @@ class MainArea extends Component {
             <Page id="about">
                <h3>about me</h3>
                <Bio>
-                  <p>I'm a web developer based in Melbourne, Australia.</p>
+                  <p>I'm a web developer based in Australia.</p>
                   <p>
-                     I have a passion for creating simple, elegant and eye-pleasing
-                     websites.
+                     I have a passion for creating simple, elegant, eye-pleasing yet
+                     user-oriented websites.
                   </p>
-                  <p>blah blah</p>
+                  <p>
+                     After finishing coding bootcamp in 2018, I was hired by a design
+                     studio in Melbourne where I honed my front-end skills as well as
+                     learned design principles and basic knowledge of Photoshop and XD,
+                     thanks to the bunch of incredibly talented designers.{" "}
+                  </p>
+                  <p>
+                     A few important changes happened to my life during those days, fast
+                     forward I am now residing in Brisbane with a beautiful daughter Clara
+                     — a name that works in three languages our family speaks, Japanese,
+                     Spanish and English.
+                  </p>
                </Bio>
                <Footer onClick={() => this.scrollTo("works")} />
             </Page>
             <Page id="works">
-               <h3>works</h3>
+               <h3>developer experiences</h3>
                <div>
                   <WorkCard>
                      <small>2018 - 2019</small>
                      <h3>Cornwell</h3>
-                     <p>An award-winning design agency</p>
+                     <p>An award-winning design studio</p>
                      <small className="more" onClick={() => this.toggleWorkModal(0)}>
                         tell me more
                      </small>
-                     <WorkDetail innerRef={this.workDetailRef} onClick={() => this.toggleWorkModal(0)} >
-                        <figure onClick={(e) => e.stopPropagation()}>
-                           <img className="close" src={close} onClick={() => this.toggleWorkModal(0)}/>
-
-                           <img src="http://html5doctor.com/wp-content/uploads/2010/03/macaque.jpg" />
-                           <figcaption>
-                              Refs provide a way to access DOM nodes or React elements
-                              created in the render method. In the typical React dataflow,
-                              props are the only way that parent components interact with
-                              their children. To modify a child, you re-render it with new
-                              props. However, there are a few cases where you need to
-                              imperatively modify a child outside of the typical dataflow.
-                              The child to be modified could be an instance of a React
-                              component, or it could be a DOM element. For both of these
-                              cases, React provides an escape hatch. When to Use Refs
-                              There are a few good use cases for refs: Managing focus,
-                              text selection, or media playback. Triggering imperative
-                              animations. Integrating with third-party DOM libraries.
-                              Avoid using refs for anything that can be done
-                              declaratively. For example, instead of exposing open() and
-                              close() methods on a Dialog component, pass an isOpen prop
-                              to it.
-                           </figcaption>
-                        </figure>
-                     </WorkDetail>
+                     <WorkModal
+                        className="work-modal"
+                        innerRef={this.workDetailRef}
+                        onClick={() => this.toggleWorkModal(0)}>
+                        <img className="close" src={close} />
+                        <ProjectsWrapper onClick={e => e.stopPropagation()}>
+                           <Card>
+                              <a
+                                 href="https://yarrabend.com.au"
+                                 target="_blank"
+                                 className="card-image">
+                                 <img src={yarrabend} alt="git" />
+                              </a>
+                              <figcaption>
+                                 <a href="https://yarrabend.com.au" target="_blank">
+                                    YarraBend
+                                 </a>
+                                 <p>Made with React.</p>
+                              </figcaption>
+                           </Card>
+                           <Card>
+                              <a
+                                 href="https://www.180-189flinders.com.au/"
+                                 target="_blank"
+                                 className="card-image">
+                                 <img src={flinders} />
+                              </a>
+                              <figcaption>
+                                 <a
+                                    href="https://www.180-189flinders.com.au/"
+                                    target="_blank">
+                                    Flinders Lane
+                                 </a>
+                              </figcaption>
+                           </Card>
+                        </ProjectsWrapper>
+                     </WorkModal>
                   </WorkCard>
 
                   <WorkCard>
@@ -335,7 +359,7 @@ const WorkCard = styled.div`
    }
 `
 
-const WorkDetail = styled.div`
+const WorkModal = styled.div`
    /* border: 1px solid lime; */
    background: rgba(0, 0, 0, 0.8);
    position: fixed;
@@ -348,31 +372,57 @@ const WorkDetail = styled.div`
    transition: opacity 0.3s;
 
    .close {
-      position: absolute;
       height: 2rem;
       width: 2rem;
-      right: -1rem;
-      top: -1rem;
-      transform: translate(100%, -100%);
+      position: absolute;
+      /* top: -10%; */
+      /* right: 50%; */
+      right: 0rem;
+      margin: 1rem;
+      /* transform: translate(0%, 0%); */
+
+      /* 
+   top: -1rem;
+   z-index: 10; */
       cursor: pointer;
-      transition: opacity .3s;
+      transition: opacity 0.3s;
       :hover {
-         opacity: .4;
+         opacity: 0.4;
+      }
+   }
+`
+
+const ProjectsWrapper = styled.div`
+   position: absolute;
+   height: 60%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   overflow: auto;
+`
+
+const Card = styled.figure`
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 6rem;
+
+   a.card-image {
+      width: 50%;
+      img {
+         width: 100%;
       }
    }
 
-   figure {
-      /* border: 1px solid magenta; */
-      display: flex;
-      position: absolute;
-      height: 60%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+   figcaption {
+      /* border: 1px solid cyan; */
+      flex-grow: 1;
+      padding-left: 1rem;
 
-      figcaption {
-         overflow: auto;
-         height: 100%;
+      a {
+         display: block;
+      }
+      * {
+         text-align: left;
       }
    }
 `
