@@ -6,10 +6,10 @@ import { media, customFonts } from '../style/globalStyle'
 
 class Layout extends React.Component {
    state = {
-      domain: "ryrieresidences.com.au",
-      company: "Franze",
-      page_title: "Ryrie Residences | Franze",
-      page_description: "Luxury 1, 2, 3 bedroom & penthouse apartments Coming Soon",
+      domain: "tomomioki.surge.sh",
+      company: "Tomomi Oki",
+      page_title: "Tomomi Oki | Front-end developer",
+      page_description: "Tomomi's portfolio site. Made with React.",
    }
    
    render() {

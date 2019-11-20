@@ -12,7 +12,10 @@ import { media, colors, below, above } from "../style/globalStyle"
 import bg from "../../static/images/bg.jpg"
 import close from "../../static/images/close.svg"
 import yarrabend from "../../static/images/yarrabend.svg"
-import flinders from "../../static/images/180flindersStreet.png"
+import flinders from "../../static/images/dexus.svg"
+import adco from "../../static/images/adco.svg"
+import geelong from "../../static/images/geelong.svg"
+import moritz from "../../static/images/moritz.svg"
 import git from "../../static/images/github.svg"
 import linkedIn from "../../static/images/linkedin.svg"
 import mail from "../../static/images/mail.svg"
@@ -54,8 +57,8 @@ class MainArea extends Component {
       if (typeof window !== `undefined`) {
          const body = document.querySelector("body")
          body.classList.contains("open")
-            ? body.classList.remove("open")
-            : body.classList.add("open")
+         ? body.classList.remove("open")
+         : body.classList.add("open")
       }
    }
 
@@ -69,13 +72,16 @@ class MainArea extends Component {
 
    toggleWorkModal = idx => {
       let modalStyle = this.workDetailRef.current.style
+      const body = document.querySelector("body")
 
       if (modalStyle.opacity === "1") {
+         body.style.overflow = "auto"
          modalStyle.opacity = 0
          setTimeout(() => {
             modalStyle.zIndex = -1
          }, 500)
       } else {
+         body.style.overflow = "hidden"
          modalStyle.zIndex = 1
          modalStyle.opacity = 1
       }
@@ -113,7 +119,7 @@ class MainArea extends Component {
                      thanks to the bunch of incredibly talented designers.{" "}
                   </p>
                   <p>
-                     A few important changes happened to my life during those days, fast
+                     A few changes happened to my life during those days, fast
                      forward I am now residing in Brisbane with a beautiful daughter Clara
                      — a name that works in three languages our family speaks, Japanese,
                      Spanish and English.
@@ -151,6 +157,7 @@ class MainArea extends Component {
                                  <p>Made with React.</p>
                               </figcaption>
                            </Card>
+                           
                            <Card>
                               <a
                                  href="https://www.180-189flinders.com.au/"
@@ -164,6 +171,58 @@ class MainArea extends Component {
                                     target="_blank">
                                     Flinders Lane
                                  </a>
+                                 <p>Made with React.</p>
+                              </figcaption>
+                           </Card>
+                           
+                           <Card>
+                              <a
+                                 href="https://www.adcoconstruct.com.au/"
+                                 target="_blank"
+                                 className="card-image">
+                                 <img src={adco} />
+                              </a>
+                              <figcaption>
+                                 <a
+                                    href="https://www.adcoconstruct.com.au/"
+                                    target="_blank">
+                                    Adco
+                                 </a>
+                                 <p>Made with React.</p>
+                              </figcaption>
+                           </Card>
+
+                           <Card>
+                              <a
+                                 href="https://saintmoritz.com.au/"
+                                 target="_blank"
+                                 className="card-image">
+                                 <img src={moritz} />
+                              </a>
+                              <figcaption>
+                                 <a
+                                    href="https://saintmoritz.com.au/"
+                                    target="_blank">
+                                    Saint Moritz
+                                 </a>
+                                 <p>Made with React.</p>
+                              </figcaption>
+                           </Card>
+
+                           <Card>
+                              <a
+                                 href="https://www.180-189flinders.com.au/"
+                                 target="_blank"
+                                 className="card-image">
+                                 <img src={geelong} />
+                              </a>
+                              <figcaption>
+                                 <a
+                                    href="https://geelongquarter.com.au/"
+                                    target="_blank">
+                                    Geelong Quarter
+                                 </a>
+                                 <p>Made with React.</p>
                               </figcaption>
                            </Card>
                         </ProjectsWrapper>
@@ -177,31 +236,6 @@ class MainArea extends Component {
                      <small className="more" onClick={() => this.toggleWorkModal(1)}>
                         tell me more
                      </small>
-                     {/* <WorkDetail innerRef={this.workDetailRef}>
-                        <figure>
-                           <img src={close} onClick={() => this.toggleWorkModal(1)}/>
-
-                           <img src="https://media.wired.com/photos/59326c6058b0d64bb35d1809/master/w_616,c_limit/Kakapo-2.jpg" />
-                           <figcaption>
-                              Refs provide a way to access DOM nodes or React elements
-                              created in the render method. In the typical React dataflow,
-                              props are the only way that parent components interact with
-                              their children. To modify a child, you re-render it with new
-                              props. However, there are a few cases where you need to
-                              imperatively modify a child outside of the typical dataflow.
-                              The child to be modified could be an instance of a React
-                              component, or it could be a DOM element. For both of these
-                              cases, React provides an escape hatch. When to Use Refs
-                              There are a few good use cases for refs: Managing focus,
-                              text selection, or media playback. Triggering imperative
-                              animations. Integrating with third-party DOM libraries.
-                              Avoid using refs for anything that can be done
-                              declaratively. For example, instead of exposing open() and
-                              close() methods on a Dialog component, pass an isOpen prop
-                              to it.
-                           </figcaption>
-                        </figure>
-                     </WorkDetail> */}
                   </WorkCard>
                </div>
                <Footer onClick={() => this.scrollTo("contact")} />
@@ -410,6 +444,7 @@ const Card = styled.figure`
       width: 50%;
       img {
          width: 100%;
+         max-height: 4rem;
       }
    }
 
