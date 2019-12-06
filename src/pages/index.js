@@ -114,15 +114,13 @@ class MainArea extends Component {
                   </p>
                   <p>
                      After finishing coding bootcamp in 2018, I was hired by a design
-                     studio in Melbourne where I honed my front-end skills as well as
-                     learned design principles and basic knowledge of Photoshop and XD,
+                     studio in Melbourne where I honed my front-end skills and
+                     learnt design principles and basic knowledge of Photoshop and XD,
                      thanks to the bunch of incredibly talented designers.{" "}
                   </p>
                   <p>
-                     A few changes happened to my life during those days, fast
-                     forward I am now residing in Brisbane with a beautiful daughter Clara
-                     — a name that works in three languages our family speaks, Japanese,
-                     Spanish and English.
+                     I am now living 
+                     in Brisbane with my beautiful daughter Clara.
                   </p>
                </Bio>
                <Footer onClick={() => this.scrollTo("works")} />
@@ -323,7 +321,7 @@ const Page = styled.div`
    /* object-fit: cover; */
    /* font-family: "'object-fit: cover'"; */
    &:not(#home) {
-      background: black;
+      background: rgb(10, 10, 10);
       justify-content: space-between;
    }
 

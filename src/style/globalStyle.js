@@ -32,11 +32,29 @@ injectGlobal`
       }
    }
 
+   body::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background-color: rgb(10, 10, 10);
+   }
+
+   body::-webkit-scrollbar {
+      width: 12px;
+      background-color: rgb(10, 10, 10);
+      /* background-color: cyan; */
+   }
+
+   body::-webkit-scrollbar-thumb {
+      border-radius: 0px;
+      /* -webkit-box-shadow: inset 2px 2px rgba(100, 20, 210, 0.9); */
+      background-color: lightgray;
+   }
+
 `
 
 export const colors = {
-   main: '#dad6d1',
-   darkNavy: '#141E2D'
+   main: "#dad6d1",
+   darkNavy: "#141E2D"
 }
 
 const breakpoints = {
@@ -47,26 +65,25 @@ const breakpoints = {
    mobileL: 600,
    mobileM: 380,
    mobileS: 320
- }
+}
 
- export const above = Object.keys(breakpoints).reduce((accumulator, label) => {
+export const above = Object.keys(breakpoints).reduce((accumulator, label) => {
    accumulator[label] = (...args) => css`
-     @media (min-width: ${breakpoints[label]}px) {
-       ${css(...args)};
-     }
+      @media (min-width: ${breakpoints[label]}px) {
+         ${css(...args)};
+      }
    `
    return accumulator
- }, {})
- 
- export const below = Object.keys(breakpoints).reduce((accumulator, label) => {
+}, {})
+
+export const below = Object.keys(breakpoints).reduce((accumulator, label) => {
    accumulator[label] = (...args) => css`
-     @media (max-width: ${breakpoints[label]}px) {
-       ${css(...args)};
-     }
+      @media (max-width: ${breakpoints[label]}px) {
+         ${css(...args)};
+      }
    `
    return accumulator
- }, {})
- 
+}, {})
 
 export const media = {
    mobileS: (...args) => css`
