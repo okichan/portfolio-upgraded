@@ -24,6 +24,9 @@ class MainArea extends Component {
    constructor(props) {
       super(props)
       this.workDetailRef = React.createRef()
+      this.setContainerRef = element => {
+         this.container = element
+      }
    }
 
    state = {
@@ -70,22 +73,27 @@ class MainArea extends Component {
       })
    }
 
-   toggleWorkModal = idx => {
-      let modalStyle = this.workDetailRef.current.style
-      const body = document.querySelector("body")
-
-      if (modalStyle.opacity === "1") {
-         body.style.overflow = "auto"
-         modalStyle.opacity = 0
-         setTimeout(() => {
-            modalStyle.zIndex = -1
-         }, 500)
-      } else {
-         body.style.overflow = "hidden"
-         modalStyle.zIndex = 1
-         modalStyle.opacity = 1
-      }
+   toggleAccordion = el => {
+      this.container.classList.toggle('open')
    }
+
+   // toggleWorkModal = idx => {
+   //    let modalStyle = this.workDetailRef.current.style
+   //    const body = document.querySelector("body")
+
+   //    if (modalStyle.opacity === "1") {
+   //       body.style.overflow = "auto"
+   //       modalStyle.opacity = 0
+   //       setTimeout(() => {
+   //          modalStyle.zIndex = -1
+   //       }, 500)
+   //    } else {
+   //       body.style.overflow = "hidden"
+   //       modalStyle.zIndex = 1
+   //       modalStyle.opacity = 1
+   //    }
+   // }
+
 
    render() {
       return (
@@ -116,7 +124,7 @@ class MainArea extends Component {
                      After finishing coding bootcamp in 2018, I was hired by a design
                      studio in Melbourne where I honed my front-end skills and
                      learnt design principles and basic knowledge of Photoshop and XD,
-                     thanks to the bunch of incredibly talented designers.{" "}
+                     thanks to the incredibly talented designers I've worked with.{" "}
                   </p>
                   <p>
                      I am now living 
@@ -125,115 +133,121 @@ class MainArea extends Component {
                </Bio>
                <Footer onClick={() => this.scrollTo("works")} />
             </Page>
-            <Page id="works">
+            <Page id="works" className="carrier">
                <h3>developer experiences</h3>
                <div>
-                  <WorkCard>
+                  {/* <WorkCard> */}
                      <small>2018 - 2019</small>
                      <h3>Cornwell</h3>
-                     <p>An award-winning design studio</p>
-                     <small className="more" onClick={() => this.toggleWorkModal(0)}>
-                        tell me more
-                     </small>
+                     <p>Junior front-end developer</p>
+                     <p>At this award-winning design agency, I was working with a lead developer and built the following websites. </p>
+
+                     <AccordionWrapper>
+                        <Accordion innerRef={this.setContainerRef}>
+                           <AccordionLabel  onClick={this.toggleAccordion}>
+                              <img src={yarrabend} alt="git" />
+                           </AccordionLabel>
+                           <AccordionDetail >
+                              <a href="https://yarrabend.com.au" target="_blank">
+                                 YarraBend
+                              </a>
+                              <p>Made with React. </p>
+                           </AccordionDetail>
+                        </Accordion>
+                        
+                        {/* <Accordion>
+                           <a
+                              href="https://www.180-189flinders.com.au/"
+                              target="_blank"
+                              className="card-image">
+                              <img src={flinders} />
+                           </a>
+                           <figcaption>
+                              <a
+                                 href="https://www.180-189flinders.com.au/"
+                                 target="_blank">
+                                 Flinders Lane
+                              </a>
+                              <p>Made with React.</p>
+                           </figcaption>
+                        </Accordion>
+                        
+                        <Accordion>
+                           <a
+                              href="https://www.adcoconstruct.com.au/"
+                              target="_blank"
+                              className="card-image">
+                              <img src={adco} />
+                           </a>
+                           <figcaption>
+                              <a
+                                 href="https://www.adcoconstruct.com.au/"
+                                 target="_blank">
+                                 Adco
+                              </a>
+                              <p>Made with React.</p>
+                           </figcaption>
+                        </Accordion>
+
+                        <Accordion>
+                           <a
+                              href="https://saintmoritz.com.au/"
+                              target="_blank"
+                              className="card-image">
+                              <img src={moritz} />
+                           </a>
+                           <figcaption>
+                              <a
+                                 href="https://saintmoritz.com.au/"
+                                 target="_blank">
+                                 Saint Moritz
+                              </a>
+                              <p>Made with React.</p>
+                           </figcaption>
+                        </Accordion>
+
+                        <Accordion>
+                           <a
+                              href="https://www.180-189flinders.com.au/"
+                              target="_blank"
+                              className="card-image">
+                              <img src={geelong} />
+                           </a>
+                           <figcaption>
+                              <a
+                                 href="https://geelongquarter.com.au/"
+                                 target="_blank">
+                                 Geelong Quarter
+                              </a>
+                              <p>Made with React.</p>
+                           </figcaption>
+                        </Accordion> */}
+                     </AccordionWrapper>
                      <WorkModal
                         className="work-modal"
                         innerRef={this.workDetailRef}
                         onClick={() => this.toggleWorkModal(0)}>
-                        <img className="close" src={close} />
-                        <ProjectsWrapper onClick={e => e.stopPropagation()}>
-                           <Card>
-                              <a
-                                 href="https://yarrabend.com.au"
-                                 target="_blank"
-                                 className="card-image">
-                                 <img src={yarrabend} alt="git" />
-                              </a>
-                              <figcaption>
-                                 <a href="https://yarrabend.com.au" target="_blank">
-                                    YarraBend
-                                 </a>
-                                 <p>Made with React.</p>
-                              </figcaption>
-                           </Card>
-                           
-                           <Card>
-                              <a
-                                 href="https://www.180-189flinders.com.au/"
-                                 target="_blank"
-                                 className="card-image">
-                                 <img src={flinders} />
-                              </a>
-                              <figcaption>
-                                 <a
-                                    href="https://www.180-189flinders.com.au/"
-                                    target="_blank">
-                                    Flinders Lane
-                                 </a>
-                                 <p>Made with React.</p>
-                              </figcaption>
-                           </Card>
-                           
-                           <Card>
-                              <a
-                                 href="https://www.adcoconstruct.com.au/"
-                                 target="_blank"
-                                 className="card-image">
-                                 <img src={adco} />
-                              </a>
-                              <figcaption>
-                                 <a
-                                    href="https://www.adcoconstruct.com.au/"
-                                    target="_blank">
-                                    Adco
-                                 </a>
-                                 <p>Made with React.</p>
-                              </figcaption>
-                           </Card>
-
-                           <Card>
-                              <a
-                                 href="https://saintmoritz.com.au/"
-                                 target="_blank"
-                                 className="card-image">
-                                 <img src={moritz} />
-                              </a>
-                              <figcaption>
-                                 <a
-                                    href="https://saintmoritz.com.au/"
-                                    target="_blank">
-                                    Saint Moritz
-                                 </a>
-                                 <p>Made with React.</p>
-                              </figcaption>
-                           </Card>
-
-                           <Card>
-                              <a
-                                 href="https://www.180-189flinders.com.au/"
-                                 target="_blank"
-                                 className="card-image">
-                                 <img src={geelong} />
-                              </a>
-                              <figcaption>
-                                 <a
-                                    href="https://geelongquarter.com.au/"
-                                    target="_blank">
-                                    Geelong Quarter
-                                 </a>
-                                 <p>Made with React.</p>
-                              </figcaption>
-                           </Card>
-                        </ProjectsWrapper>
+                        {/* <caption>
+                           <img className="close" src={close} />
+                        </caption> */}
                      </WorkModal>
-                  </WorkCard>
+                  {/* </WorkCard> */}
 
-                  <WorkCard>
+                  {/* <WorkCard>
                      <small>2017 - 2018</small>
                      <h3>Coder Academy</h3>
-                     <p>Australia's only accredited coding bootcamp</p>
+                     <p>Full-time student</p>
                      <small className="more" onClick={() => this.toggleWorkModal(1)}>
                         tell me more
                      </small>
+                  </WorkCard> */}
+               </div>
+            </Page>
+               
+            <Page>
+               <div>
+                  <WorkCard>
+                     gja;liel
                   </WorkCard>
                </div>
                <Footer onClick={() => this.scrollTo("contact")} />
@@ -341,6 +355,10 @@ const Page = styled.div`
          }
       }
    }
+
+   &.carrier {
+      height: unset;
+   }
 `
 
 const Bio = styled.div`
@@ -393,7 +411,7 @@ const WorkCard = styled.div`
 
 const WorkModal = styled.div`
    /* border: 1px solid lime; */
-   background: rgba(0, 0, 0, 0.8);
+   background: rgba(0, 0, 0, 0.85);
    position: fixed;
    opacity: 0;
    z-index: -1;
@@ -403,61 +421,88 @@ const WorkModal = styled.div`
    right: 0;
    transition: opacity 0.3s;
 
-   .close {
-      height: 2rem;
-      width: 2rem;
-      position: absolute;
-      /* top: -10%; */
-      /* right: 50%; */
-      right: 0rem;
-      margin: 1rem;
-      /* transform: translate(0%, 0%); */
+   caption {
+      display: block;
+      text-align: right;
+      /* padding-bottom: 2rem;    */
 
-      /* 
-   top: -1rem;
-   z-index: 10; */
-      cursor: pointer;
-      transition: opacity 0.3s;
-      :hover {
-         opacity: 0.4;
+      .close {
+         height: 2rem;
+         width: 2rem;
+         margin: 1rem;
+         cursor: pointer;
+         transition: opacity 0.3s;
+         :hover {
+            opacity: 0.4;
+         }
       }
+   }
+
+   p {
+      padding: 0 15%;
+      /* max-width: 70%; */
    }
 `
 
-const ProjectsWrapper = styled.div`
-   position: absolute;
-   height: 60%;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   overflow: auto;
+const AccordionWrapper = styled.div`
+   width: 80%;
+   /* border: 1px solid; */
+   margin: 0 auto;
 `
 
-const Card = styled.figure`
+const Accordion = styled.div`
+   border-bottom: 1px solid;
+`
+
+const AccordionLabel = styled.div`
+   padding: 1rem 0;
    display: flex;
    justify-content: space-between;
-   margin-bottom: 6rem;
+   /* border-bottom: 1px solid; */
+   cursor: pointer;
 
-   a.card-image {
-      width: 50%;
-      img {
-         width: 100%;
-         max-height: 4rem;
+   .open & {
+      /* background: red; */
+      &:after {
+         content: '-';
+         display: inline-block;
+         margin: auto 0;
       }
    }
 
-   figcaption {
-      /* border: 1px solid cyan; */
-      flex-grow: 1;
-      padding-left: 1rem;
-
-      a {
-         display: block;
-      }
-      * {
-         text-align: left;
-      }
+   img {
+      max-width: 50%;
    }
+
+   &:after {
+      content: '+';
+      display: inline-block;
+      margin: auto 0;
+   }
+   /* border: 1px solid; */
+`
+
+const AccordionDetail = styled.div`
+   max-height: 0;
+   /* border-top: 1px solid; */
+   /* transition: height 0.7s; */
+   transition: max-height 0.7s ease-out;
+
+   a {
+      display: block;
+      padding: 1rem 0;
+   }
+
+   * {
+      text-align: left;
+   }
+
+   .open & {
+      height: auto;
+      max-height: 7rem;
+   }
+
+
 `
 
 const Social = styled.div`

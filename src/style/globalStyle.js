@@ -30,25 +30,28 @@ injectGlobal`
             opacity: .7;
          }
       }
+
+      &::-webkit-scrollbar-track {
+         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+         border-radius: 10px;
+         background-color: rgb(10, 10, 10);
+      }
+
+      &::-webkit-scrollbar {
+         width: 12px;
+         background-color: rgb(10, 10, 10);
+         /* background-color: cyan; */
+      }
+
+      &::-webkit-scrollbar-thumb {
+         border-radius: 0px;
+         /* -webkit-box-shadow: inset 2px 2px rgba(100, 20, 210, 0.9); */
+         background-color: lightgray;
+      }
+      
+      
    }
 
-   body::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-      border-radius: 10px;
-      background-color: rgb(10, 10, 10);
-   }
-
-   body::-webkit-scrollbar {
-      width: 12px;
-      background-color: rgb(10, 10, 10);
-      /* background-color: cyan; */
-   }
-
-   body::-webkit-scrollbar-thumb {
-      border-radius: 0px;
-      /* -webkit-box-shadow: inset 2px 2px rgba(100, 20, 210, 0.9); */
-      background-color: lightgray;
-   }
 
 `
 
