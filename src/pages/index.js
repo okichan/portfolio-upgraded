@@ -7,6 +7,7 @@ import styled from "styled-components"
 import Form from "../components/Form"
 import Button from "../components/Button"
 import Header from "../components/Header"
+import Accordion from "../components/Accordion"
 import Footer from "../components/Footer"
 import { media, colors, below, above } from "../style/globalStyle"
 import bg from "../../static/images/bg.jpg"
@@ -60,8 +61,8 @@ class MainArea extends Component {
       if (typeof window !== `undefined`) {
          const body = document.querySelector("body")
          body.classList.contains("open")
-         ? body.classList.remove("open")
-         : body.classList.add("open")
+            ? body.classList.remove("open")
+            : body.classList.add("open")
       }
    }
 
@@ -74,7 +75,8 @@ class MainArea extends Component {
    }
 
    toggleAccordion = el => {
-      this.container.classList.toggle('open')
+      console.log(el.classList)
+      // this.container.classList.toggle("open")
    }
 
    // toggleWorkModal = idx => {
@@ -94,8 +96,37 @@ class MainArea extends Component {
    //    }
    // }
 
-
    render() {
+      const projects = [
+         {
+            logo: yarrabend,
+            name: "YarraBend",
+            tech: "React, GraphQL",
+            desc: "xxx",
+            href: "https://yarrabend.com.au"
+         },
+         {
+            logo: flinders,
+            name: "Flinders Lane",
+            tech: "Made with pure html and CSS.",
+            desc: "xxx",
+            href: "https://www.180-189flinders.com.au/"
+         },
+         {
+            logo: adco,
+            name: "Adco",
+            tech: "React, GraphQL",
+            desc: "xxx",
+            href: "https://www.adcoconstruct.com.au/"
+         },
+         {
+            logo: moritz,
+            name: "Saint Moritz",
+            tech: "React",
+            desc: "xxx",
+            href: "https://saintmoritz.com.au/"
+         },
+      ]
       return (
          <Fragment>
             <Page id="home">
@@ -122,136 +153,56 @@ class MainArea extends Component {
                   </p>
                   <p>
                      After finishing coding bootcamp in 2018, I was hired by a design
-                     studio in Melbourne where I honed my front-end skills and
-                     learnt design principles and basic knowledge of Photoshop and XD,
-                     thanks to the incredibly talented designers I've worked with.{" "}
+                     studio in Melbourne where I honed my front-end skills and learnt
+                     design principles and basic knowledge of Photoshop and XD, thanks to
+                     the incredibly talented designers I've worked with.{" "}
                   </p>
-                  <p>
-                     I am now living 
-                     in Brisbane with my beautiful daughter Clara.
-                  </p>
+                  <p>I am now living in Brisbane with my beautiful daughter Clara.</p>
                </Bio>
                <Footer onClick={() => this.scrollTo("works")} />
             </Page>
-            <Page id="works" className="carrier">
+            <Page id="works" className="career">
                <h3>developer experiences</h3>
                <div>
                   {/* <WorkCard> */}
-                     <small>2018 - 2019</small>
-                     <h3>Cornwell</h3>
-                     <p>Junior front-end developer</p>
-                     <p>At this award-winning design agency, I was working with a lead developer and built the following websites. </p>
+                  <small>2018 - 2019</small>
+                  <h3>Cornwell</h3>
+                  <p>Junior front-end developer</p>
+                  <p>
+                     At this award-winning design agency, I was working with a lead
+                     developer and built the following websites.{" "}
+                  </p>
+                  
+                  <AccordionWrapper>
+                     {projects.map(m => {
+                        return (
+                           <Accordion project={m}/>
+                        )
+                     })}
+                  </AccordionWrapper>
 
-                     <AccordionWrapper>
-                        <Accordion innerRef={this.setContainerRef}>
-                           <AccordionLabel  onClick={this.toggleAccordion}>
-                              <img src={yarrabend} alt="git" />
-                           </AccordionLabel>
-                           <AccordionDetail >
-                              <a href="https://yarrabend.com.au" target="_blank">
-                                 YarraBend
-                              </a>
-                              <p>Made with React. </p>
-                           </AccordionDetail>
-                        </Accordion>
-                        
-                        {/* <Accordion>
-                           <a
-                              href="https://www.180-189flinders.com.au/"
-                              target="_blank"
-                              className="card-image">
-                              <img src={flinders} />
-                           </a>
-                           <figcaption>
-                              <a
-                                 href="https://www.180-189flinders.com.au/"
-                                 target="_blank">
-                                 Flinders Lane
-                              </a>
-                              <p>Made with React.</p>
-                           </figcaption>
-                        </Accordion>
-                        
-                        <Accordion>
-                           <a
-                              href="https://www.adcoconstruct.com.au/"
-                              target="_blank"
-                              className="card-image">
-                              <img src={adco} />
-                           </a>
-                           <figcaption>
-                              <a
-                                 href="https://www.adcoconstruct.com.au/"
-                                 target="_blank">
-                                 Adco
-                              </a>
-                              <p>Made with React.</p>
-                           </figcaption>
-                        </Accordion>
-
-                        <Accordion>
-                           <a
-                              href="https://saintmoritz.com.au/"
-                              target="_blank"
-                              className="card-image">
-                              <img src={moritz} />
-                           </a>
-                           <figcaption>
-                              <a
-                                 href="https://saintmoritz.com.au/"
-                                 target="_blank">
-                                 Saint Moritz
-                              </a>
-                              <p>Made with React.</p>
-                           </figcaption>
-                        </Accordion>
-
-                        <Accordion>
-                           <a
-                              href="https://www.180-189flinders.com.au/"
-                              target="_blank"
-                              className="card-image">
-                              <img src={geelong} />
-                           </a>
-                           <figcaption>
-                              <a
-                                 href="https://geelongquarter.com.au/"
-                                 target="_blank">
-                                 Geelong Quarter
-                              </a>
-                              <p>Made with React.</p>
-                           </figcaption>
-                        </Accordion> */}
-                     </AccordionWrapper>
-                     <WorkModal
-                        className="work-modal"
-                        innerRef={this.workDetailRef}
-                        onClick={() => this.toggleWorkModal(0)}>
-                        {/* <caption>
-                           <img className="close" src={close} />
-                        </caption> */}
-                     </WorkModal>
-                  {/* </WorkCard> */}
-
-                  {/* <WorkCard>
-                     <small>2017 - 2018</small>
-                     <h3>Coder Academy</h3>
-                     <p>Full-time student</p>
-                     <small className="more" onClick={() => this.toggleWorkModal(1)}>
-                        tell me more
-                     </small>
-                  </WorkCard> */}
-               </div>
-            </Page>
-               
-            <Page>
-               <div>
-                  <WorkCard>
-                     gja;liel
-                  </WorkCard>
+                     <small>2018 Feb</small>
+                  <h3>Serraview</h3>
+                  <p>Internship</p>
+                  <p>
+                     Tasks being managed by Jira, I worked mainly on cosmetic upgrades
+                     using Angular2 under supervison of a senior front-end mentor.
+                  </p>
+                  <br />
+                  <br />
+                  <br />
+                  <small>2017 - 2018</small>
+                  <h3>Coder Academy</h3>
+                  <p>Full-time student</p>
+                  <p>
+                     Coder Academy is Australia's only accredited coding bootcamps. During
+                     this super intense 6-month course, we were taught basic programming,
+                     Ruby on Rails, Git, Bootstrap and React.
+                  </p>
                </div>
                <Footer onClick={() => this.scrollTo("contact")} />
             </Page>
+
             <Page id="contact">
                <h3>contact</h3>
                <Social>
@@ -356,8 +307,10 @@ const Page = styled.div`
       }
    }
 
-   &.carrier {
+   &.career {
       height: unset;
+      min-height: 100vh;
+      /* display: block; */
    }
 `
 
@@ -446,63 +399,8 @@ const WorkModal = styled.div`
 
 const AccordionWrapper = styled.div`
    width: 80%;
-   /* border: 1px solid; */
+   /* border: 1px solid cyan; */
    margin: 0 auto;
-`
-
-const Accordion = styled.div`
-   border-bottom: 1px solid;
-`
-
-const AccordionLabel = styled.div`
-   padding: 1rem 0;
-   display: flex;
-   justify-content: space-between;
-   /* border-bottom: 1px solid; */
-   cursor: pointer;
-
-   .open & {
-      /* background: red; */
-      &:after {
-         content: '-';
-         display: inline-block;
-         margin: auto 0;
-      }
-   }
-
-   img {
-      max-width: 50%;
-   }
-
-   &:after {
-      content: '+';
-      display: inline-block;
-      margin: auto 0;
-   }
-   /* border: 1px solid; */
-`
-
-const AccordionDetail = styled.div`
-   max-height: 0;
-   /* border-top: 1px solid; */
-   /* transition: height 0.7s; */
-   transition: max-height 0.7s ease-out;
-
-   a {
-      display: block;
-      padding: 1rem 0;
-   }
-
-   * {
-      text-align: left;
-   }
-
-   .open & {
-      height: auto;
-      max-height: 7rem;
-   }
-
-
 `
 
 const Social = styled.div`
