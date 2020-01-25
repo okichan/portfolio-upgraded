@@ -97,7 +97,7 @@ class MainArea extends Component {
    // }
 
    render() {
-      const projects = [
+      const projectsCornwell = [
          {
             logo: yarrabend,
             name: "YarraBend",
@@ -116,6 +116,37 @@ class MainArea extends Component {
             logo: adco,
             name: "Adco",
             tech: "React, GraphQL",
+            desc: "xxx",
+            href: "https://www.adcoconstruct.com.au/"
+         },
+         {
+            logo: moritz,
+            name: "Saint Moritz",
+            tech: "React",
+            desc: "xxx",
+            href: "https://saintmoritz.com.au/"
+         },
+      ]
+
+      const projectsCA = [
+         {
+            logo: yarrabend,
+            name: "Tanto Management System",
+            tech: "React, Express, MongoDB",
+            desc: "xxx",
+            href: "https://yarrabend.com.au"
+         },
+         {
+            logo: flinders,
+            name: "Wordsworths",
+            tech: "Ruby on Rails",
+            desc: "xxx",
+            href: "https://www.180-189flinders.com.au/"
+         },
+         {
+            logo: adco,
+            name: "Zodiac Redefined",
+            tech: "React, Express",
             desc: "xxx",
             href: "https://www.adcoconstruct.com.au/"
          },
@@ -174,7 +205,7 @@ class MainArea extends Component {
                   </p>
                   
                   <AccordionWrapper>
-                     {projects.map(m => {
+                     {projectsCornwell.map(m => {
                         return (
                            <Accordion project={m}/>
                         )
@@ -199,6 +230,14 @@ class MainArea extends Component {
                      this super intense 6-month course, we were taught basic programming,
                      Ruby on Rails, Git, Bootstrap and React.
                   </p>
+                  
+                  <AccordionWrapper>
+                     {projectsCA.map(m => {
+                        return (
+                           <Accordion project={m}/>
+                        )
+                     })}
+                  </AccordionWrapper>
                </div>
                <Footer onClick={() => this.scrollTo("contact")} />
             </Page>
@@ -320,80 +359,6 @@ const Bio = styled.div`
    p {
       text-align: left;
       margin: 1rem 0;
-   }
-`
-
-const WorkCard = styled.div`
-   padding: 2rem;
-   /* border: 1px solid red; */
-
-   :first-child {
-      margin-bottom: 4rem;
-   }
-
-   h3 {
-      margin: 2rem 0;
-      display: inline-block;
-   }
-
-   small {
-      display: block;
-      font-size: 0.6rem;
-   }
-
-   .more {
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.7rem;
-      cursor: pointer;
-
-      :hover:after {
-         transform: scale(0);
-      }
-
-      :after {
-         content: "";
-         margin-top: 0.1rem;
-         display: block;
-         background: grey;
-         height: 1px;
-         transition: all 0.5s;
-      }
-   }
-`
-
-const WorkModal = styled.div`
-   /* border: 1px solid lime; */
-   background: rgba(0, 0, 0, 0.85);
-   position: fixed;
-   opacity: 0;
-   z-index: -1;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   transition: opacity 0.3s;
-
-   caption {
-      display: block;
-      text-align: right;
-      /* padding-bottom: 2rem;    */
-
-      .close {
-         height: 2rem;
-         width: 2rem;
-         margin: 1rem;
-         cursor: pointer;
-         transition: opacity 0.3s;
-         :hover {
-            opacity: 0.4;
-         }
-      }
-   }
-
-   p {
-      padding: 0 15%;
-      /* max-width: 70%; */
    }
 `
 

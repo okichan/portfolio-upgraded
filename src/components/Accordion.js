@@ -1,18 +1,19 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import goDown from "../../static/images/arrow.svg"
 // import { media, customFonts } from "../style/globalStyle"
 
 const Accordion = ({project}) => {
-   let textInput = React.createRef()
+   let accorItem = React.createRef()
 
-   const toggleAccordion = () => textInput.current.classList.toggle("open")
+   const toggleAccordion = () => accorItem.current.classList.toggle("open")
 
    return (
-      <div>
+      <div ref={accorItem}>
          <AccordionLabel onClick={toggleAccordion}>
             <img src={project.logo} alt={project.name} />
          </AccordionLabel>
-         <AccordionDetail innerRef={textInput}>
+         <AccordionDetail goDown={goDown} >
             <a href={project.href} target="_blank">
                {project.name}
             </a>
@@ -29,12 +30,11 @@ const AccordionLabel = styled.div`
    justify-content: space-between;
    border-bottom: 1px solid;
    cursor: pointer;
+   position: relative;
 
    .open & {
       &:after {
-         content: "-";
-         display: inline-block;
-         margin: auto 0;
+         transform: rotate(180deg);
       }
    }
 
@@ -43,9 +43,16 @@ const AccordionLabel = styled.div`
    }
 
    &:after {
-      content: "+";
-      display: inline-block;
-      margin: auto 0;
+      content: '';
+      position: absolute;
+      width: 1.1rem;
+      height: 1.1rem;
+      top: 50%;
+      right: 1px;
+		transform: translateY(-50%);
+      transform-origin: 50% 25%;
+      background: url(${goDown});
+      transition: transform .5s;
    }
 `
 
@@ -63,7 +70,7 @@ const AccordionDetail = styled.div`
       text-align: left;
    }
 
-   &.open {
+   .open & {
       height: auto;
       max-height: 7rem;
    }
