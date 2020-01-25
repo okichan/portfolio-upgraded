@@ -18,6 +18,7 @@ const Accordion = ({project}) => {
                {project.name}
             </a>
             <p>{project.tech}</p>
+            <p>{project.desc}</p>
          </AccordionDetail>
       </div>
    )
@@ -27,30 +28,29 @@ const Accordion = ({project}) => {
 const AccordionLabel = styled.div`
    padding: 1rem 0;
    display: flex;
+   /* border: 1px solid red; */
    justify-content: space-between;
    border-bottom: 1px solid;
    cursor: pointer;
-   position: relative;
 
    .open & {
       &:after {
-         transform: rotate(180deg);
+         transform: rotate3d(90, 0, 1, 180deg);
       }
    }
 
    img {
-      max-width: 50%;
+      max-width: 160px;
+      max-height:40px;
    }
 
    &:after {
       content: '';
-      position: absolute;
+      align-items: center;
       width: 1.1rem;
       height: 1.1rem;
-      top: 50%;
-      right: 1px;
-		transform: translateY(-50%);
-      transform-origin: 50% 25%;
+      align-self: center;
+      /* border: 1px solid red; */
       background: url(${goDown});
       transition: transform .5s;
    }
@@ -60,10 +60,19 @@ const AccordionDetail = styled.div`
    max-height: 0;
    overflow: hidden; 
    transition: max-height 0.7s ease-out;
+   /* background: rgb(22, 22, 22); */
 
    a {
       display: block;
-      padding: 1rem 0;
+   }
+
+   a, p {
+      padding: 0 0 1rem;
+
+      &:first-child {
+         padding-top: 1rem;
+      }
+
    }
 
    * {

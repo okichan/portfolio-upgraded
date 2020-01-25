@@ -74,28 +74,6 @@ class MainArea extends Component {
       })
    }
 
-   toggleAccordion = el => {
-      console.log(el.classList)
-      // this.container.classList.toggle("open")
-   }
-
-   // toggleWorkModal = idx => {
-   //    let modalStyle = this.workDetailRef.current.style
-   //    const body = document.querySelector("body")
-
-   //    if (modalStyle.opacity === "1") {
-   //       body.style.overflow = "auto"
-   //       modalStyle.opacity = 0
-   //       setTimeout(() => {
-   //          modalStyle.zIndex = -1
-   //       }, 500)
-   //    } else {
-   //       body.style.overflow = "hidden"
-   //       modalStyle.zIndex = 1
-   //       modalStyle.opacity = 1
-   //    }
-   // }
-
    render() {
       const projectsCornwell = [
          {
@@ -125,7 +103,7 @@ class MainArea extends Component {
             tech: "React",
             desc: "xxx",
             href: "https://saintmoritz.com.au/"
-         },
+         }
       ]
 
       const projectsCA = [
@@ -156,7 +134,7 @@ class MainArea extends Component {
             tech: "React",
             desc: "xxx",
             href: "https://saintmoritz.com.au/"
-         },
+         }
       ]
       return (
          <Fragment>
@@ -195,49 +173,51 @@ class MainArea extends Component {
             <Page id="works" className="career">
                <h3>developer experiences</h3>
                <div>
-                  {/* <WorkCard> */}
-                  <small>2018 - 2019</small>
-                  <h3>Cornwell</h3>
-                  <p>Junior front-end developer</p>
-                  <p>
-                     At this award-winning design agency, I was working with a lead
-                     developer and built the following websites.{" "}
-                  </p>
-                  
-                  <AccordionWrapper>
-                     {projectsCornwell.map(m => {
-                        return (
-                           <Accordion project={m}/>
-                        )
-                     })}
-                  </AccordionWrapper>
+                  <div className="mt-4 mb-14">
+                     <p className="mx-2">2018 - 2019</p>
+                     <h3>Cornwell</h3>
+                     <p>Junior front-end developer</p>
+                     <p className="mx-2">
+                        At this award-winning design agency,
+                        <br /> I was working with a lead developer and built the following
+                        websites.
+                     </p>
 
-                     <small>2018 Feb</small>
-                  <h3>Serraview</h3>
-                  <p>Internship</p>
-                  <p>
-                     Tasks being managed by Jira, I worked mainly on cosmetic upgrades
-                     using Angular2 under supervison of a senior front-end mentor.
-                  </p>
-                  <br />
-                  <br />
-                  <br />
-                  <small>2017 - 2018</small>
-                  <h3>Coder Academy</h3>
-                  <p>Full-time student</p>
-                  <p>
-                     Coder Academy is Australia's only accredited coding bootcamps. During
-                     this super intense 6-month course, we were taught basic programming,
-                     Ruby on Rails, Git, Bootstrap and React.
-                  </p>
-                  
-                  <AccordionWrapper>
-                     {projectsCA.map(m => {
-                        return (
-                           <Accordion project={m}/>
-                        )
-                     })}
-                  </AccordionWrapper>
+                     <AccordionWrapper>
+                        {projectsCornwell.map(m => {
+                           return <Accordion project={m} />
+                        })}
+                     </AccordionWrapper>
+                  </div>
+
+                  <div className="mt-4 mb-14">
+                     <p className="mx-2">2018 Feb</p>
+                     <h3>Serraview</h3>
+                     <p>Internship</p>
+                     <p className="mx-2">
+                        Tasks being managed by Jira, I worked mainly on cosmetic upgrades{" "}
+                        <br />
+                        using Angular2 under supervison of a senior front-end mentor.
+                     </p>
+                  </div>
+
+                  <div className="mx-4">
+                     <p>2017 - 2018</p>
+                     <h3 className="mx-2">Coder Academy</h3>
+                     <p>Full-time student</p>
+                     <p className="mx-2">
+                        Coder Academy is Australia's only accredited coding bootcamps.
+                        <br /> During this super intense 6-month course, we were taught{" "}
+                        <br />
+                        basic programming, Ruby on Rails, Git, Bootstrap and React.
+                     </p>
+
+                     <AccordionWrapper>
+                        {projectsCA.map(m => {
+                           return <Accordion project={m} />
+                        })}
+                     </AccordionWrapper>
+                  </div>
                </div>
                <Footer onClick={() => this.scrollTo("contact")} />
             </Page>
@@ -331,6 +311,10 @@ const Page = styled.div`
 
    h3 {
       text-transform: uppercase;
+
+      &.organisation {
+         padding: 2rem;
+      }
    }
 
    &#contact {
@@ -364,8 +348,9 @@ const Bio = styled.div`
 
 const AccordionWrapper = styled.div`
    width: 80%;
+   max-width: 860px;
    /* border: 1px solid cyan; */
-   margin: 0 auto;
+   margin: 0 auto 4rem;
 `
 
 const Social = styled.div`

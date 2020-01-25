@@ -48,7 +48,22 @@ injectGlobal`
          /* -webkit-box-shadow: inset 2px 2px rgba(100, 20, 210, 0.9); */
          background-color: lightgray;
       }
+
+      .mx-4 {
+         margin: 4rem 0;
+      }
       
+      .mx-2 {
+         margin: 2rem 0;
+      }
+      
+      .mt-4 {
+         margin-top: 4rem;
+      }
+      
+      .mb-14 {
+         margin-bottom: 14rem;
+      }
       
    }
 
