@@ -41,6 +41,11 @@ const AccordionLabel = styled.div`
    /* border-top: 1px solid; */
    cursor: pointer;
 
+   p {
+      text-align: left;
+
+   }
+
    .open & {
       &:after {
          transform: rotate3d(90, 0, 1, 180deg);
@@ -85,7 +90,7 @@ const AccordionDetail = styled.div`
 
    .open & {
       height: auto;
-      max-height: 10rem;
+      max-height: 12rem;
    }
 `
 

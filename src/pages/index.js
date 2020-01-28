@@ -111,7 +111,7 @@ class MainArea extends Component {
             // logo: null,
             name: "Tanto Management System",
             tech: "React | Express | MongoDB",
-            desc: "With this final project for the course, we have built an app to manage the sales, inventory and customer information.",
+            desc: "For this final project we built an app to manage the sales, inventory and customer information.",
             href: "https://mct-project-t3-demo.netlify.com/"
          },
          {
@@ -156,9 +156,9 @@ class MainArea extends Component {
                   </p>
                   <p>
                      I successfully landed a job at a design agency. 
-                     I loved working with talented people, but unfortunately, after a year the business shut down.
+                     I loved working with talented people but unfortunately, after a year the business shut down.
                   </p>
-                  <p>I lost job but got a baby. I was away from work for a while parenting but I realised I still prefer coding to changing nappies, so here I am. </p>
+                  <p>I lost job but got a baby actually. I was away from work for a while parenting but I realised I still prefer coding to changing nappies, so here I am. </p>
                </Bio>
                <Footer onClick={() => this.scrollTo("works")} />
             </Page>
@@ -191,8 +191,8 @@ class MainArea extends Component {
                   <h3><a href="https://serraview.com/" target="_blank">Serraview </a></h3>
                   <p>Internship</p>
                   <p className="mx-2">
-                     In an agile development environment, I worked mainly on cosmetic upgrades{" "}
-                     <br className="hide-mobile"/>
+                     In an agile environment, I worked mainly on cosmetic upgrades{" "}
+                     <br className="hide-mob"/>
                      using Angular2 under supervison of a senior front-end mentor.
                   </p>
                </div>
@@ -201,15 +201,15 @@ class MainArea extends Component {
             </Page>
 
             <Page id="career-3" className="career">
-               <br />
+               <br className="hide-mob"/>
                <div className="">
                   <p className="mx-2">2017 - 2018</p>
                   <h3><a href="https://coderacademy.edu.au/" target="_blank">Coder Academy</a></h3>
                   <p>Full-time student</p>
                   <p className="mx-2">
                      Coder Academy is Australia's only accredited coding bootcamps.
-                     <br /> During this intense 6-month course, we were taught{" "}
-                     <br className="hide-mobile" />
+                     <br /> During this intense 6-month course, we were taught {" "}
+                     <br className="hide-mob" />
                      basic programming, Ruby on Rails, Git, Bootstrap and React.
                   </p>
 
