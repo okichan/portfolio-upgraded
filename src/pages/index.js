@@ -171,7 +171,7 @@ class MainArea extends Component {
                      <h3>Cornwell</h3>
                      <p>Junior front-end developer</p>
                      <p className="mx-2">
-                        At this award-winning design agency, I built the following, but not limited to, websites with direction of a lead developer.  
+                        At this award-winning design agency, I built the following, but not limited to,<br className="hide-mob"/> websites with direction of a lead developer.  
                      </p>
 
                      <AccordionWrapper>
