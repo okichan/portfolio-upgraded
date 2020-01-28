@@ -3,7 +3,7 @@ import styled from "styled-components"
 import goDown from "../../static/images/arrow.svg"
 // import { media, customFonts } from "../style/globalStyle"
 
-const Accordion = ({project}) => {
+const Accordion = ({ project }) => {
    let accorItem = React.createRef()
 
    const toggleAccordion = () => accorItem.current.classList.toggle("open")
@@ -11,19 +11,27 @@ const Accordion = ({project}) => {
    return (
       <div ref={accorItem}>
          <AccordionLabel onClick={toggleAccordion}>
-            <img src={project.logo} alt={project.name} />
+            {
+             !!project.logo ? <img src={project.logo} alt={project.name} /> : <p>{project.name}</p>
+            }
          </AccordionLabel>
-         <AccordionDetail goDown={goDown} >
-            <a href={project.href} target="_blank">
-               {project.name}
-            </a>
+         <AccordionDetail goDown={goDown}>
+            <p>
+               <a href={project.href} target="_blank">
+                  {!!project.logo ? 
+
+                  project.name
+                  :
+                  `Go to site`
+                  }
+               </a>
+            </p>
             <p>{project.tech}</p>
             <p>{project.desc}</p>
          </AccordionDetail>
       </div>
    )
 }
-
 
 const AccordionLabel = styled.div`
    padding: 1rem 0;
@@ -41,48 +49,43 @@ const AccordionLabel = styled.div`
 
    img {
       max-width: 160px;
-      max-height:40px;
+      max-height: 40px;
    }
 
    &:after {
-      content: '';
+      content: "";
       align-items: center;
       width: 1.1rem;
       height: 1.1rem;
       align-self: center;
       /* border: 1px solid red; */
       background: url(${goDown});
-      transition: transform .8s;
+      transition: transform 0.8s;
    }
 `
 
 const AccordionDetail = styled.div`
    max-height: 0;
-   overflow: hidden; 
-   transition: max-height 0.7s ease-out;
-   /* background: rgb(22, 22, 22); */
+   overflow: hidden;
+   transition: max-height 0.6s ease-out;
    border-bottom: 1px solid white;
 
-   a {
-      display: block;
-   }
-
-   a, p {
+   a,
+   p {
       padding: 0 0 1rem;
+      text-align: left;
 
       &:first-child {
          padding-top: 1rem;
       }
-
-   }
-
-   * {
-      text-align: left;
+      &:last-child {
+         padding-bottom: 1rem;
+      }
    }
 
    .open & {
       height: auto;
-      max-height: 7rem;
+      max-height: 10rem;
    }
 `
 

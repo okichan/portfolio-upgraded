@@ -22,7 +22,7 @@ injectGlobal`
          outline-width: 1px;
          outline-color: inherit;
       }
-      
+
       a {
          transition: opacity .3s ease-in-out;
 
@@ -65,6 +65,10 @@ injectGlobal`
          margin-bottom: 14rem;
       }
       
+   }
+
+   body {
+      background: rgb(10, 10, 10);
    }
 
 

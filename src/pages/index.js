@@ -79,62 +79,55 @@ class MainArea extends Component {
          {
             logo: yarrabend,
             name: "YarraBend",
-            tech: "React, GraphQL",
-            desc: "xxx",
+            tech: "React | GraphQL",
+            desc: "In a team of ~10 ppl, I built the official website for a development project for Yarrabend.",
             href: "https://yarrabend.com.au"
          },
          {
             logo: flinders,
             name: "Flinders Lane",
-            tech: "Made with pure html and CSS.",
-            desc: "xxx",
+            tech: "HTML | JavaScript | CSS",
+            desc: "The first commercial website I built on my own.",
             href: "https://www.180-189flinders.com.au/"
          },
          {
             logo: adco,
             name: "Adco",
-            tech: "React, GraphQL",
-            desc: "xxx",
+            tech: "React | GraphQL",
+            desc: "In a team of ~5 ppl, I built the official website for a construction company.",
             href: "https://www.adcoconstruct.com.au/"
          },
          {
             logo: moritz,
             name: "Saint Moritz",
             tech: "React",
-            desc: "xxx",
+            desc: "I have worked on front end for this premium apartment's register page.",
             href: "https://saintmoritz.com.au/"
          }
       ]
 
       const projectsCA = [
          {
-            logo: yarrabend,
+            // logo: null,
             name: "Tanto Management System",
-            tech: "React, Express, MongoDB",
-            desc: "xxx",
-            href: "https://yarrabend.com.au"
+            tech: "React | Express | MongoDB",
+            desc: "With this final project for the course, we have built an app to manage the sales, inventory and customer information.",
+            href: "https://mct-project-t3-demo.netlify.com/"
          },
          {
-            logo: flinders,
+            // logo: flinders,
             name: "Wordsworths",
             tech: "Ruby on Rails",
-            desc: "xxx",
-            href: "https://www.180-189flinders.com.au/"
+            desc: "I have built a two-sided marketplace app which features private message, payment system etc.",
+            href: "https://wordsworth.herokuapp.com/"
          },
          {
-            logo: adco,
+            // logo: adco,
             name: "Zodiac Redefined",
-            tech: "React, Express",
-            desc: "xxx",
-            href: "https://www.adcoconstruct.com.au/"
-         },
-         {
-            logo: moritz,
-            name: "Saint Moritz",
             tech: "React",
-            desc: "xxx",
-            href: "https://saintmoritz.com.au/"
-         }
+            desc: "I repurposed a coding challenge for a job and made into a silly side project.",
+            href: "https://zodiac-redefined.netlify.com/"
+         },
       ]
       return (
          <Fragment>
@@ -180,9 +173,7 @@ class MainArea extends Component {
                      <h3>Cornwell</h3>
                      <p>Junior front-end developer</p>
                      <p className="mx-2">
-                        At this award-winning design agency,
-                        <br /> I was working with a lead developer and built the following
-                        websites.
+                        At this award-winning design agency, I was working with a lead developer <br/> and the following are my highlights.  
                      </p>
 
                      <AccordionWrapper>
@@ -195,27 +186,29 @@ class MainArea extends Component {
                <Footer onClick={() => this.scrollTo("career-2")} />
             </Page>
 
-            <Page id="career-2">
+            <Page id="career-2" className="career">
                <br />
                <div>
                   <p className="mx-2">2018 Feb</p>
-                  <h3>Serraview</h3>
+                  <h3><a href="https://serraview.com/" target="_blank">Serraview </a></h3>
                   <p>Internship</p>
                   <p className="mx-2">
                      In an agile development environment, I worked mainly on cosmetic upgrades{" "}
                      <br />
                      using Angular2 under supervison of a senior front-end mentor.
+                     <br/>
+                     
                   </p>
                </div>
 
                <Footer onClick={() => this.scrollTo("career-3")} />
             </Page>
 
-            <Page id="career-3">
+            <Page id="career-3" className="career">
                <br />
-               <div className="mx-4">
-                  <p>2017 - 2018</p>
-                  <h3 className="mx-2">Coder Academy</h3>
+               <div className="">
+                  <p className="mx-2">2017 - 2018</p>
+                  <h3><a href="https://coderacademy.edu.au/" target="_blank">Coder Academy</a></h3>
                   <p>Full-time student</p>
                   <p className="mx-2">
                      Coder Academy is Australia's only accredited coding bootcamps.
@@ -265,7 +258,7 @@ const Bg = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center 20%;
       font-family: "'object-fit: cover; object-position: center;'"; /* IE polyfill */
       ${above.tablet`
          display: none;
@@ -315,7 +308,6 @@ const Page = styled.div`
    /* object-fit: cover; */
    /* font-family: "'object-fit: cover'"; */
    &:not(#home) {
-      background: rgb(10, 10, 10);
       justify-content: space-between;
    }
 
