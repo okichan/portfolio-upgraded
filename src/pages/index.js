@@ -146,21 +146,19 @@ class MainArea extends Component {
                <Footer onClick={() => this.scrollTo("about")} />
             </Page>
 
-            <Page id="about">
+            <Page id="about" className="career">
                <h3>about me</h3>
                <Bio>
-                  <p>I'm a web developer based in Australia.</p>
+                  <p>Hello.</p>
+                  <p>I'm a front-end web developer based in Melbourne.</p>
                   <p>
-                     I have a passion for creating simple, elegant, eye-pleasing yet
-                     user-oriented websites.
+                     I was a career changer. I used to do Excel admin for 10 years, but decided to join the coding bootcamp because I've always wanted to code and I knew I'd be good at it.
                   </p>
                   <p>
-                     After finishing coding bootcamp in 2018, I was hired by a design
-                     studio in Melbourne where I honed my front-end skills and learnt
-                     design principles and basic knowledge of Photoshop and XD, thanks to
-                     the incredibly talented designers I've worked with.{" "}
+                     I successfully landed a job at a design agency. 
+                     I loved working with talented people, but unfortunately, after a year the business shut down.
                   </p>
-                  <p>I am now living in Brisbane with my beautiful daughter Clara.</p>
+                  <p>I lost job but got a baby. I was away from work for a while parenting but I realised I still prefer coding to changing nappies, so here I am. </p>
                </Bio>
                <Footer onClick={() => this.scrollTo("works")} />
             </Page>
@@ -173,7 +171,7 @@ class MainArea extends Component {
                      <h3>Cornwell</h3>
                      <p>Junior front-end developer</p>
                      <p className="mx-2">
-                        At this award-winning design agency, I was working with a lead developer <br className="hide-mob"/> and the following are my highlights.  
+                        At this award-winning design agency, I built the following, but not limited to, websites with direction of a lead developer.  
                      </p>
 
                      <AccordionWrapper>
@@ -352,7 +350,9 @@ const Bio = styled.div`
    width: 50vw;
    min-width: 18rem;
    p {
-      text-align: left;
+      ${above.tablet`
+         text-align: left;
+      `}
       margin: 1rem 0;
    }
 
