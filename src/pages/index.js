@@ -229,15 +229,15 @@ class MainArea extends Component {
             <Page id="contact">
                <h3>contact</h3>
                <Social>
-                  <a href="">
+                  <a href="https://github.com/okichan" target="_blank">
                      <img src={git} alt="git" />
                   </a>
-                  <a href="">
+                  <a href="https://www.linkedin.com/in/tomomi-oki-parsons/" target="_blank">
                      <img src={linkedIn} alt="git" />
                   </a>
-                  <span>
+                  {/* <span>
                      <img src={mail} alt="git" onClick={this.toggleHandler} />
-                  </span>
+                  </span> */}
                </Social>
                <Footer onClick={() => this.scrollTo("home")} reverseArrow />
             </Page>
@@ -356,11 +356,14 @@ const AccordionWrapper = styled.div`
 `
 
 const Social = styled.div`
-   display: flex;
-   align-items: flex-end;
-
    img {
       width: 48px;
+   }
+
+   a {
+      display: inline-block;
+      margin: 0 .6rem;
+
    }
 `
 

@@ -17,10 +17,10 @@ injectGlobal`
       text-decoration: none;
 
       &:focus {
-         outline-offset: 2px;
-         outline-style: dotted;
-         outline-width: 1px;
-         outline-color: inherit;
+         /* outline-offset: 2px; */
+         outline-style: none;
+         /* outline-width: 1px; */
+         /* outline-color: inherit; */
       }
 
       a {
