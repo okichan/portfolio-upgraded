@@ -1,7 +1,7 @@
 module.exports = {
    siteMetadata: {
      title: `Tomomi Oki`,
-     siteUrl: `https://tomomioki.now.zh/`
+     siteUrl: `https://tomomioki.surge.sh/`
    },
    plugins: [
      `gatsby-plugin-react-helmet`, 
