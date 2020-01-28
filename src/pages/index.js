@@ -173,7 +173,7 @@ class MainArea extends Component {
                      <h3>Cornwell</h3>
                      <p>Junior front-end developer</p>
                      <p className="mx-2">
-                        At this award-winning design agency, I was working with a lead developer <br/> and the following are my highlights.  
+                        At this award-winning design agency, I was working with a lead developer <br className="hide-mob"/> and the following are my highlights.  
                      </p>
 
                      <AccordionWrapper>
@@ -194,10 +194,8 @@ class MainArea extends Component {
                   <p>Internship</p>
                   <p className="mx-2">
                      In an agile development environment, I worked mainly on cosmetic upgrades{" "}
-                     <br />
+                     <br className="hide-mobile"/>
                      using Angular2 under supervison of a senior front-end mentor.
-                     <br/>
-                     
                   </p>
                </div>
 
@@ -213,7 +211,7 @@ class MainArea extends Component {
                   <p className="mx-2">
                      Coder Academy is Australia's only accredited coding bootcamps.
                      <br /> During this intense 6-month course, we were taught{" "}
-                     <br />
+                     <br className="hide-mobile" />
                      basic programming, Ruby on Rails, Git, Bootstrap and React.
                   </p>
 
@@ -337,6 +335,17 @@ const Page = styled.div`
       min-height: 100vh;
       /* display: block; */
    }
+
+   .hide-mob {
+         ${below.tablet`
+            display: none;
+         `}
+      }
+
+   ${below.tablet`
+      padding-right: 1rem;
+      padding-left: 1rem;
+   `}
 `
 
 const Bio = styled.div`
@@ -346,6 +355,10 @@ const Bio = styled.div`
       text-align: left;
       margin: 1rem 0;
    }
+
+   ${below.tablet`
+      width: auto;
+   `}
 `
 
 const AccordionWrapper = styled.div`
@@ -353,6 +366,9 @@ const AccordionWrapper = styled.div`
    max-width: 860px;
    /* border: 1px solid cyan; */
    margin: 0 auto 4rem;
+   ${below.tablet`
+      width: auto;
+   `}
 `
 
 const Social = styled.div`
