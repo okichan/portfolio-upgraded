@@ -30,7 +30,7 @@ const AccordionLabel = styled.div`
    display: flex;
    /* border: 1px solid red; */
    justify-content: space-between;
-   border-bottom: 1px solid;
+   /* border-top: 1px solid; */
    cursor: pointer;
 
    .open & {
@@ -52,7 +52,7 @@ const AccordionLabel = styled.div`
       align-self: center;
       /* border: 1px solid red; */
       background: url(${goDown});
-      transition: transform .5s;
+      transition: transform .8s;
    }
 `
 
@@ -61,6 +61,7 @@ const AccordionDetail = styled.div`
    overflow: hidden; 
    transition: max-height 0.7s ease-out;
    /* background: rgb(22, 22, 22); */
+   border-bottom: 1px solid white;
 
    a {
       display: block;

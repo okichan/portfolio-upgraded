@@ -152,6 +152,7 @@ class MainArea extends Component {
                </Main>
                <Footer onClick={() => this.scrollTo("about")} />
             </Page>
+
             <Page id="about">
                <h3>about me</h3>
                <Bio>
@@ -170,10 +171,11 @@ class MainArea extends Component {
                </Bio>
                <Footer onClick={() => this.scrollTo("works")} />
             </Page>
+            
             <Page id="works" className="career">
                <h3>developer experiences</h3>
                <div>
-                  <div className="mt-4 mb-14">
+                  <div className="">
                      <p className="mx-2">2018 - 2019</p>
                      <h3>Cornwell</h3>
                      <p>Junior front-end developer</p>
@@ -189,35 +191,44 @@ class MainArea extends Component {
                         })}
                      </AccordionWrapper>
                   </div>
+               </div>
+               <Footer onClick={() => this.scrollTo("career-2")} />
+            </Page>
 
-                  <div className="mt-4 mb-14">
-                     <p className="mx-2">2018 Feb</p>
-                     <h3>Serraview</h3>
-                     <p>Internship</p>
-                     <p className="mx-2">
-                        Tasks being managed by Jira, I worked mainly on cosmetic upgrades{" "}
-                        <br />
-                        using Angular2 under supervison of a senior front-end mentor.
-                     </p>
-                  </div>
+            <Page id="career-2">
+               <br />
+               <div>
+                  <p className="mx-2">2018 Feb</p>
+                  <h3>Serraview</h3>
+                  <p>Internship</p>
+                  <p className="mx-2">
+                     In an agile development environment, I worked mainly on cosmetic upgrades{" "}
+                     <br />
+                     using Angular2 under supervison of a senior front-end mentor.
+                  </p>
+               </div>
 
-                  <div className="mx-4">
-                     <p>2017 - 2018</p>
-                     <h3 className="mx-2">Coder Academy</h3>
-                     <p>Full-time student</p>
-                     <p className="mx-2">
-                        Coder Academy is Australia's only accredited coding bootcamps.
-                        <br /> During this super intense 6-month course, we were taught{" "}
-                        <br />
-                        basic programming, Ruby on Rails, Git, Bootstrap and React.
-                     </p>
+               <Footer onClick={() => this.scrollTo("career-3")} />
+            </Page>
 
-                     <AccordionWrapper>
-                        {projectsCA.map(m => {
-                           return <Accordion project={m} />
-                        })}
-                     </AccordionWrapper>
-                  </div>
+            <Page id="career-3">
+               <br />
+               <div className="mx-4">
+                  <p>2017 - 2018</p>
+                  <h3 className="mx-2">Coder Academy</h3>
+                  <p>Full-time student</p>
+                  <p className="mx-2">
+                     Coder Academy is Australia's only accredited coding bootcamps.
+                     <br /> During this intense 6-month course, we were taught{" "}
+                     <br />
+                     basic programming, Ruby on Rails, Git, Bootstrap and React.
+                  </p>
+
+                  <AccordionWrapper>
+                     {projectsCA.map(m => {
+                        return <Accordion project={m} />
+                     })}
+                  </AccordionWrapper>
                </div>
                <Footer onClick={() => this.scrollTo("contact")} />
             </Page>
@@ -237,7 +248,6 @@ class MainArea extends Component {
                </Social>
                <Footer onClick={() => this.scrollTo("home")} reverseArrow />
             </Page>
-            {/* <Form closeButton={this.toggleHandler} /> */}
          </Fragment>
       )
    }
